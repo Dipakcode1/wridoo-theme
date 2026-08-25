@@ -15392,4 +15392,134 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   border-radius: 15px;
   box-shadow: none; }
 
+/* ------------------------------------------------------------
+   Segments & Solutions Grid (Bitrix24 2-Column Layout - Wridoo Brand)
+   ------------------------------------------------------------ */
+.segment-section {
+  background: #fbfaff;
+  position: relative;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+/* Compact Section Spacing Overrides */
+.pt-130 { padding-top: 65px !important; }
+.pb-130 { padding-bottom: 65px !important; }
+.pt-120 { padding-top: 60px !important; }
+.pb-120 { padding-bottom: 60px !important; }
+.pt-105 { padding-top: 55px !important; }
+.pb-105 { padding-bottom: 55px !important; }
+.pt-100 { padding-top: 55px !important; }
+.pb-100 { padding-bottom: 55px !important; }
+.pt-80  { padding-top: 45px !important; }
+.pb-80  { padding-bottom: 45px !important; }
+.mb-60  { margin-bottom: 35px !important; }
+
+.segment-content .sec-title--four {
+  text-align: left;
+}
+
+.segment-content .sec-title--four .sub-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #4E1CE3;
+  border: 1px solid rgba(78, 28, 227, 0.15);
+  box-shadow: 0 2px 8px rgba(78, 28, 227, 0.06);
+}
+
+.segment-content .sec-title--four .title {
+  font-size: clamp(32px, 3.8vw, 44px);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: #110c29;
+}
+
+.segment-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #55585b;
+  max-width: 440px;
+}
+
+.segment-cta-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+/* 2-Column Grid of 8 Cards */
+.segments-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 767px) {
+  .segments-card-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.segment-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ede7ff;
+  border-radius: 14px;
+  padding-right: 18px;
+  min-height: 72px;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(78, 28, 227, 0.1);
+  cursor: default;
+}
+
+.segment-card:hover {
+  transform: translateY(-3px);
+  background: #e2d9ff;
+  box-shadow: 0 10px 24px -6px rgba(78, 28, 227, 0.2);
+  border-color: rgba(78, 28, 227, 0.25);
+}
+
+.segment-icon-badge {
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  border-radius: 14px;
+  background: #4E1CE3;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.segment-card:hover .segment-icon-badge {
+  background: #370fc2;
+}
+
+.segment-icon-badge svg {
+  width: 30px;
+  height: 30px;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+.segment-card-title {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #110c29;
+  line-height: 1.35;
+  padding: 8px 0;
+}
+
 /*# sourceMappingURL=main.css.map */

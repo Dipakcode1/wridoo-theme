@@ -154,9 +154,24 @@
 .wridoo-home .ul_li { display: flex; flex-wrap: wrap; align-items: center; }
 
 .wridoo-home .section {
-  padding: clamp(60px, 8vw, 96px) 0;
+  padding: clamp(45px, 5.5vw, 65px) 0;
   position: relative;
 }
+
+/* ------------------------------------------------------------
+   Low / Compact Section Spacing
+   ------------------------------------------------------------ */
+.wridoo-home .pt-130, .pt-130 { padding-top: clamp(48px, 6vw, 70px) !important; }
+.wridoo-home .pb-130, .pb-130 { padding-bottom: clamp(48px, 6vw, 70px) !important; }
+.wridoo-home .pt-120, .pt-120 { padding-top: clamp(45px, 5.5vw, 65px) !important; }
+.wridoo-home .pb-120, .pb-120 { padding-bottom: clamp(45px, 5.5vw, 65px) !important; }
+.wridoo-home .pt-105, .pt-105 { padding-top: clamp(40px, 5vw, 55px) !important; }
+.wridoo-home .pb-105, .pb-105 { padding-bottom: clamp(40px, 5vw, 55px) !important; }
+.wridoo-home .pt-100, .pt-100 { padding-top: clamp(40px, 5vw, 60px) !important; }
+.wridoo-home .pb-100, .pb-100 { padding-bottom: clamp(40px, 5vw, 60px) !important; }
+.wridoo-home .pt-80, .pt-80 { padding-top: clamp(35px, 4vw, 50px) !important; }
+.wridoo-home .pb-80, .pb-80 { padding-bottom: clamp(35px, 4vw, 50px) !important; }
+.wridoo-home .mb-60, .mb-60 { margin-bottom: clamp(28px, 3.5vw, 42px) !important; }
 
 .wridoo-home .section--tint {
   background: var(--brand-tint);
@@ -1297,7 +1312,124 @@
 }
 
 /* ------------------------------------------------------------
-   14. Animations & Keyframes
+   14. Segments & Solutions Grid (Bitrix24 2-Column Layout - Wridoo Brand)
+   ------------------------------------------------------------ */
+.segment-section {
+  background: #fbfaff;
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0;
+}
+
+.segment-content .sec-title--four {
+  text-align: left;
+}
+
+.segment-content .sec-title--four .sub-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #4E1CE3;
+  border: 1px solid rgba(78, 28, 227, 0.15);
+  box-shadow: 0 2px 8px rgba(78, 28, 227, 0.06);
+}
+
+.segment-content .sec-title--four .title {
+  font-size: clamp(32px, 3.8vw, 44px);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: #110c29;
+}
+
+.segment-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #55585b;
+  max-width: 440px;
+}
+
+.segment-cta-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+/* 2-Column Grid of 8 Cards */
+.segments-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 767px) {
+  .segments-card-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.segment-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ede7ff;
+  border-radius: 14px;
+  padding-right: 18px;
+  min-height: 72px;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(78, 28, 227, 0.1);
+  cursor: default;
+}
+
+.segment-card:hover {
+  transform: translateY(-3px);
+  background: #e2d9ff;
+  box-shadow: 0 10px 24px -6px rgba(78, 28, 227, 0.2);
+  border-color: rgba(78, 28, 227, 0.25);
+}
+
+.segment-icon-badge {
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  border-radius: 14px;
+  background: #4E1CE3;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.segment-card:hover .segment-icon-badge {
+  background: #370fc2;
+}
+
+.segment-icon-badge svg {
+  width: 30px;
+  height: 30px;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+.segment-card-title {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #110c29;
+  line-height: 1.35;
+  padding: 8px 0;
+}
+
+/* ------------------------------------------------------------
+   15. Animations & Keyframes
    ------------------------------------------------------------ */
 @keyframes brandMarquee {
   0% { transform: translateX(0); }

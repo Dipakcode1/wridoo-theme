@@ -3,25 +3,25 @@
     "name": "title",
     "label": "Section Heading",
     "type": "text",
-    "default": "Wridoo for Travel — built to support teams like yours:"
+    "default": "Built to support every segment of travel"
   },
   {
     "name": "primary_cta_text",
     "label": "Primary Button Text",
     "type": "text",
-    "default": "START FOR FREE"
+    "default": "Start free trial"
   },
   {
     "name": "primary_cta_link",
     "label": "Primary Button Link",
     "type": "url",
-    "default": { "href": "#demo" }
+    "default": { "href": "#cta" }
   },
   {
     "name": "secondary_cta_text",
     "label": "Secondary Button Text",
     "type": "text",
-    "default": "BOOK A DEMO"
+    "default": "Book a demo"
   },
   {
     "name": "secondary_cta_link",

@@ -6,6 +6,18 @@
 -->
 {% extends "./layouts/base.html" %}
 
+{% require_css %}
+<style>
+  .xb-corner-shape::before,
+  .xb-corner-shape::after {
+    background-image: url("{{ get_asset_url('../assets/img/shape/corner-shape01.png') }}") !important;
+  }
+  .xb-corner-shape::after {
+    background-image: url("{{ get_asset_url('../assets/img/shape/corner-shape02.png') }}") !important;
+  }
+</style>
+{% end_require_css %}
+
 {% block body %}
 <div class="body_wrap">
     <div class="body-container m-auto mxw-1460">
@@ -196,7 +208,7 @@
                                         <div class="xb-item--logo">
                                             <div class="xb-circle">
                                                 <div class="xb-logo">
-                                                    <img src="{{ get_asset_url('../assets/img/icon/logo-icon.svg') }}" alt="logo">
+                                                    <img src="{{ get_asset_url('../assets/img/logo/fav-icon.png') }}" alt="Wridoo Favicon" style="max-width: 44px; max-height: 44px; object-fit: contain;">
                                                 </div>
                                                 <div class="round-shape"><img src="{{ get_asset_url('../assets/img/shape/round-shape.png') }}" alt=""></div>
                                             </div>
@@ -1033,10 +1045,9 @@
                                     <div class="fs-footer-widget fs-footer-newsletter">
                                         <p class="fs-widget-title">The Ultimate Travel CRM</p>
                                         <h2 class="xb-item--title">Join The Businesses Scaling Smarter</h2>
-                                        <p class="xb-item--content">Smarter bookings, CRM, and websites made easy for travel operators.</p>
-                                        <div class="xb-item--btn gap-15 mt-40 ul_li" style="flex-wrap: nowrap;">
-                                            <a class="thm-btn fintech-btn" href="#pricing" style="white-space: nowrap; padding: 15px 28px;">Start Free Trial</a>
-                                            <a class="thm-btn fintech-btn fintech-btn--white" href="#pricing" style="white-space: nowrap; padding: 15px 28px;">Book A Demo</a>
+                                        <p class="xb-item--content">Smarter bookings, CRM, and websites <br> made easy for travel operators.</p>
+                                        <div class="xb-item--btn mt-40 ul_li">
+                                            <a class="thm-btn fintech-btn" href="#pricing" style="white-space: nowrap; padding: 15px 36px;">Start Free Trial</a>
                                         </div>
                                     </div>
                                 </div>

@@ -1,3 +1,15 @@
+{% require_css %}
+<style>
+  .xb-corner-shape::before,
+  .xb-corner-shape::after {
+    background-image: url("{{ get_asset_url('../../assets/img/shape/corner-shape01.png') }}") !important;
+  }
+  .xb-corner-shape::after {
+    background-image: url("{{ get_asset_url('../../assets/img/shape/corner-shape02.png') }}") !important;
+  }
+</style>
+{% end_require_css %}
+
 <section class="dashboard">
   <div class="container mxw-1330">
     <div class="fs-dashboard-wrapper xbFadeUpItem">

@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Never expose /public in the browser URL (only when the client requested it)
+    RewriteCond %{THE_REQUEST} \s/+public/([^\s?]*) [NC]
+    RewriteRule ^public/(.*)$ /$1 [R=301,L]
+    RewriteCond %{THE_REQUEST} \s/+public[\s?] [NC]
+    RewriteRule ^public/?$ / [R=301,L]
+
+    # Block sensitive project paths (never serve from document root)
+    RewriteRule ^(\.env|composer\.(json|lock)|phpunit\.xml(\.dist)?)(/|$) - [F,L]
+    RewriteRule ^(app|config|database|storage|vendor|docs|tests|routes)(/|$) - [F,L]
+
+    # Serve media + theme assets from project root (do not rewrite into public/)
+    # Shared hosts often cannot follow public/.htaccess "../uploads" rewrites.
+    RewriteRule ^uploads/ - [L]
+    RewriteRule ^themes/[^/]+/assets/ - [L]
+
+    # Internal rewrite: everything else goes through public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Prevent directory listings at project root
+Options -Indexes

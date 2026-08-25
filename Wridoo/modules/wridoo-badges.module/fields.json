@@ -9,7 +9,7 @@
     "name": "link_text",
     "label": "Link Text",
     "type": "text",
-    "default": "Learn more"
+    "default": "LEARN MORE"
   },
   {
     "name": "link_url",

@@ -45,19 +45,19 @@
     "name": "primary_cta_text",
     "label": "Primary Button Text",
     "type": "text",
-    "default": "START FOR FREE"
+    "default": "Start free trial"
   },
   {
     "name": "primary_cta_link",
     "label": "Primary Button Link",
     "type": "url",
-    "default": { "href": "#demo" }
+    "default": { "href": "#cta" }
   },
   {
     "name": "secondary_cta_text",
     "label": "Secondary Button Text",
     "type": "text",
-    "default": "BOOK A DEMO"
+    "default": "Book a demo"
   },
   {
     "name": "secondary_cta_link",

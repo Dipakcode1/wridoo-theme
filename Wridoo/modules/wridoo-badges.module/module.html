@@ -1,17 +1,23 @@
-<section class="section">
-  <div class="container center">
-    <h2 class="reveal in-view h2">{{ module.title }}</h2>
-    <div class="reveal in-view badges">
+<section class="badges-section pt-70 pb-70">
+  <div class="container mxw-1330 text-center">
+    <div class="sec-title--four text-center mb-40">
+      <h2 class="title">{{ module.title or "See why customers love Wridoo" }}</h2>
+    </div>
+    <div class="badges-row d-flex flex-wrap align-items-center justify-content-center gap-4 gap-lg-5 mb-40">
       {% for item in module.badges %}
-        {% if item.image.src %}
-          <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" loading="lazy" />
-        {% else %}
-          <img src="https://www.bitrix24.in/images/content_en/bxw_blocks/bxw_block_badges/img-badge-{{ loop.index }}.png" alt="Wridoo award badge {{ loop.index }}" loading="lazy" />
-        {% endif %}
+        <div class="badge-item">
+          {% if item.image.src %}
+            <img src="{{ item.image.src }}" alt="{{ item.image.alt or 'Wridoo award badge' }}" class="badge-img" loading="lazy" />
+          {% else %}
+            <img src="{{ get_asset_url('../../assets/img/badges/img-badge-' ~ loop.index ~ '.png') }}" alt="Wridoo award badge {{ loop.index }}" class="badge-img" loading="lazy" />
+          {% endif %}
+        </div>
       {% endfor %}
     </div>
     {% if module.link_text %}
-      <a href="{{ module.link_url.href }}" class="text-link">{{ module.link_text }}</a>
+      <div class="badges-btn text-center">
+        <a href="{{ module.link_url.href or '#demo' }}" class="thm-btn fintech-btn fintech-btn--white">{{ module.link_text }}</a>
+      </div>
     {% endif %}
   </div>
 </section>

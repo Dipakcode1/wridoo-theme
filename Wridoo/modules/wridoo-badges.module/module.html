@@ -1,0 +1,17 @@
+<section class="section">
+  <div class="container center">
+    <h2 class="reveal in-view h2">{{ module.title }}</h2>
+    <div class="reveal in-view badges">
+      {% for item in module.badges %}
+        {% if item.image.src %}
+          <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" loading="lazy" />
+        {% else %}
+          <img src="https://www.bitrix24.in/images/content_en/bxw_blocks/bxw_block_badges/img-badge-{{ loop.index }}.png" alt="Wridoo award badge {{ loop.index }}" loading="lazy" />
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% if module.link_text %}
+      <a href="{{ module.link_url.href }}" class="text-link">{{ module.link_text }}</a>
+    {% endif %}
+  </div>
+</section>

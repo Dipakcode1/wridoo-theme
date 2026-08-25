@@ -1,0 +1,18 @@
+<section class="section" id="demo">
+  <div class="container center">
+    <h2 class="reveal in-view h2 narrow">{{ module.title }}</h2>
+    <p class="reveal in-view lead narrow">{{ module.description_top }}</p>
+    <img class="reveal in-view img-fluid mt-48"
+      src="{{ module.image.src }}"
+      alt="{{ module.image.alt }}" loading="lazy" />
+    <p class="reveal in-view lead narrow mt-48">{{ module.description_bottom }}</p>
+    <div class="cta cta--center">
+      {% if module.primary_cta_text %}
+        <a href="{{ module.primary_cta_link.href }}" class="btn btn-primary">{{ module.primary_cta_text }}</a>
+      {% endif %}
+      {% if module.secondary_cta_text %}
+        <a href="{{ module.secondary_cta_link.href }}" class="btn btn-soft">{{ module.secondary_cta_text }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>

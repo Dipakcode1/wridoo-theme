@@ -1,0 +1,43 @@
+<section class="section section--tint">
+  <div class="container">
+    <h2 class="reveal in-view h2 center">{{ module.title }}</h2>
+    <div class="showcase-viewport">
+      <div class="showcase-track" id="showcaseTrack-{{ name }}">
+        {% for item in module.cases %}
+          <article class="showcase-card">
+            <div class="showcase-head">
+              {% if item.logo.src %}
+                <img src="{{ item.logo.src }}" alt="{{ item.company }}" loading="lazy" />
+              {% else %}
+                <img src="https://www.bitrix24.in/images/content_en/solutions/industry/travel-crm-software/img-partners-showcase-logo-{{ loop.index }}.png" alt="{{ item.company }}" loading="lazy" />
+              {% endif %}
+              <p class="showcase-company">{{ item.company }}</p>
+            </div>
+            {% if item.image.src %}
+              <img src="{{ item.image.src }}" alt="{{ item.case_title }}" loading="lazy" />
+            {% else %}
+              <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-partners-showcase-{{ loop.index }}.740w.png.webp" alt="{{ item.case_title }}" loading="lazy" />
+            {% endif %}
+            <p class="showcase-title">{{ item.case_title }}</p>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="carousel-nav">
+      <button class="round-btn showcase-prev" data-module="{{ name }}" aria-label="Previous partner case" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="round-btn showcase-next" data-module="{{ name }}" aria-label="Next partner case" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+    <div class="cta cta--center">
+      {% if module.primary_cta_text %}
+        <a href="{{ module.primary_cta_link.href }}" class="btn btn-primary">{{ module.primary_cta_text }}</a>
+      {% endif %}
+      {% if module.secondary_cta_text %}
+        <a href="{{ module.secondary_cta_link.href }}" class="btn btn-soft">{{ module.secondary_cta_text }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>

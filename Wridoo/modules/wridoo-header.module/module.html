@@ -1,0 +1,158 @@
+{# Macro for rendering HubSpot Menu Nodes for Desktop #}
+{% macro render_desktop_node(node) %}
+  <li class="{% if node.children %}menu-item-has-children{% endif %} {% if node.activeBranch %}active{% endif %}">
+    <a href="{{ node.url }}" {% if node.linkTarget %}target="{{ node.linkTarget }}"{% endif %}>
+      <span>{{ node.label }}</span>
+    </a>
+    {% if node.children %}
+      <ul class="submenu">
+        {% for child in node.children %}
+          {{ render_desktop_node(child) }}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </li>
+{% endmacro %}
+
+{# Macro for rendering HubSpot Menu Nodes for Mobile #}
+{% macro render_mobile_node(node) %}
+  <li class="menu-item {% if node.children %}menu-item-has-children{% endif %} {% if node.activeBranch %}active{% endif %}">
+    <a href="{{ node.url }}" {% if node.linkTarget %}target="{{ node.linkTarget }}"{% endif %}>
+      <span>{{ node.label }}</span>
+    </a>
+    {% if node.children %}
+      <ul class="sub-menu">
+        {% for child in node.children %}
+          {{ render_mobile_node(child) }}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </li>
+{% endmacro %}
+
+<header id="xb-header-area" class="header-area header-area--four"> 
+  <div class="xb-header">
+    <div class="container mxw-1330">
+      <div class="header-wrapper">
+        <div class="header__wrap border-btm ul_li_between pos-rel">
+          <!-- Logo -->
+          <div class="xb-header-logo">
+            <a href="/" class="logo">
+              {% if module.logo.src %}
+                <img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" style="max-width: {{ module.logo_width }}px; height: auto;">
+              {% else %}
+                <img src="{{ get_asset_url('../../assets/img/logo/logo-black.png') }}" alt="Wridoo Logo" style="max-width: {{ module.logo_width }}px; height: auto;">
+              {% endif %}
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="main-menu__wrap navbar navbar-expand-lg p-0">
+            <nav class="main-menu collapse navbar-collapse">
+              <ul>
+                {% if module.header_menu %}
+                  {% set menu_tree = menu(module.header_menu) %}
+                  {% for node in menu_tree.children %}
+                    {{ render_desktop_node(node) }}
+                  {% endfor %}
+                {% else %}
+                  <li class="active"><a href="/"><span>Home</span></a></li>
+                  <li class="menu-item-has-children">
+                    <a href="#solutions"><span>Solutions</span></a>
+                    <ul class="submenu">
+                      <li><a href="#solutions"><span>Tour Operators</span></a></li>
+                      <li><a href="#solutions"><span>Travel Agencies</span></a></li>
+                      <li><a href="#solutions"><span>Hotels &amp; Resorts</span></a></li>
+                      <li><a href="#solutions"><span>DMCs &amp; Activities</span></a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#features"><span>Features</span></a></li>
+                  <li><a href="#pricing"><span>Pricing</span></a></li>
+                  <li><a href="#faq"><span>FAQ</span></a></li>
+                  <li><a href="#contact"><span>Contact</span></a></li>
+                {% endif %}
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Desktop CTA Button -->
+          <div class="xb-header-btn d-lg-block d-none">
+            {% if module.cta_text %}
+              <a class="thm-btn fintech-btn" href="{{ module.cta_url }}">{{ module.cta_text }}</a>
+            {% endif %}
+          </div>
+
+          <!-- Mobile Hamburger Trigger -->
+          <div class="header-bar-mobile side-menu d-lg-none">
+            <a class="xb-nav-mobile" href="javascript:void(0);" aria-label="Open mobile menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Slide-out Drawer Menu -->
+      <div class="xb-header-wrap">
+        <div class="xb-header-menu">
+          <div class="xb-header-menu-scroll">
+            <div class="xb-menu-close xb-hide-xl xb-close" aria-label="Close menu"></div>
+            
+            <div class="xb-logo-mobile xb-hide-xl">
+              <a href="/" rel="home">
+                {% if module.logo.src %}
+                  <img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}">
+                {% else %}
+                  <img src="{{ get_asset_url('../../assets/img/logo/logo-black.png') }}" alt="Wridoo Logo">
+                {% endif %}
+              </a>
+            </div>
+
+            {% if module.show_search_mobile %}
+              <div class="xb-header-mobile-search xb-hide-xl">
+                <form role="search" action="/search">
+                  <input type="text" placeholder="Search..." name="q" class="search-field">
+                  <button class="search-submit" type="submit"><i class="far fa-search"></i></button>
+                </form>
+              </div>
+            {% endif %}
+
+            <nav class="xb-header-nav">
+              <ul class="xb-menu-primary clearfix">
+                {% if module.header_menu %}
+                  {% set menu_tree = menu(module.header_menu) %}
+                  {% for node in menu_tree.children %}
+                    {{ render_mobile_node(node) }}
+                  {% endfor %}
+                {% else %}
+                  <li class="menu-item active"><a href="/"><span>Home</span></a></li>
+                  <li class="menu-item menu-item-has-children">
+                    <a href="#solutions"><span>Solutions</span></a>
+                    <ul class="sub-menu">
+                      <li><a href="#solutions"><span>Tour Operators</span></a></li>
+                      <li><a href="#solutions"><span>Travel Agencies</span></a></li>
+                      <li><a href="#solutions"><span>Hotels &amp; Resorts</span></a></li>
+                      <li><a href="#solutions"><span>DMCs &amp; Activities</span></a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item"><a href="#features"><span>Features</span></a></li>
+                  <li class="menu-item"><a href="#pricing"><span>Pricing</span></a></li>
+                  <li class="menu-item"><a href="#faq"><span>FAQ</span></a></li>
+                  <li class="menu-item"><a href="#contact"><span>Contact</span></a></li>
+                {% endif %}
+              </ul>
+            </nav>
+
+            {% if module.cta_text %}
+              <div class="xb-header-mobile-btn mt-30 text-center">
+                <a class="thm-btn fintech-btn w-100" href="{{ module.cta_url }}">{{ module.cta_text }}</a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="xb-header-menu-backdrop"></div>
+      </div>
+    </div>
+  </div>
+</header>

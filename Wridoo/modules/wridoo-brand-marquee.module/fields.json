@@ -1,0 +1,44 @@
+[
+  {
+    "name": "title",
+    "label": "Heading Text",
+    "type": "text",
+    "default": "Trusted by 620K+ travel agencies & global brands"
+  },
+  {
+    "name": "logos",
+    "label": "Brand Logos",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 20,
+      "default": 7
+    },
+    "children": [
+      {
+        "name": "brand_name",
+        "label": "Brand Name",
+        "type": "text",
+        "default": "Brand"
+      },
+      {
+        "name": "image",
+        "label": "Brand Logo Image",
+        "type": "image",
+        "default": {
+          "src": "",
+          "alt": "Brand"
+        }
+      }
+    ],
+    "default": [
+      { "brand_name": "Context", "image": { "src": "", "alt": "Context" } },
+      { "brand_name": "Huobi", "image": { "src": "", "alt": "Huobi" } },
+      { "brand_name": "Cellulant", "image": { "src": "", "alt": "Cellulant" } },
+      { "brand_name": "Onboard", "image": { "src": "", "alt": "Onboard" } },
+      { "brand_name": "Aerobotics", "image": { "src": "", "alt": "Aerobotics" } },
+      { "brand_name": "Afriex", "image": { "src": "", "alt": "Afriex" } },
+      { "brand_name": "Global brand", "image": { "src": "", "alt": "Global brand" } }
+    ]
+  }
+]

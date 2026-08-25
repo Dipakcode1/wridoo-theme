@@ -1,0 +1,84 @@
+[
+  {
+    "name": "title",
+    "label": "Section Heading",
+    "type": "text",
+    "default": "Discover how Wridoo helps deliver better travel experiences"
+  },
+  {
+    "name": "testimonials",
+    "label": "Testimonials",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 10,
+      "default": 2
+    },
+    "children": [
+      {
+        "name": "logo",
+        "label": "Company Logo",
+        "type": "image",
+        "default": {
+          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-logo-1.540w.png.webp",
+          "alt": "Customer logo"
+        }
+      },
+      {
+        "name": "quote",
+        "label": "Quote Text",
+        "type": "text",
+        "default": "Switching from the Wridoo Cloud edition to Wridoo On-Premise has allowed us to streamline operations and improve both efficiency and customer satisfaction."
+      },
+      {
+        "name": "photo",
+        "label": "Author Photo",
+        "type": "image",
+        "default": {
+          "src": "https://www.bitrix24.in/images/content_en/solutions/industry/real-estate/img-slider-helps-foto-felipe-fernandez.png",
+          "alt": "Author"
+        }
+      },
+      {
+        "name": "author_name",
+        "label": "Author Name",
+        "type": "text",
+        "default": "Felipe Fernández"
+      },
+      {
+        "name": "role",
+        "label": "Author Role & Company",
+        "type": "text",
+        "default": "Sales & Marketing Director, Cayuga"
+      }
+    ],
+    "default": [
+      {
+        "logo": {
+          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-logo-1.540w.png.webp",
+          "alt": "Cayuga"
+        },
+        "quote": "Switching from the Wridoo Cloud edition to Wridoo On-Premise has allowed us to streamline operations and improve both efficiency and customer satisfaction.",
+        "photo": {
+          "src": "https://www.bitrix24.in/images/content_en/solutions/industry/real-estate/img-slider-helps-foto-felipe-fernandez.png",
+          "alt": "Felipe Fernández"
+        },
+        "author_name": "Felipe Fernández",
+        "role": "Sales & Marketing Director, Cayuga"
+      },
+      {
+        "logo": {
+          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-logo-2.540w.png.webp",
+          "alt": "immoveo.de"
+        },
+        "quote": "From the very beginning we were amazed by the combination of many useful features Wridoo has to offer. We use Wridoo in the fields of project management, CRM, and internal company communication.",
+        "photo": {
+          "src": "https://www.bitrix24.in/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-1.png",
+          "alt": "Dominik Groebler"
+        },
+        "author_name": "Dominik Groebler",
+        "role": "CEO, immoveo.de"
+      }
+    ]
+  }
+]

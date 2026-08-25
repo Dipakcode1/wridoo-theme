@@ -1,0 +1,60 @@
+<!--
+  templateType: none
+-->
+<!doctype html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% if page_meta.html_title or pageTitle %}<title>{{ page_meta.html_title or pageTitle }}</title>{% endif %}
+    {% if brand_settings.favicon.src %}<link rel="shortcut icon" href="{{ brand_settings.favicon.src }}" />{% endif %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+    
+    <!-- Google Fonts & Font Awesome 6 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Sastik CSS Suite -->
+    {{ require_css(get_asset_url("../../assets/css/bootstrap.min.css")) }}
+    {{ require_css(get_asset_url("../../assets/css/fontawesome.css")) }}
+    {{ require_css(get_asset_url("../../assets/css/animate.css")) }}
+    {{ require_css(get_asset_url("../../assets/css/swiper.min.css")) }}
+    {{ require_css(get_asset_url("../../assets/css/odometer.css")) }}
+    {{ require_css(get_asset_url("../../assets/css/nice-select.css")) }}
+    {{ require_css(get_asset_url("../../assets/css/magnific-popup.css")) }}
+    {{ require_css(get_asset_url("../../assets/css/custom-fonts.css")) }}
+    {{ require_css(get_asset_url("../../assets/css/jquery-ui.css")) }}
+    {{ require_css(get_asset_url("../../assets/css/main.css")) }}
+
+    {{ standard_header_includes }}
+  </head>
+  <body class="fintech-saas">
+    {% block body %}
+    {% endblock body %}
+
+    {{ require_js(get_asset_url("../../assets/js/jquery-3.7.1.min.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/bootstrap.bundle.min.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/swiper.min.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/wow.min.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/appear.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/imagesloaded.pkgd.min.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/isotope.pkgd.min.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/jquery.nice-select.min.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/jquery.marquee.min.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/jquery.magnific-popup.min.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/jqueryui.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/odometer.min.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/parallaxie.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/parallax.min.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/parallax-scroll.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/easing.min.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/scrollspy.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/plugin.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/lenis.js")) }}
+    {{ require_js(get_asset_url("../../assets/js/main.js")) }}
+    
+    {{ standard_footer_includes }}
+  </body>
+</html>

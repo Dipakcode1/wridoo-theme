@@ -1,0 +1,187 @@
+[
+  {
+    "name": "title",
+    "label": "Section Heading",
+    "type": "text",
+    "default": "Take your travel business further with Wridoo"
+  },
+  {
+    "name": "primary_cta_text",
+    "label": "Primary Button Text",
+    "type": "text",
+    "default": "START FOR FREE"
+  },
+  {
+    "name": "primary_cta_link",
+    "label": "Primary Button Link",
+    "type": "url",
+    "default": { "href": "#demo" }
+  },
+  {
+    "name": "secondary_cta_text",
+    "label": "Secondary Button Text",
+    "type": "text",
+    "default": "BOOK A DEMO"
+  },
+  {
+    "name": "secondary_cta_link",
+    "label": "Secondary Button Link",
+    "type": "url",
+    "default": { "href": "#demo" }
+  },
+  {
+    "name": "tabs",
+    "label": "Feature Tabs",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 10,
+      "default": 6
+    },
+    "children": [
+      {
+        "name": "tab_name",
+        "label": "Tab Button Label",
+        "type": "text",
+        "default": "Online booking management"
+      },
+      {
+        "name": "kicker",
+        "label": "Kicker (Small Category)",
+        "type": "text",
+        "default": "Traveler interaction"
+      },
+      {
+        "name": "tab_title",
+        "label": "Tab Heading",
+        "type": "text",
+        "default": "Handle customer reservations with ease"
+      },
+      {
+        "name": "point_1",
+        "label": "Point 1",
+        "type": "text",
+        "default": "Allow clients to easily schedule meetings or reserve hotel rooms"
+      },
+      {
+        "name": "point_2",
+        "label": "Point 2",
+        "type": "text",
+        "default": "Notify travelers about bookings to reduce no-shows"
+      },
+      {
+        "name": "point_3",
+        "label": "Point 3",
+        "type": "text",
+        "default": "Monitor availability, workload, and occupied slots in real time"
+      },
+      {
+        "name": "point_4",
+        "label": "Point 4",
+        "type": "text",
+        "default": "Add travelers to waitlists to quickly fill canceled bookings"
+      },
+      {
+        "name": "point_5",
+        "label": "Point 5",
+        "type": "text",
+        "default": "Link every booking to a CRM card with full customer details"
+      },
+      {
+        "name": "image",
+        "label": "Feature Graphic",
+        "type": "image",
+        "default": {
+          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-1.1344w.jpg.webp",
+          "alt": "Feature Preview"
+        }
+      }
+    ],
+    "default": [
+      {
+        "tab_name": "Online booking management",
+        "kicker": "Traveler interaction",
+        "tab_title": "Handle customer reservations with ease",
+        "point_1": "Allow clients to easily schedule meetings or reserve hotel rooms",
+        "point_2": "Notify travelers about bookings to reduce no-shows",
+        "point_3": "Monitor availability, workload, and occupied slots in real time",
+        "point_4": "Add travelers to waitlists to quickly fill canceled bookings",
+        "point_5": "Link every booking to a CRM card with full customer details",
+        "image": {
+          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-1.1344w.jpg.webp",
+          "alt": "Handle customer reservations with ease"
+        }
+      },
+      {
+        "tab_name": "Traveler interaction",
+        "kicker": "Traveler interaction",
+        "tab_title": "Stay connected with tourists at every step of their journey",
+        "point_1": "Consult clients via calls, chat, or messengers from one interface",
+        "point_2": "Use chatbots to handle routine inquiries and provide quick responses",
+        "point_3": "Send travel details, confirmations, and updates via email",
+        "point_4": "Run video meetings and automatically summarize call outcomes",
+        "point_5": "",
+        "image": {
+          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-2.1344w.jpg.webp",
+          "alt": "Stay connected with tourists"
+        }
+      },
+      {
+        "tab_name": "Document control",
+        "kicker": "Document control",
+        "tab_title": "Handle sensitive data securely and efficiently",
+        "point_1": "Collect consent for data processing directly via live chat",
+        "point_2": "Sign hotel placement agreements with travelers through SMS or email",
+        "point_3": "Monitor the signing process in real time to avoid missing important documents",
+        "point_4": "Store passport scans and client files securely in Wridoo.Drive",
+        "point_5": "Set detailed access permissions to restrict sensitive data",
+        "image": {
+          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-3.1344w.jpg.webp",
+          "alt": "Handle sensitive data securely"
+        }
+      },
+      {
+        "tab_name": "Team dynamics",
+        "kicker": "Team dynamics",
+        "tab_title": "Keep your managers organized for seamless journeys",
+        "point_1": "Receive automatic reminders for events, tasks, and activities",
+        "point_2": "Use sales scripts and promote top tours effectively",
+        "point_3": "Sync calendars with external services to ensure no meetings are missed",
+        "point_4": "Access complete client information anytime using the mobile app",
+        "point_5": "",
+        "image": {
+          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-4.1344w.jpg.webp",
+          "alt": "Keep your managers organized"
+        }
+      },
+      {
+        "tab_name": "Personalised marketing campaigns",
+        "kicker": "Personalised marketing campaigns",
+        "tab_title": "Attract new travelers and increase your loyal client base",
+        "point_1": "Create personalized offers for families, adventure seekers, or luxury travelers",
+        "point_2": "Keep ready-to-use templates for peak travel seasons",
+        "point_3": "Launch targeted SMS and email campaigns directly from CRM",
+        "point_4": "Automate follow-ups after trips to gather feedback and repeat bookings",
+        "point_5": "",
+        "image": {
+          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-5.1344w.jpg.webp",
+          "alt": "Attract new travelers"
+        }
+      },
+      {
+        "tab_name": "Strategic analytics",
+        "kicker": "Strategic analytics",
+        "tab_title": "Make smarter decisions based on real data",
+        "point_1": "Analyze top-performing ad channels and improve campaign outcomes",
+        "point_2": "Identify frequent travelers and offer personalized discounts",
+        "point_3": "Measure how your marketing campaigns perform with detailed analytics",
+        "point_4": "Monitor agent's response speed to boost effectiveness",
+        "point_5": "Gather honest feedback from travelers through CRM-forms",
+        "image": {
+          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-6.1344w.jpg.webp",
+          "alt": "Make smarter decisions based on real data"
+        }
+      }
+    ]
+  }
+]

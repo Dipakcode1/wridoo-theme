@@ -1,0 +1,496 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Home - Wridoo Tour & Travel CRM
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<div class="body_wrap">
+    <div class="body-container m-auto mxw-1460">
+        <div class="xb-line-pattern">
+            <img src="{{ get_asset_url('../assets/img/shape/line-pattern.png') }}" alt="pattern">
+            <img src="{{ get_asset_url('../assets/img/shape/line-pattern.png') }}" alt="pattern">
+        </div>
+        <div class="body-inner" data-bg-color="#fff">
+
+            <!-- header start -->
+            <header id="xb-header-area" class="header-area header-area--four"> 
+                <div class="xb-header">
+                    <div class="container mxw-1330">
+                        <div class="header-wrapper">
+                            <div class="header__wrap border-btm ul_li_between pos-rel">
+                                <div class="xb-header-logo">
+                                    <a href="/" class="logo">
+                                        <img src="{{ get_asset_url('../assets/img/logo/logo-black.png') }}" alt="Wridoo Logo" style="height: 38px; width: auto;">
+                                    </a>
+                                </div>
+                                <div class="main-menu__wrap navbar navbar-expand-lg p-0">
+                                    <nav class="main-menu collapse navbar-collapse">
+                                        <ul>
+                                            <li class="active"><a href="/"><span>Home</span></a></li>
+                                            <li class="menu-item-has-children">
+                                                <a href="#solutions"><span>Solutions</span></a>
+                                                <ul class="submenu">
+                                                    <li><a href="#solutions"><span>Tour Operators</span></a></li>
+                                                    <li><a href="#solutions"><span>Travel Agencies</span></a></li>
+                                                    <li><a href="#solutions"><span>Hotels &amp; Resorts</span></a></li>
+                                                    <li><a href="#solutions"><span>DMCs &amp; Activities</span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#features"><span>Features</span></a></li>
+                                            <li><a href="#pricing"><span>Pricing</span></a></li>
+                                            <li><a href="#faq"><span>FAQ</span></a></li>
+                                            <li><a href="#contact"><span>Contact</span></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="xb-header-btn d-lg-block d-none">
+                                    <a class="thm-btn fintech-btn" href="#cta">Start free trial</a>
+                                </div>
+                                <div class="header-bar-mobile side-menu d-lg-none">
+                                    <a class="xb-nav-mobile" href="javascript:void(0);" aria-label="Toggle navigation">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Slide-out Drawer Menu -->
+                        <div class="xb-header-wrap">
+                            <div class="xb-header-menu">
+                                <div class="xb-header-menu-scroll">
+                                    <div class="xb-menu-close xb-hide-xl xb-close" aria-label="Close menu"></div>
+                                    <div class="xb-logo-mobile xb-hide-xl">
+                                        <a href="/" rel="home"><img src="{{ get_asset_url('../assets/img/logo/logo-black.png') }}" alt="Wridoo Logo"></a>
+                                    </div>
+                                    <nav class="xb-header-nav">
+                                        <ul class="xb-menu-primary clearfix">
+                                            <li class="menu-item active"><a href="/"><span>Home</span></a></li>
+                                            <li class="menu-item menu-item-has-children">
+                                                <a href="#solutions"><span>Solutions</span></a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="#solutions"><span>Tour Operators</span></a></li>
+                                                    <li><a href="#solutions"><span>Travel Agencies</span></a></li>
+                                                    <li><a href="#solutions"><span>Hotels &amp; Resorts</span></a></li>
+                                                    <li><a href="#solutions"><span>DMCs &amp; Activities</span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item"><a href="#features"><span>Features</span></a></li>
+                                            <li class="menu-item"><a href="#pricing"><span>Pricing</span></a></li>
+                                            <li class="menu-item"><a href="#faq"><span>FAQ</span></a></li>
+                                            <li class="menu-item"><a href="#contact"><span>Contact</span></a></li>
+                                        </ul>
+                                    </nav>
+                                    <div class="xb-header-mobile-btn mt-30 text-center">
+                                        <a class="thm-btn fintech-btn w-100" href="#cta">Start free trial</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xb-header-menu-backdrop"></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- header end -->
+
+            <!-- main area start -->
+            <main>
+                <!-- hero start -->
+                <section class="hero-area hero-area--four pos-rel">
+                    <div class="container mxw-1330">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-9 col-lg-12">
+                                <div class="xb-hero-content text-center">
+                                    <div class="sec-title">
+                                        <h1 class="title xb-blur-title heroTitleUp" data-animation-delay="0ms">
+                                            Take control of every travel booking flow
+                                        </h1>
+                                    </div>
+                                    <p class="xb-item--content xb-blur-content xbFadeUpContent" data-animation-delay="100ms">
+                                        All-in-one travel CRM solution to manage bookings, guest communications, itineraries, and scale your tour business.
+                                    </p>
+                                    <div class="xb-hero-btn xb-item--btn ul_li justify-content-center xbFadeUpItem" data-animation-delay="200ms">
+                                        <a class="thm-btn fintech-btn" href="#cta">Start free trial</a>
+                                        <a class="thm-btn fintech-btn fintech-btn--white" href="#demo">Book a demo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </section>
+                <!-- hero end -->
+
+                <!-- dashboard start -->
+                <section class="dashboard" id="demo">
+                    <div class="container mxw-1330">
+                        <div class="fs-dashboard-wrapper xbFadeUpItem" data-animation-delay="300ms">
+                            <ul class="fs-dashboard-nav xb-corner-shape ul_li nav nav-pills" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#pills-dashboard" data-tab="pills-dashboard" type="button" role="tab">
+                                        <img src="{{ get_asset_url('../assets/img/icon/das_icon01.svg') }}" alt="icon"> Booking management
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-document-tab" data-bs-toggle="pill" data-bs-target="#pills-document" data-tab="pills-document" type="button" role="tab">
+                                        <img src="{{ get_asset_url('../assets/img/icon/das_icon02.svg') }}" alt="icon"> Traveler CRM
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-sheet-tab" data-bs-toggle="pill" data-bs-target="#pills-sheet" data-tab="pills-sheet" type="button" role="tab">
+                                        <img src="{{ get_asset_url('../assets/img/icon/das_icon03.svg') }}" alt="icon"> Itineraries &amp; tours
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-whiteboard-tab" data-bs-toggle="pill" data-bs-target="#pills-whiteboard" data-tab="pills-whiteboard" type="button" role="tab">
+                                        <img src="{{ get_asset_url('../assets/img/icon/das_icon04.svg') }}" alt="icon"> Smart automation
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-assistance-tab" data-bs-toggle="pill" data-bs-target="#pills-assistance" data-tab="pills-assistance" type="button" role="tab">
+                                        <img src="{{ get_asset_url('../assets/img/icon/das_icon05.svg') }}" alt="icon"> AI travel assistant
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="tab-content fs-dashboard-img-wrap" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-dashboard" role="tabpanel">
+                                    <div><img src="{{ get_asset_url('../assets/img/dashboard/img01.jpg') }}" alt="Booking management CRM dashboard"></div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-document" role="tabpanel">
+                                    <div><img src="{{ get_asset_url('../assets/img/dashboard/img02.jpg') }}" alt="Traveler communication & CRM setup"></div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-sheet" role="tabpanel">
+                                    <div><img src="{{ get_asset_url('../assets/img/dashboard/img03.jpg') }}" alt="Itineraries & tour performance insights"></div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-whiteboard" role="tabpanel">
+                                    <div><img src="{{ get_asset_url('../assets/img/dashboard/img04.jpg') }}" alt="Smart routing and travel automation dashboard"></div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-assistance" role="tabpanel">
+                                    <div><img src="{{ get_asset_url('../assets/img/dashboard/img05.jpg') }}" alt="AI travel assistant dashboard"></div>
+                                </div>
+                            </div>
+                            <div class="xb-section-shape dashboard-shape">
+                                <div class="shape shape--1"><img src="{{ get_asset_url('../assets/img/shape/das_shape03.png') }}" alt="shape"></div>
+                                <div class="shape shape--2"><img src="{{ get_asset_url('../assets/img/shape/das_shape04.png') }}" alt="shape"></div>
+                                <div class="shape shape--3"><img src="{{ get_asset_url('../assets/img/shape/das_shape01.png') }}" alt="shape"></div>
+                                <div class="shape shape--4"><img src="{{ get_asset_url('../assets/img/shape/das_shape02.png') }}" alt="shape"></div>
+                                <div class="shape shape--5"><img src="{{ get_asset_url('../assets/img/shape/circle-blur.png') }}" alt="blur"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- dashboard end -->
+                
+                <!-- brand start -->
+                <section class="brand pt-130 pb-105">
+                    <div class="container mxw-1330">
+                        <div class="fs-brand-wrapper text-center">
+                            <p class="fs-brand-top">Trusted by <span>620K+</span> travel agencies &amp; global brands</p>
+                            <div class="fs-brand-marquee-wrap o-hidden marquee-left">
+                                <ul class="fs-brand-marquee">
+                                    <li class="fs-marquee-item"><img src="{{ get_asset_url('../assets/img/brand/brand-logo07.png') }}" alt="brand"></li>
+                                    <li class="fs-marquee-item"><img src="{{ get_asset_url('../assets/img/brand/brand-logo08.png') }}" alt="brand"></li>
+                                    <li class="fs-marquee-item"><img src="{{ get_asset_url('../assets/img/brand/brand-logo09.png') }}" alt="brand"></li>
+                                    <li class="fs-marquee-item"><img src="{{ get_asset_url('../assets/img/brand/brand-logo10.png') }}" alt="brand"></li>
+                                    <li class="fs-marquee-item"><img src="{{ get_asset_url('../assets/img/brand/brand-logo11.png') }}" alt="brand"></li>
+                                    <li class="fs-marquee-item"><img src="{{ get_asset_url('../assets/img/brand/brand-logo12.png') }}" alt="brand"></li>
+                                    <li class="fs-marquee-item"><img src="{{ get_asset_url('../assets/img/brand/brand-logo13.png') }}" alt="brand"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- brand end -->
+
+                <!-- solution start -->
+                <section class="solution-area pt-130 pb-130" id="solutions">
+                    <div class="container mxw-1330">
+                        <div class="sec-title--four text-center mb-60">
+                            <span class="sub-title"><span><img src="{{ get_asset_url('../assets/img/icon/sub-icon.svg') }}" alt="icon"></span>Wridoo Travel Solutions</span>
+                            <h2 class="title">Built to support every segment of travel</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 mt-30">
+                                <div class="solution-item pos-rel">
+                                    <div class="solution-icon mb-25">
+                                        <img src="{{ get_asset_url('../assets/img/icon/das_icon01.svg') }}" alt="icon" style="width: 32px; height: 32px;">
+                                    </div>
+                                    <h3 class="title mb-15">Tour Operators</h3>
+                                    <p class="content">Create multi-day itineraries, manage group allocations, and automate vendor vouchers seamlessly.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mt-30">
+                                <div class="solution-item pos-rel">
+                                    <div class="solution-icon mb-25">
+                                        <img src="{{ get_asset_url('../assets/img/icon/das_icon02.svg') }}" alt="icon" style="width: 32px; height: 32px;">
+                                    </div>
+                                    <h3 class="title mb-15">Travel Agencies</h3>
+                                    <p class="content">Fast booking engine, multi-currency payment processing, and comprehensive traveler CRM profiles.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mt-30">
+                                <div class="solution-item pos-rel">
+                                    <div class="solution-icon mb-25">
+                                        <img src="{{ get_asset_url('../assets/img/icon/das_icon03.svg') }}" alt="icon" style="width: 32px; height: 32px;">
+                                    </div>
+                                    <h3 class="title mb-15">Hotels &amp; Resorts</h3>
+                                    <p class="content">Direct reservation integration, guest messaging, automated confirmations, and check-in workflows.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mt-30">
+                                <div class="solution-item pos-rel">
+                                    <div class="solution-icon mb-25">
+                                        <img src="{{ get_asset_url('../assets/img/icon/das_icon04.svg') }}" alt="icon" style="width: 32px; height: 32px;">
+                                    </div>
+                                    <h3 class="title mb-15">DMCs &amp; Activities</h3>
+                                    <p class="content">Real-time slot availability, QR-coded e-tickets, digital waivers, and automated guide schedules.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- solution end -->
+
+                <!-- feature start -->
+                <section class="feature-area pt-130 pb-130" id="features">
+                    <div class="container mxw-1330">
+                        <div class="sec-title--four text-center mb-60">
+                            <span class="sub-title"><span><img src="{{ get_asset_url('../assets/img/icon/sub-icon.svg') }}" alt="icon"></span>Core Capabilities</span>
+                            <h2 class="title">Everything you need to run your travel CRM</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 mt-30">
+                                <div class="feature-box p-4 bg-white rounded-3 shadow-sm h-100">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <span class="me-3 p-3 bg-light rounded-circle"><i class="fa-solid fa-calendar-check text-primary fa-lg"></i></span>
+                                        <h4 class="mb-0">Smart Booking &amp; Reservation Engine</h4>
+                                    </div>
+                                    <p class="text-muted">Real-time availability calendar, automated booking confirmations, waitlist management, and instant booking synchronization across all sales channels.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mt-30">
+                                <div class="feature-box p-4 bg-white rounded-3 shadow-sm h-100">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <span class="me-3 p-3 bg-light rounded-circle"><i class="fa-solid fa-comments text-primary fa-lg"></i></span>
+                                        <h4 class="mb-0">Omnichannel Guest Communication</h4>
+                                    </div>
+                                    <p class="text-muted">Consult travelers across WhatsApp, Live Chat, SMS, and Email in a single unified inbox. Automate itinerary delivery and post-trip feedback collection.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mt-30">
+                                <div class="feature-box p-4 bg-white rounded-3 shadow-sm h-100">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <span class="me-3 p-3 bg-light rounded-circle"><i class="fa-solid fa-map-location-dot text-primary fa-lg"></i></span>
+                                        <h4 class="mb-0">Dynamic Itinerary &amp; Trip Builder</h4>
+                                    </div>
+                                    <p class="text-muted">Generate day-by-day itineraries with photos, maps, flight details, and hotel vouchers. Export directly to customized PDF proposals or interactive web links.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mt-30">
+                                <div class="feature-box p-4 bg-white rounded-3 shadow-sm h-100">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <span class="me-3 p-3 bg-light rounded-circle"><i class="fa-solid fa-credit-card text-primary fa-lg"></i></span>
+                                        <h4 class="mb-0">Multi-Currency Payments &amp; Invoicing</h4>
+                                    </div>
+                                    <p class="text-muted">Send automated payment links with split deposit options, handle installments, generate branded tax invoices, and track agent commissions effortlessly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- feature end -->
+
+                <!-- story / testimonials start -->
+                <section class="story-area pt-130 pb-130">
+                    <div class="container mxw-1330">
+                        <div class="sec-title--four text-center mb-60">
+                            <span class="sub-title"><span><img src="{{ get_asset_url('../assets/img/icon/sub-icon.svg') }}" alt="icon"></span>Customer Success</span>
+                            <h2 class="title">Discover how Wridoo elevates travel businesses</h2>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="card p-5 border-0 shadow-lg rounded-4 text-center bg-white">
+                                    <div class="mb-4">
+                                        <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-logo-1.540w.png.webp" alt="Cayuga" style="max-height: 40px; margin: 0 auto;">
+                                    </div>
+                                    <p class="fs-5 fst-italic text-secondary mb-4">
+                                        &ldquo;Switching to Wridoo has allowed us to streamline travel bookings, automate itinerary proposals, and improve both guest satisfaction and repeat bookings by 42%.&rdquo;
+                                    </p>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img src="https://www.bitrix24.in/images/content_en/solutions/industry/real-estate/img-slider-helps-foto-felipe-fernandez.png" alt="Felipe Fernández" class="rounded-circle me-3" style="width: 54px; height: 54px; object-fit: cover;">
+                                        <div class="text-start">
+                                            <h6 class="mb-0 fw-bold">Felipe Fernández</h6>
+                                            <small class="text-muted">Sales &amp; Marketing Director, Cayuga Travel</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- story / testimonials end -->
+
+                <!-- pricing start -->
+                <section class="pricing-area pt-130 pb-130" id="pricing">
+                    <div class="container mxw-1330">
+                        <div class="sec-title--four text-center mb-60">
+                            <span class="sub-title"><span><img src="{{ get_asset_url('../assets/img/icon/sub-icon.svg') }}" alt="icon"></span>Transparent Pricing</span>
+                            <h2 class="title">Choose the right plan for your travel agency</h2>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4 col-md-6 mt-30">
+                                <div class="card p-4 border rounded-4 bg-white shadow-sm h-100">
+                                    <h4 class="fw-bold mb-2">Starter</h4>
+                                    <p class="text-muted small">For independent travel agents and boutique operators.</p>
+                                    <div class="my-4">
+                                        <span class="h1 fw-bold">$29</span><span class="text-muted"> /month</span>
+                                    </div>
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Up to 500 active bookings</li>
+                                        <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Itinerary builder (PDF export)</li>
+                                        <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Traveler CRM database</li>
+                                        <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Email payment links</li>
+                                    </ul>
+                                    <a href="#cta" class="thm-btn fintech-btn fintech-btn--white text-center mt-auto">Start Free Trial</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mt-30">
+                                <div class="card p-4 border-2 border-primary rounded-4 bg-white shadow-lg h-100 position-relative">
+                                    <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-2">POPULAR</span>
+                                    <h4 class="fw-bold mb-2">Professional</h4>
+                                    <p class="text-muted small">For growing tour operators and agencies.</p>
+                                    <div class="my-4">
+                                        <span class="h1 fw-bold">$79</span><span class="text-muted"> /month</span>
+                                    </div>
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Unlimited bookings &amp; guests</li>
+                                        <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>WhatsApp &amp; SMS automation</li>
+                                        <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Multi-currency payment gateway</li>
+                                        <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Vendor voucher generator</li>
+                                        <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>AI Trip Assistant</li>
+                                    </ul>
+                                    <a href="#cta" class="thm-btn fintech-btn text-center mt-auto">Start Free Trial</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mt-30">
+                                <div class="card p-4 border rounded-4 bg-white shadow-sm h-100">
+                                    <h4 class="fw-bold mb-2">Enterprise</h4>
+                                    <p class="text-muted small">For multi-branch DMCs and hotel chains.</p>
+                                    <div class="my-4">
+                                        <span class="h1 fw-bold">$199</span><span class="text-muted"> /month</span>
+                                    </div>
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Everything in Professional</li>
+                                        <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Custom API &amp; GDS integration</li>
+                                        <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>Dedicated account manager</li>
+                                        <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i>White-label guest portal</li>
+                                    </ul>
+                                    <a href="#cta" class="thm-btn fintech-btn fintech-btn--white text-center mt-auto">Contact Sales</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- pricing end -->
+
+                <!-- faq start -->
+                <section class="faq-area pt-130 pb-130" id="faq">
+                    <div class="container mxw-1330">
+                        <div class="sec-title--four text-center mb-60">
+                            <span class="sub-title"><span><img src="{{ get_asset_url('../assets/img/icon/sub-icon.svg') }}" alt="icon"></span>FAQ</span>
+                            <h2 class="title">Frequently Asked Questions</h2>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="accordion" id="travelFaq">
+                                    <div class="accordion-item mb-3 border rounded-3 overflow-hidden">
+                                        <h2 class="accordion-header" id="faq1">
+                                            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true">
+                                                Can I connect Wridoo with my existing booking engines and telephony?
+                                            </button>
+                                        </h2>
+                                        <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#travelFaq">
+                                            <div class="accordion-body text-muted">
+                                                Yes, Wridoo provides over 500+ integrations including popular telephony platforms, SMS gateways, payment processors, and a REST API for GDS and channel managers.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item mb-3 border rounded-3 overflow-hidden">
+                                        <h2 class="accordion-header" id="faq2">
+                                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                                Does Wridoo support multi-currency payments and installment plans?
+                                            </button>
+                                        </h2>
+                                        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#travelFaq">
+                                            <div class="accordion-body text-muted">
+                                                Yes, you can issue quotes and invoices in multiple currencies, set up deposit payment schedules, and collect balances automatically before departure dates.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item mb-3 border rounded-3 overflow-hidden">
+                                        <h2 class="accordion-header" id="faq3">
+                                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                                How easy is it to migrate my existing guest list and booking records?
+                                            </button>
+                                        </h2>
+                                        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#travelFaq">
+                                            <div class="accordion-body text-muted">
+                                                You can import your entire customer and booking history via CSV or Excel in just a few clicks. Our onboarding team is also available to assist with custom database migrations.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- faq end -->
+
+                <!-- cta start -->
+                <section class="cta-area pt-100 pb-100" id="cta">
+                    <div class="container mxw-1330">
+                        <div class="p-5 rounded-4 text-center position-relative overflow-hidden" style="background: linear-gradient(135deg, #180949 0%, #3410a8 45%, #4E1CE3 100%) !important;">
+                            <h2 class="text-white mb-3 fw-bold">Ready to take your travel business further?</h2>
+                            <p class="text-white-50 mb-4 fs-5 mx-auto" style="max-width: 600px;">Join 620,000+ travel operators worldwide. Start your 14-day free trial today with no credit card required.</p>
+                            <a href="#cta" class="thm-btn fintech-btn fintech-btn--white">Start Free Trial Now</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- cta end -->
+            </main>
+            <!-- main area end -->
+
+            <!-- footer start -->
+            <footer class="footer-area footer-area--four pt-80 pb-50">
+                <div class="container mxw-1330">
+                    <div class="row align-items-center justify-content-between pb-40 border-bottom mb-40">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <a href="/" class="logo">
+                                <img src="{{ get_asset_url('../assets/img/logo/logo-black.png') }}" alt="Wridoo Logo" style="height: 38px; width: auto;">
+                            </a>
+                            <p class="text-muted small mt-2 mb-0">The all-in-one travel CRM platform for tour operators, travel agencies, and hospitality businesses.</p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <a href="mailto:support@wridoo.com" class="text-dark me-4 text-decoration-none fw-bold"><i class="fa-solid fa-envelope me-2 text-primary"></i>support@wridoo.com</a>
+                            <a href="tel:+15551234567" class="text-dark text-decoration-none fw-bold"><i class="fa-solid fa-phone me-2 text-primary"></i>+1 555-123-4567</a>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-between align-items-center text-muted small">
+                        <p class="mb-0">&copy; {{ local_dt|datetimeformat("%Y") if local_dt else "2026" }} Wridoo. All rights reserved.</p>
+                        <div>
+                            <a href="#!" class="text-muted me-3 text-decoration-none">Terms of Service</a>
+                            <a href="#!" class="text-muted text-decoration-none">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- footer end -->
+
+        </div>
+    </div>
+</div>
+{% endblock body %}

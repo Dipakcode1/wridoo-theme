@@ -1,0 +1,77 @@
+[
+  {
+    "name": "title",
+    "label": "Heading",
+    "type": "text",
+    "default": "Ready to take your business to new destinations?"
+  },
+  {
+    "name": "lead",
+    "label": "Lead Description",
+    "type": "text",
+    "default": "Wridoo Partners provide travel businesses with customized, end-to-end solutions that simplify daily workflows. Book a demo to discover how Wridoo helps transform every booking into unforgettable memories for your clients."
+  },
+  {
+    "name": "subtitle",
+    "label": "Checklist Subtitle",
+    "type": "text",
+    "default": "Why you need a Wridoo Partner"
+  },
+  {
+    "name": "checklist",
+    "label": "Benefits Checklist",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 10,
+      "default": 4
+    },
+    "children": [
+      {
+        "name": "text",
+        "label": "Benefit Item",
+        "type": "text",
+        "default": "Quick product implementation"
+      }
+    ],
+    "default": [
+      { "text": "Quick product implementation" },
+      { "text": "Picking a proper plan" },
+      { "text": "Employee education for quicker start" },
+      { "text": "Tailored customization for your needs" }
+    ]
+  },
+  {
+    "name": "primary_cta_text",
+    "label": "Primary Button Text",
+    "type": "text",
+    "default": "START FOR FREE"
+  },
+  {
+    "name": "primary_cta_link",
+    "label": "Primary Button Link",
+    "type": "url",
+    "default": { "href": "#demo" }
+  },
+  {
+    "name": "secondary_cta_text",
+    "label": "Secondary Button Text",
+    "type": "text",
+    "default": "BOOK A DEMO"
+  },
+  {
+    "name": "secondary_cta_link",
+    "label": "Secondary Button Link",
+    "type": "url",
+    "default": { "href": "#demo" }
+  },
+  {
+    "name": "image",
+    "label": "Illustration Image",
+    "type": "image",
+    "default": {
+      "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/healthcare-crm-software/img-partner-benefits.680w.png.webp",
+      "alt": "Wridoo partner benefits"
+    }
+  }
+]

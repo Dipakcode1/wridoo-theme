@@ -1,0 +1,34 @@
+<section class="hero-area hero-area--four pos-rel">
+  <div class="container mxw-1330">
+    <div class="row justify-content-center">
+      <div class="col-xl-9 col-lg-12">
+        <div class="xb-hero-content text-center">
+          <div class="sec-title">
+            <h1 class="title xb-blur-title heroTitleUp" data-animation-delay="0ms">
+              Take control <span class="dollar"><img src="{{ get_asset_url('../../assets/img/hero/moneybrick_small.gif') }}" alt="gif"></span> of every travel booking flow
+            </h1>
+          </div>
+          <p class="xb-item--content xb-blur-content xbFadeUpContent" data-animation-delay="100ms">
+            {{ module.description or "All-in-one travel CRM solution to manage bookings, guest communications, itineraries, and scale your tour business." }}
+          </p>
+          <div class="xb-hero-btn xb-item--btn ul_li justify-content-center xbFadeUpItem" data-animation-delay="200ms">
+            {% if module.primary_cta_text %}
+              <a class="thm-btn fintech-btn" href="{{ module.primary_cta_link.href or '#cta' }}">{{ module.primary_cta_text }}</a>
+            {% endif %}
+            {% if module.secondary_cta_text %}
+              <a class="thm-btn fintech-btn fintech-btn--white" href="{{ module.secondary_cta_link.href or '#demo' }}">{{ module.secondary_cta_text }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="xb-hero-shape">
+    <div class="shape shape--1 xb-blur-title xbFadeUpItem" data-animation-delay="250ms">
+      <img class="updown" src="{{ get_asset_url('../../assets/img/hero/icon-img01.png') }}" alt="icon">
+    </div>
+    <div class="shape shape--2 xb-blur-title xbFadeUpItem" data-animation-delay="350ms">
+      <img class="updown-2" src="{{ get_asset_url('../../assets/img/hero/icon-img02.png') }}" alt="icon">
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+<section class="section section--tint">
+  <div class="container">
+    <h2 class="reveal in-view h2 center">{{ module.title }}</h2>
+    <div class="testimonial-wrap">
+      {% for item in module.testimonials %}
+        <div class="testimonial-card" id="testimonial-item-{{ name }}-{{ loop.index0 }}" {% if not loop.first %}style="display: none;"{% endif %}>
+          {% if item.logo.src %}
+            <img class="testimonial-logo" src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" loading="lazy" />
+          {% else %}
+            <img class="testimonial-logo" src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-logo-{{ loop.index }}.540w.png.webp" alt="Customer logo" loading="lazy" />
+          {% endif %}
+          <p class="testimonial-quote">&ldquo;{{ item.quote }}&rdquo;</p>
+          <div class="testimonial-person">
+            {% if item.photo.src %}
+              <img src="{{ item.photo.src }}" alt="{{ item.author_name }}" loading="lazy" />
+            {% elif loop.index == 1 %}
+              <img src="https://www.bitrix24.in/images/content_en/solutions/industry/real-estate/img-slider-helps-foto-felipe-fernandez.png" alt="{{ item.author_name }}" loading="lazy" />
+            {% else %}
+              <img src="https://www.bitrix24.in/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-1.png" alt="{{ item.author_name }}" loading="lazy" />
+            {% endif %}
+            <div>
+              <p class="testimonial-name">{{ item.author_name }}</p>
+              <p class="testimonial-role">{{ item.role }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      
+      <div class="carousel-nav">
+        <button class="round-btn testimonial-prev" data-module="{{ name }}" aria-label="Previous testimonial" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button class="round-btn testimonial-next" data-module="{{ name }}" aria-label="Next testimonial" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

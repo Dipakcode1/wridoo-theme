@@ -1,0 +1,48 @@
+[
+  {
+    "name": "title",
+    "label": "Hero Title",
+    "required": false,
+    "type": "text",
+    "default": "Take control of every travel booking flow"
+  },
+  {
+    "name": "description",
+    "label": "Hero Description",
+    "required": false,
+    "type": "text",
+    "default": "All-in-one travel CRM solution to manage bookings, guest communications, itineraries, and grow your travel business."
+  },
+  {
+    "name": "primary_cta_text",
+    "label": "Primary Button Text",
+    "required": false,
+    "type": "text",
+    "default": "Start free trial"
+  },
+  {
+    "name": "primary_cta_link",
+    "label": "Primary Button Link",
+    "required": false,
+    "type": "url",
+    "default": {
+      "href": "#demo"
+    }
+  },
+  {
+    "name": "secondary_cta_text",
+    "label": "Secondary Button Text",
+    "required": false,
+    "type": "text",
+    "default": "Book a demo"
+  },
+  {
+    "name": "secondary_cta_link",
+    "label": "Secondary Button Link",
+    "required": false,
+    "type": "url",
+    "default": {
+      "href": "#demo"
+    }
+  }
+]

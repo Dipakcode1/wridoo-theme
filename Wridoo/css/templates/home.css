@@ -1,0 +1,1321 @@
+/* ============================================================
+   Wridoo Travel CRM - Modern SaaS Design System for HubSpot
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. Design Tokens & Fonts
+   ------------------------------------------------------------ */
+@font-face {
+  font-family: 'BwGradual';
+  src: url('../../assets/fonts/BwGradualDEMO-Bold.woff2') format('woff2'),
+       url('../../assets/fonts/BwGradualDEMO-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BwGradual';
+  src: url('../../assets/fonts/BwGradualDEMO-Medium.woff2') format('woff2'),
+       url('../../assets/fonts/BwGradualDEMO-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Brand Colors */
+  --brand: #4E1CE3;
+  --brand-dark: #370fc2;
+  --brand-deep: #110c29;
+  --brand-soft: #ede7ff;
+  --brand-tint: #f6f3ff;
+  --color-primary: #4E1CE3;
+  --color-secondary: #4E1CE3;
+
+  /* Neutrals & Text */
+  --ink: #110c29;
+  --ink-muted: #575273;
+  --white: #ffffff;
+  --border: #e6e2f3;
+  --border-light: rgba(230, 226, 243, 0.7);
+  --secondary: #f0ecfb;
+  --color-heading: #110c29;
+  --color-default: #403a56;
+
+  /* Accents */
+  --gold: #b58721;
+  --lime: #a7e321;
+  --lime-ink: #22400f;
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #180949 0%, #3410a8 45%, #4E1CE3 100%);
+  --gradient-card: linear-gradient(180deg, #ffffff 0%, #fbfaff 100%);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(17, 12, 41, 0.04);
+  --shadow-md: 0 8px 24px -4px rgba(17, 12, 41, 0.08);
+  --shadow-lg: 0 16px 36px -8px rgba(17, 12, 41, 0.12);
+  --shadow-card: 0 10px 30px -12px rgba(17, 12, 41, 0.25);
+  --shadow-brand: 0 12px 30px -6px rgba(78, 28, 227, 0.35);
+
+  /* Radius & Spacing */
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-body: "Mulish", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: 'BwGradual', 'Mulish', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ------------------------------------------------------------
+   2. Reset & Global Base for Wridoo Page
+   ------------------------------------------------------------ */
+.wridoo-home {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.wridoo-home *,
+.wridoo-home *::before,
+.wridoo-home *::after {
+  box-sizing: border-box;
+}
+
+.wridoo-home img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wridoo-home a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.wridoo-home button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  color: inherit;
+}
+
+.wridoo-home ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wridoo-home h1,
+.wridoo-home h2,
+.wridoo-home h3,
+.wridoo-home h4,
+.wridoo-home h5,
+.wridoo-home h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+/* ------------------------------------------------------------
+   3. Layout & Structure
+   ------------------------------------------------------------ */
+.wridoo-home .container {
+  width: 100%;
+  max-width: 1300px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 3.5vw, 24px);
+}
+
+.wridoo-home .mxw-1330 {
+  max-width: 1330px;
+  margin-inline: auto;
+}
+
+.wridoo-home .center { text-align: center; }
+.wridoo-home .narrow { max-width: 780px; margin-inline: auto; }
+.wridoo-home .mt-48 { margin-top: 48px; }
+.wridoo-home .img-fluid { width: 100%; }
+.wridoo-home .img-narrow { max-width: 540px; margin-inline: auto; }
+.wridoo-home .rounded { border-radius: var(--radius-lg); }
+.wridoo-home .pos-rel { position: relative; }
+.wridoo-home .ul_li { display: flex; flex-wrap: wrap; align-items: center; }
+
+.wridoo-home .section {
+  padding: clamp(60px, 8vw, 96px) 0;
+  position: relative;
+}
+
+.wridoo-home .section--tint {
+  background: var(--brand-tint);
+}
+
+.wridoo-home .two-col {
+  display: grid;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+
+.wridoo-home .h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.4vw, 42px);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.wridoo-home .h3-small {
+  margin-top: 32px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.wridoo-home .lead {
+  margin-top: 18px;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.65;
+  color: var(--ink-muted);
+}
+
+.wridoo-home .text-link {
+  display: inline-block;
+  margin-top: 36px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--brand);
+  position: relative;
+}
+
+.wridoo-home .text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ------------------------------------------------------------
+   4. Buttons & CTAs
+   ------------------------------------------------------------ */
+.wridoo-home .btn {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius-sm);
+  padding: 13px 26px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.wridoo-home .btn-primary {
+  background: var(--brand);
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(78, 28, 227, 0.25);
+}
+
+.wridoo-home .btn-primary:hover {
+  transform: translateY(-2px);
+  background: var(--brand-dark);
+  color: #ffffff !important;
+  box-shadow: var(--shadow-brand);
+}
+
+.wridoo-home .btn-soft {
+  background: var(--secondary);
+  color: var(--ink) !important;
+}
+
+.wridoo-home .btn-soft:hover {
+  background: var(--brand-soft);
+  color: var(--brand) !important;
+  transform: translateY(-2px);
+}
+
+.wridoo-home .btn-outline {
+  display: inline-flex;
+  border: 1.5px solid var(--brand);
+  color: var(--brand) !important;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.wridoo-home .btn-outline:hover {
+  background: var(--brand);
+  color: #ffffff !important;
+}
+
+.wridoo-home .thm-btn {
+  z-index: 1;
+  font-size: 15px;
+  font-weight: 700;
+  position: relative;
+  align-items: center;
+  display: inline-flex;
+  padding: 15px 34px;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  font-family: var(--font-heading);
+}
+
+.wridoo-home .fintech-btn {
+  background: var(--brand);
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(78, 28, 227, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.wridoo-home .fintech-btn:hover {
+  color: #ffffff !important;
+  background: var(--brand-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-brand);
+}
+
+.wridoo-home .fintech-btn--white {
+  background: #ffffff;
+  color: var(--color-heading) !important;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.wridoo-home .fintech-btn--white:hover {
+  color: var(--brand) !important;
+  transform: translateY(-2px);
+  background: #ffffff;
+  border-color: var(--brand-soft);
+  box-shadow: var(--shadow-md);
+}
+
+.wridoo-home .cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.wridoo-home .cta--center {
+  justify-content: center;
+}
+
+/* ------------------------------------------------------------
+   5. Header Navigation & Mobile Drawer
+   ------------------------------------------------------------ */
+.header-area--four {
+  position: relative;
+  z-index: 99;
+  background: #ffffff;
+  width: 100%;
+}
+
+.header-area--four .header__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(227, 232, 239, 0.8);
+}
+
+.header-area--four .xb-header-logo img {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+.header-area--four .main-menu ul {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-area--four .main-menu ul li {
+  position: relative;
+}
+
+.header-area--four .main-menu ul li a {
+  font-size: 15px;
+  font-weight: 600;
+  color: #110c29;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 0;
+  transition: color 0.25s ease;
+  text-decoration: none;
+}
+
+.header-area--four .main-menu ul li:hover > a,
+.header-area--four .main-menu ul li.active > a {
+  color: #4E1CE3;
+}
+
+/* Dropdown Submenu */
+.header-area--four .main-menu ul li .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(17, 12, 41, 0.12);
+  border-radius: 12px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 100;
+  border: 1px solid #eef0f4;
+}
+
+.header-area--four .main-menu ul li:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.header-area--four .main-menu ul li .submenu li a {
+  padding: 8px 18px;
+  font-size: 14px;
+  color: #403a56;
+  width: 100%;
+  display: block;
+}
+
+.header-area--four .main-menu ul li .submenu li a:hover {
+  background: #f6f3ff;
+  color: #4E1CE3;
+}
+
+/* Mobile Hamburger Button */
+.xb-nav-mobile {
+  width: 32px;
+  height: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.xb-nav-mobile span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #110c29;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Slide-out Drawer Menu */
+.xb-header-menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 12, 41, 0.6);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease;
+}
+
+.xb-header-menu-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.xb-header-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 9999;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0.35s ease;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+}
+
+.xb-header-menu.active {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.xb-header-menu-scroll {
+  padding: 40px 24px;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.xb-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xb-menu-close::before,
+.xb-menu-close::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: #110c29;
+}
+
+.xb-menu-close::before {
+  transform: rotate(45deg);
+}
+
+.xb-menu-close::after {
+  transform: rotate(-45deg);
+}
+
+.xb-logo-mobile {
+  margin-bottom: 28px;
+}
+
+.xb-logo-mobile img {
+  height: 34px;
+  width: auto;
+}
+
+.xb-header-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.xb-header-nav .menu-item {
+  border-bottom: 1px solid #f0ecfb;
+}
+
+.xb-header-nav .menu-item a {
+  display: block;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #110c29;
+  text-decoration: none;
+}
+
+.xb-header-nav .menu-item:hover > a,
+.xb-header-nav .menu-item.active > a {
+  color: #4E1CE3;
+}
+
+.xb-header-nav .sub-menu {
+  display: none;
+  padding-left: 14px;
+  padding-bottom: 10px;
+}
+
+.xb-header-nav .menu-item.open .sub-menu {
+  display: block;
+}
+
+.xb-header-nav .sub-menu li a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #575273;
+  padding: 6px 0;
+}
+
+.xb-header-nav .sub-menu li a:hover {
+  color: #4E1CE3;
+}
+
+/* ------------------------------------------------------------
+   6. Hero Section (Hero Area Four)
+   ------------------------------------------------------------ */
+.wridoo-home .hero-area--four {
+  position: relative;
+  padding-top: clamp(30px, 5vw, 56px);
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.wridoo-home .hero-area--four .xb-hero-content {
+  padding: clamp(40px, 6vw, 72px) 0 clamp(32px, 4vw, 48px);
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.wridoo-home .hero-area--four .sec-title .title {
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 4.6vw, 68px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  color: var(--color-heading);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.wridoo-home .hero-area--four .xb-item--content {
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 500;
+  line-height: 1.55;
+  margin: 20px auto 36px;
+  color: var(--ink-muted);
+  max-width: 660px;
+}
+
+.wridoo-home .hero-area--four .xb-hero-btn {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ------------------------------------------------------------
+   7. Interactive Dashboard Component (Matching Sastik Fintech Demo)
+   ------------------------------------------------------------ */
+.wridoo-home .dashboard,
+.dashboard {
+  padding: 0;
+  position: relative;
+  background: transparent;
+}
+
+.wridoo-home .fs-dashboard-wrapper,
+.fs-dashboard-wrapper {
+  position: relative;
+  min-height: 469px;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+  background: #d4ceff;
+  border-radius: 0;
+  padding: 0 0 65px;
+  box-shadow: none;
+}
+
+.wridoo-home .fs-dashboard-nav,
+.fs-dashboard-nav {
+  gap: 10px;
+  margin: 0 auto 40px;
+  position: relative;
+  background: #fbfaff;
+  display: inline-flex;
+  padding: 15px 52px 11px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  box-shadow: none;
+  z-index: 10;
+  max-width: 100%;
+}
+
+@media (max-width: 1199px) {
+  .wridoo-home .fs-dashboard-nav,
+  .fs-dashboard-nav {
+    padding: 14px 20px 10px;
+  }
+}
+
+@media (max-width: 991px) {
+  .wridoo-home .fs-dashboard-nav,
+  .fs-dashboard-nav {
+    margin: 0 70px 40px;
+    border-radius: 0 0 30px 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .wridoo-home .fs-dashboard-nav,
+  .fs-dashboard-nav {
+    margin: 0 0 40px;
+    padding: 10px 12px;
+    gap: 6px;
+  }
+}
+
+/* Corner shape wings for seamless curved dock transition */
+.xb-corner-shape {
+  position: relative;
+}
+
+.xb-corner-shape::before,
+.xb-corner-shape::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: -81px;
+  height: 100%;
+  width: 81px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAAA+BAMAAAChA+qKAAAALVBMVEUAAAD7+v/69//7+v/79//39//////8+v/7+v/6+f/69f/7+v/8+f/7+f/7+v/EK8g/AAAADnRSTlMA72CbQCAQ3795MM9Qr0VKcFgAAADLSURBVEjHjcqxCcJAAEDRT+IdJpgVro0gpLYKWIoQiBuIpTscuEBGCGSRjJAZnMAZLFzgv/pRH7/KB7jpSatnmOyk0pNZz0Oyk0XPOtnJoudBT2Y9Kz3p9XzpGZKdDHqWerLqOepZ6UnWc9Bzr2etJ72eDz0LPZn0HPWs9IzZTgY9Sz1jtpNBz0bPmOxk07PRMyY76fRs9IzJTjY9Sz1jtpNRz52edHoWenLRM2Q7eepJq2fo7aRe7aSY7GTX20k42Qn3t51wPaf//AEelLNUhqWq/QAAAABJRU5ErkJggg==");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 81px 100%;
+  pointer-events: none;
+}
+
+@media (max-width: 1199px) {
+  .xb-corner-shape::before,
+  .xb-corner-shape::after {
+    left: -70px;
+    background-size: 70px 100%;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .xb-corner-shape::before,
+  .xb-corner-shape::after {
+    left: -60px;
+    background-size: 60px 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .xb-corner-shape::before,
+  .xb-corner-shape::after {
+    display: none !important;
+  }
+}
+
+.xb-corner-shape::after {
+  left: auto;
+  right: -81px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAAA+BAMAAAChA+qKAAAALVBMVEUAAAD8+v/39//7+v/7+v/8+v/7+v/6+v/79//69P/////6+P/4+P/8+f/7+v8wZBwdAAAADnRSTlMA3iC875+HYEAwEHBwUFsG+S8AAADESURBVEjHjc0xFcIwAADRk1A6MkUCj4kBAWCBx1AJlVAJlVAJ0cDIVAslIZ2KBgR0yN383zt+qvQCBweczBEpz0hZsDJaeUPKPFp5R8o8WrlhZbSyYGVn5TJZ2WLlbGXBykbLYGXBykbL2cqElR8tOyuXYOWKlSctg5UFKxstRyu/WNlq2e+knqPn6Dl6jp6j5+g5eo6eU5lX5NHKHKzcsLK3ckXKPFjZImWapMwRKR9IeaEiDWQHhUxvlMzXgJGH50ilP2w4tGKUzdlnAAAAAElFTkSuQmCC");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 81px 100%;
+}
+
+@media (max-width: 1199px) {
+  .xb-corner-shape::after {
+    right: -70px;
+    background-size: 70px 100%;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .xb-corner-shape::after {
+    right: -60px;
+    background-size: 60px 100%;
+  }
+}
+
+/* Nav Link Pills */
+.wridoo-home .fs-dashboard-nav .nav-link,
+.fs-dashboard-nav .nav-link {
+  gap: 7px;
+  z-index: 1;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  min-height: 32px;
+  padding: 2px 10px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  color: #55585b;
+  border: 1px solid #e9e5ff;
+  border-radius: 6px;
+  background: transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+@media (max-width: 1199px) {
+  .wridoo-home .fs-dashboard-nav .nav-link,
+  .fs-dashboard-nav .nav-link {
+    padding: 3px 8px;
+    font-size: 13px;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  .wridoo-home .fs-dashboard-nav .nav-link,
+  .fs-dashboard-nav .nav-link {
+    padding: 3px 6px;
+    font-size: 12px;
+    gap: 4px;
+  }
+}
+
+.wridoo-home .fs-dashboard-nav .nav-link img,
+.fs-dashboard-nav .nav-link img,
+.wridoo-home .fs-dashboard-nav .nav-link svg,
+.fs-dashboard-nav .nav-link svg {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.wridoo-home .fs-dashboard-nav .nav-link:hover,
+.fs-dashboard-nav .nav-link:hover {
+  background: #0d1738;
+  border-color: #0d1738;
+  color: #ffffff !important;
+}
+
+.wridoo-home .fs-dashboard-nav .nav-link:hover img,
+.fs-dashboard-nav .nav-link:hover img {
+  filter: brightness(100) invert(1);
+}
+
+.wridoo-home .fs-dashboard-nav .nav-link:hover svg,
+.fs-dashboard-nav .nav-link:hover svg {
+  stroke: #ffffff;
+}
+
+.wridoo-home .fs-dashboard-nav .nav-link.active,
+.fs-dashboard-nav .nav-link.active {
+  background: #0d1738 !important;
+  border-color: #0d1738 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(13, 23, 56, 0.25);
+}
+
+.wridoo-home .fs-dashboard-nav .nav-link.active img,
+.fs-dashboard-nav .nav-link.active img {
+  filter: brightness(100) invert(1);
+}
+
+.wridoo-home .fs-dashboard-nav .nav-link.active svg,
+.fs-dashboard-nav .nav-link.active svg {
+  stroke: #ffffff;
+}
+
+/* Dashboard Mockup Image Wrapper */
+.wridoo-home .fs-dashboard-img-wrap,
+.fs-dashboard-img-wrap {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  min-height: 433px;
+  max-width: 851px;
+  margin: 0 auto -65px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 25px 60px rgba(13, 23, 56, 0.12);
+}
+
+.wridoo-home .fs-dashboard-img-wrap .tab-pane,
+.fs-dashboard-img-wrap .tab-pane {
+  display: none;
+}
+
+.wridoo-home .fs-dashboard-img-wrap .tab-pane.active,
+.fs-dashboard-img-wrap .tab-pane.active,
+.wridoo-home .fs-dashboard-img-wrap .tab-pane.show,
+.fs-dashboard-img-wrap .tab-pane.show {
+  display: block;
+}
+
+.wridoo-home .fs-dashboard-img-wrap img,
+.fs-dashboard-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
+
+/* Dashboard Background Floating Shapes */
+.dashboard-shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dashboard-shape .shape {
+  position: absolute;
+}
+
+.dashboard-shape .shape--1 {
+  top: 60px;
+  left: 60px;
+}
+
+.dashboard-shape .shape--2 {
+  top: 60px;
+  right: 60px;
+}
+
+.dashboard-shape .shape--3 {
+  bottom: 120px;
+  left: 40px;
+}
+
+.dashboard-shape .shape--4 {
+  bottom: 120px;
+  right: 40px;
+}
+
+.dashboard-shape .shape--5 {
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  transform: translateX(-50%);
+}
+
+/* ------------------------------------------------------------
+   8. Brand Logos Section (Marquee)
+   ------------------------------------------------------------ */
+.wridoo-home .brand-area {
+  padding: clamp(40px, 5vw, 60px) 0;
+  overflow: hidden;
+}
+
+.wridoo-home .fs-brand-top {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink-muted);
+  margin-bottom: 28px;
+}
+
+.wridoo-home .fs-brand-marquee-wrap {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 24px;
+}
+
+.wridoo-home .fs-brand-marquee {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 24px;
+  min-width: 100%;
+  animation: brandMarquee 28s linear infinite;
+}
+
+.wridoo-home .fs-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  min-width: 180px;
+  min-height: 70px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.wridoo-home .fs-marquee-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--brand-soft);
+}
+
+.wridoo-home .fs-marquee-item img {
+  height: 28px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+}
+
+/* ------------------------------------------------------------
+   9. Checklists, Segments & Badges
+   ------------------------------------------------------------ */
+.wridoo-home .check-list {
+  margin-top: 28px;
+  display: grid;
+  gap: 14px;
+}
+
+.wridoo-home .check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.wridoo-home .check-list .check {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--brand-soft);
+  color: var(--brand);
+  border-radius: 50%;
+}
+
+/* Segments */
+.wridoo-home .segments-grid {
+  display: grid;
+  gap: 48px;
+}
+
+.wridoo-home .segments {
+  display: grid;
+  gap: 16px;
+}
+
+.wridoo-home .segment {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding-right: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.wridoo-home .segment:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--brand-soft);
+}
+
+.wridoo-home .segment-icon {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--brand);
+  color: #ffffff;
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.wridoo-home .segment span:last-child {
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Badges */
+.wridoo-home .badges {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 3.5vw, 36px);
+}
+
+.wridoo-home .badges img {
+  height: 88px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.wridoo-home .badges img:hover {
+  transform: scale(1.06);
+}
+
+/* ------------------------------------------------------------
+   10. Feature Tabs Section
+   ------------------------------------------------------------ */
+.wridoo-home .tabs {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.wridoo-home .tab-btn {
+  border-radius: var(--radius-full);
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  background: var(--brand-soft);
+  color: var(--ink);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.wridoo-home .tab-btn:hover {
+  background: #dfd5ff;
+  transform: translateY(-1px);
+}
+
+.wridoo-home .tab-btn.is-active {
+  background: var(--brand);
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(78, 28, 227, 0.3);
+}
+
+.wridoo-home .tab-panel {
+  margin-top: 48px;
+}
+
+.wridoo-home .tab-kicker {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+.wridoo-home .tab-title {
+  margin-top: 10px;
+  font-size: clamp(24px, 2.8vw, 36px);
+  font-weight: 700;
+  line-height: 1.22;
+}
+
+.wridoo-home .tab-img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+/* ------------------------------------------------------------
+   11. Testimonials Carousel
+   ------------------------------------------------------------ */
+.wridoo-home .testimonial-wrap {
+  position: relative;
+  max-width: 800px;
+  margin: 48px auto 0;
+}
+
+.wridoo-home .testimonial-card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: clamp(28px, 4vw, 48px);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-light);
+}
+
+.wridoo-home .testimonial-logo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.wridoo-home .testimonial-quote {
+  margin: 24px 0 0;
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.65;
+  font-style: italic;
+  color: var(--ink);
+}
+
+.wridoo-home .testimonial-person {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.wridoo-home .testimonial-person img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--brand-soft);
+}
+
+.wridoo-home .testimonial-name {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.wridoo-home .testimonial-role {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-muted);
+}
+
+.wridoo-home .carousel-nav {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.wridoo-home .round-btn {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  max-width: 44px;
+  max-height: 44px;
+  flex: 0 0 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--brand);
+  border-radius: 50%;
+  color: var(--brand);
+  background: #ffffff;
+  padding: 0;
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.wridoo-home .round-btn svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.wridoo-home .round-btn:hover {
+  background: var(--brand);
+  color: #ffffff !important;
+  transform: scale(1.08);
+}
+
+.wridoo-home .round-btn:hover svg {
+  stroke: #ffffff;
+}
+
+/* ------------------------------------------------------------
+   12. Partner Showcase Carousel
+   ------------------------------------------------------------ */
+.wridoo-home .showcase-viewport {
+  margin-top: 48px;
+  overflow: hidden;
+  padding: 8px 0;
+}
+
+.wridoo-home .showcase-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wridoo-home .showcase-card {
+  flex: 0 0 85%;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wridoo-home .showcase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.wridoo-home .showcase-head {
+  padding: 22px;
+}
+
+.wridoo-home .showcase-head img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+.wridoo-home .showcase-company {
+  margin: 10px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+.wridoo-home .showcase-title {
+  margin: 0;
+  padding: 22px;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+/* ------------------------------------------------------------
+   13. Footer
+   ------------------------------------------------------------ */
+.wridoo-home.site-footer,
+.site-footer.wridoo-home {
+  border-top: 1px solid var(--border);
+  padding: 36px 0;
+  background: #ffffff;
+  width: 100%;
+}
+
+.wridoo-home .footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--ink-muted);
+}
+
+.wridoo-home .footer-inner p {
+  margin: 0;
+}
+
+/* ------------------------------------------------------------
+   14. Animations & Keyframes
+   ------------------------------------------------------------ */
+@keyframes brandMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% - 24px)); }
+}
+
+.wridoo-home .reveal {
+  opacity: 1;
+}
+
+@media (min-width: 640px) {
+  .wridoo-home .segments { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wridoo-home .showcase-card { flex-basis: 48%; }
+}
+
+@media (min-width: 1024px) {
+  .wridoo-home .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wridoo-home .segments-grid { grid-template-columns: minmax(0, 420px) 1fr; }
+  .wridoo-home .showcase-card { flex-basis: calc(25% - 18px); }
+  .wridoo-home .main-nav { display: flex; }
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "name": "title",
+    "label": "Heading",
+    "type": "text",
+    "default": "Take your travel agency to the next level with our partners"
+  },
+  {
+    "name": "description_top",
+    "label": "Top Description",
+    "type": "text",
+    "default": "Wridoo Partners help travel agencies, tour operators, and hotels create seamless operational systems that connect every part of the guest journey — from booking tours and accommodations to collecting honest reviews about the trip."
+  },
+  {
+    "name": "image",
+    "label": "Graphic Overview Image",
+    "type": "image",
+    "default": {
+      "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-improve.4432w.png.webp",
+      "alt": "Wridoo travel workflow overview"
+    }
+  },
+  {
+    "name": "description_bottom",
+    "label": "Bottom Description",
+    "type": "text",
+    "default": "Whether you want to simplify daily operations or attract more travelers to your business, Wridoo equips you with the tools to achieve success."
+  },
+  {
+    "name": "primary_cta_text",
+    "label": "Primary Button Text",
+    "type": "text",
+    "default": "START FOR FREE"
+  },
+  {
+    "name": "primary_cta_link",
+    "label": "Primary Button Link",
+    "type": "url",
+    "default": { "href": "#demo" }
+  },
+  {
+    "name": "secondary_cta_text",
+    "label": "Secondary Button Text",
+    "type": "text",
+    "default": "BOOK A DEMO"
+  },
+  {
+    "name": "secondary_cta_link",
+    "label": "Secondary Button Link",
+    "type": "url",
+    "default": { "href": "#demo" }
+  }
+]

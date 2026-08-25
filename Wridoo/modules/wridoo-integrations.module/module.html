@@ -1,0 +1,27 @@
+<section class="section">
+  <div class="container two-col">
+    <img class="reveal in-view img-fluid rounded"
+      src="{{ module.image.src }}"
+      alt="{{ module.image.alt }}" loading="lazy" />
+    <div class="reveal in-view">
+      <h2 class="h2">{{ module.title }}</h2>
+      <p class="lead">{{ module.lead }}</p>
+      <ul class="check-list">
+        {% for item in module.checklist %}
+          <li>
+            <span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span><strong>{{ item.bold_title }}</strong> {{ item.description }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="cta">
+        {% if module.primary_cta_text %}
+          <a href="{{ module.primary_cta_link.href }}" class="btn btn-primary">{{ module.primary_cta_text }}</a>
+        {% endif %}
+        {% if module.secondary_cta_text %}
+          <a href="{{ module.secondary_cta_link.href }}" class="btn btn-soft">{{ module.secondary_cta_text }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

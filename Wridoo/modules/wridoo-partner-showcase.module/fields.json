@@ -1,0 +1,124 @@
+[
+  {
+    "name": "title",
+    "label": "Section Heading",
+    "type": "text",
+    "default": "Businesses in the travel segment succeed with Wridoo Partners"
+  },
+  {
+    "name": "cases",
+    "label": "Partner Cases",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 12,
+      "default": 4
+    },
+    "children": [
+      {
+        "name": "company",
+        "label": "Company Name",
+        "type": "text",
+        "default": "Webee Group"
+      },
+      {
+        "name": "logo",
+        "label": "Company Logo",
+        "type": "image",
+        "default": {
+          "src": "https://www.bitrix24.in/images/content_en/solutions/industry/travel-crm-software/img-partners-showcase-logo-1.png",
+          "alt": "Webee Group"
+        }
+      },
+      {
+        "name": "image",
+        "label": "Case Graphic Image",
+        "type": "image",
+        "default": {
+          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-partners-showcase-1.740w.png.webp",
+          "alt": "Case study"
+        }
+      },
+      {
+        "name": "case_title",
+        "label": "Case Title",
+        "type": "text",
+        "default": "Efficient Hotel Management with a Custom Wridoo Setup"
+      }
+    ],
+    "default": [
+      {
+        "company": "Webee Group",
+        "logo": {
+          "src": "https://www.bitrix24.in/images/content_en/solutions/industry/travel-crm-software/img-partners-showcase-logo-1.png",
+          "alt": "Webee Group"
+        },
+        "image": {
+          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-partners-showcase-1.740w.png.webp",
+          "alt": "Case study 1"
+        },
+        "case_title": "Efficient Hotel Management with a Custom Wridoo Setup"
+      },
+      {
+        "company": "Digital Foursquare",
+        "logo": {
+          "src": "https://www.bitrix24.in/images/content_en/solutions/industry/travel-crm-software/img-partners-showcase-logo-2.png",
+          "alt": "Digital Foursquare"
+        },
+        "image": {
+          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-partners-showcase-2.740w.png.webp",
+          "alt": "Case study 2"
+        },
+        "case_title": "Issuing online payment links for a hotel"
+      },
+      {
+        "company": "VAM Consulting",
+        "logo": {
+          "src": "https://www.bitrix24.in/images/content_en/solutions/industry/travel-crm-software/img-partners-showcase-logo-3.png",
+          "alt": "VAM Consulting"
+        },
+        "image": {
+          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-partners-showcase-3.740w.png.webp",
+          "alt": "Case study 3"
+        },
+        "case_title": "Wridoo for Tourism and Hospitality"
+      },
+      {
+        "company": "Genesis Systems Teknoloji",
+        "logo": {
+          "src": "https://www.bitrix24.in/images/content_en/solutions/industry/travel-crm-software/img-partners-showcase-logo-4.png",
+          "alt": "Genesis Systems Teknoloji"
+        },
+        "image": {
+          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-partners-showcase-4.740w.png.webp",
+          "alt": "Case study 4"
+        },
+        "case_title": "Medical Tourism Management with Wridoo"
+      }
+    ]
+  },
+  {
+    "name": "primary_cta_text",
+    "label": "Primary Button Text",
+    "type": "text",
+    "default": "START FOR FREE"
+  },
+  {
+    "name": "primary_cta_link",
+    "label": "Primary Button Link",
+    "type": "url",
+    "default": { "href": "#demo" }
+  },
+  {
+    "name": "secondary_cta_text",
+    "label": "Secondary Button Text",
+    "type": "text",
+    "default": "BOOK A DEMO"
+  },
+  {
+    "name": "secondary_cta_link",
+    "label": "Secondary Button Link",
+    "type": "url",
+    "default": { "href": "#demo" }
+  }
+]

@@ -1,0 +1,76 @@
+[
+  {
+    "name": "title",
+    "label": "Section Heading",
+    "type": "text",
+    "default": "Wridoo for Travel — built to support teams like yours:"
+  },
+  {
+    "name": "primary_cta_text",
+    "label": "Primary Button Text",
+    "type": "text",
+    "default": "START FOR FREE"
+  },
+  {
+    "name": "primary_cta_link",
+    "label": "Primary Button Link",
+    "type": "url",
+    "default": { "href": "#demo" }
+  },
+  {
+    "name": "secondary_cta_text",
+    "label": "Secondary Button Text",
+    "type": "text",
+    "default": "BOOK A DEMO"
+  },
+  {
+    "name": "secondary_cta_link",
+    "label": "Secondary Button Link",
+    "type": "url",
+    "default": { "href": "#demo" }
+  },
+  {
+    "name": "segments",
+    "label": "Audience Segments",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 12,
+      "default": 8
+    },
+    "children": [
+      {
+        "name": "icon",
+        "label": "Icon",
+        "type": "choice",
+        "choices": [
+          ["plane", "Airplane"],
+          ["monitor", "Monitor / Platform"],
+          ["building", "Hotel / Building"],
+          ["mountain", "Mountain / Tours"],
+          ["bus", "Bus / Transport"],
+          ["ship", "Ship / Cruise"],
+          ["heart", "Health, wellness & spa tourism services"],
+          ["sparkles", "Sparkles / Custom"]
+        ],
+        "default": "plane"
+      },
+      {
+        "name": "segment_title",
+        "label": "Segment Title",
+        "type": "text",
+        "default": "Travel agencies & tour operators"
+      }
+    ],
+    "default": [
+      { "icon": "plane", "segment_title": "Travel agencies & tour operators" },
+      { "icon": "monitor", "segment_title": "Online travel & booking platforms" },
+      { "icon": "building", "segment_title": "Hotels, resorts & vacation rentals" },
+      { "icon": "mountain", "segment_title": "Guided tours & experience providers" },
+      { "icon": "bus", "segment_title": "Transportation & transfer services" },
+      { "icon": "ship", "segment_title": "Cruise and maritime tourism businesses" },
+      { "icon": "heart", "segment_title": "Health, wellness & spa tourism services" },
+      { "icon": "sparkles", "segment_title": "Your travel business" }
+    ]
+  }
+]

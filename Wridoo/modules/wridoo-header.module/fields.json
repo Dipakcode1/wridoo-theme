@@ -1,0 +1,42 @@
+[
+  {
+    "name": "logo",
+    "label": "Logo Image",
+    "type": "image",
+    "default": {
+      "src": "",
+      "alt": "Wridoo Logo"
+    }
+  },
+  {
+    "name": "logo_width",
+    "label": "Logo Width (px)",
+    "type": "number",
+    "default": 130
+  },
+  {
+    "name": "header_menu",
+    "label": "Select HubSpot Menu",
+    "type": "menu",
+    "default": null,
+    "help_text": "Select a HubSpot Menu. If not selected, the default clean navigation will be displayed."
+  },
+  {
+    "name": "cta_text",
+    "label": "CTA Button Text",
+    "type": "text",
+    "default": "Start free trial"
+  },
+  {
+    "name": "cta_url",
+    "label": "CTA Button URL",
+    "type": "text",
+    "default": "#cta"
+  },
+  {
+    "name": "show_search_mobile",
+    "label": "Show Search in Mobile Menu?",
+    "type": "boolean",
+    "default": false
+  }
+]

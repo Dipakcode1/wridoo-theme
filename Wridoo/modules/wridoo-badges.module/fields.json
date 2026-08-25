@@ -1,0 +1,49 @@
+[
+  {
+    "name": "title",
+    "label": "Heading",
+    "type": "text",
+    "default": "See why customers love Wridoo"
+  },
+  {
+    "name": "link_text",
+    "label": "Link Text",
+    "type": "text",
+    "default": "Learn more"
+  },
+  {
+    "name": "link_url",
+    "label": "Link URL",
+    "type": "url",
+    "default": { "href": "#demo" }
+  },
+  {
+    "name": "badges",
+    "label": "Badges",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 12,
+      "default": 6
+    },
+    "children": [
+      {
+        "name": "image",
+        "label": "Badge Image",
+        "type": "image",
+        "default": {
+          "src": "",
+          "alt": "Wridoo Award Badge"
+        }
+      }
+    ],
+    "default": [
+      { "image": { "src": "https://www.bitrix24.in/images/content_en/bxw_blocks/bxw_block_badges/img-badge-1.png", "alt": "Wridoo award badge 1" } },
+      { "image": { "src": "https://www.bitrix24.in/images/content_en/bxw_blocks/bxw_block_badges/img-badge-2.png", "alt": "Wridoo award badge 2" } },
+      { "image": { "src": "https://www.bitrix24.in/images/content_en/bxw_blocks/bxw_block_badges/img-badge-3.png", "alt": "Wridoo award badge 3" } },
+      { "image": { "src": "https://www.bitrix24.in/images/content_en/bxw_blocks/bxw_block_badges/img-badge-4.png", "alt": "Wridoo award badge 4" } },
+      { "image": { "src": "https://www.bitrix24.in/images/content_en/bxw_blocks/bxw_block_badges/img-badge-5.png", "alt": "Wridoo award badge 5" } },
+      { "image": { "src": "https://www.bitrix24.in/images/content_en/bxw_blocks/bxw_block_badges/img-badge-6.png", "alt": "Wridoo award badge 6" } }
+    ]
+  }
+]

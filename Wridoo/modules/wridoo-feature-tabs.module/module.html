@@ -1,0 +1,42 @@
+<section class="section">
+  <div class="container">
+    <h2 class="reveal in-view h2 center">{{ module.title }}</h2>
+    
+    <div class="tabs" id="feature-tabs-{{ name }}">
+      {% for tab in module.tabs %}
+        <button class="tab-btn {% if loop.first %}is-active{% endif %}" data-feature-tab="{{ loop.index0 }}" data-module="{{ name }}" type="button">
+          {{ tab.tab_name }}
+        </button>
+      {% endfor %}
+    </div>
+
+    {% for tab in module.tabs %}
+      <div class="tab-panel two-col {% if loop.first %}is-entering{% endif %}" id="feature-panel-{{ name }}-{{ loop.index0 }}" {% if not loop.first %}style="display: none;"{% endif %}>
+        <div>
+          <h3 class="tab-kicker">{{ tab.kicker }}</h3>
+          <h3 class="tab-title">{{ tab.tab_title }}</h3>
+          <ul class="check-list">
+            {% if tab.point_1 %}<li><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_1 }}</span></li>{% endif %}
+            {% if tab.point_2 %}<li><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_2 }}</span></li>{% endif %}
+            {% if tab.point_3 %}<li><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_3 }}</span></li>{% endif %}
+            {% if tab.point_4 %}<li><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_4 }}</span></li>{% endif %}
+            {% if tab.point_5 %}<li><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_5 }}</span></li>{% endif %}
+          </ul>
+          <div class="cta">
+            {% if module.primary_cta_text %}
+              <a href="{{ module.primary_cta_link.href }}" class="btn btn-primary">{{ module.primary_cta_text }}</a>
+            {% endif %}
+            {% if module.secondary_cta_text %}
+              <a href="{{ module.secondary_cta_link.href }}" class="btn btn-soft">{{ module.secondary_cta_text }}</a>
+            {% endif %}
+          </div>
+        </div>
+        {% if tab.image.src %}
+          <img class="tab-img" loading="lazy" alt="{{ tab.tab_title }}" src="{{ tab.image.src }}" />
+        {% else %}
+          <img class="tab-img" loading="lazy" alt="{{ tab.tab_title }}" src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-{{ loop.index }}.1344w.jpg.webp" />
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>

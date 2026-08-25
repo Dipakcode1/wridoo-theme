@@ -16135,6 +16135,42 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   font-weight: 800;
 }
 
+.integrations-cta-btns {
+  margin-top: 38px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+
+.integrations-cta-btns .thm-btn {
+  padding: 15px 32px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px -4px rgba(78, 28, 227, 0.28);
+  transition: all 0.3s ease;
+}
+
+.integrations-cta-btns .thm-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(78, 28, 227, 0.36);
+}
+
+.integrations-cta-btns .fintech-btn--white {
+  background: #ffffff;
+  color: #110c29;
+  border: 1.5px solid #ece8f8;
+  box-shadow: 0 6px 18px rgba(17, 12, 41, 0.06);
+}
+
+.integrations-cta-btns .fintech-btn--white:hover {
+  background: #ede7ff;
+  border-color: rgba(78, 28, 227, 0.25);
+  color: #4E1CE3;
+}
+
 /* ------------------------------------------------------------
    Wridoo Custom Pricing Section & Domain Addon
    ------------------------------------------------------------ */

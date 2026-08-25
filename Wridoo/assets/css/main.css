@@ -14961,10 +14961,9 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   left: -81px;
   height: 100%;
   width: 81px;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAAA+BAMAAAChA+qKAAAALVBMVEUAAAD7+v/69//7+v/79//39//////8+v/7+v/6+f/69f/7+v/8+f/7+f/7+v/EK8g/AAAADnRSTlMA72CbQCAQ3795MM9Qr0VKcFgAAADLSURBVEjHjcqxCcJAAEDRT+IdJpgVro0gpLYKWIoQiBuIpTscuEBGCGSRjJAZnMAZLFzgv/pRH7/KB7jpSatnmOyk0pNZz0Oyk0XPOtnJoudBT2Y9Kz3p9XzpGZKdDHqWerLqOepZ6UnWc9Bzr2etJ72eDz0LPZn0HPWs9IzZTgY9Sz1jtpNBz0bPmOxk07PRMyY76fRs9IzJTjY9Sz1jtpNRz52edHoWenLRM2Q7eepJq2fo7aRe7aSY7GTX20k42Qn3t51wPaf//AEelLNUhqWq/QAAAABJRU5ErkJggg==");
+  background-image: url(../img/shape/corner-shape01.png);
   background-repeat: no-repeat;
-  background-position: top right;
-  background-size: 81px 100%; }
+  background-size: 100% 100%; }
   @media (max-width: 1199px) {
     .xb-corner-shape::before, .xb-corner-shape::after {
       left: -70px;
@@ -14982,10 +14981,9 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   content: '';
   left: auto;
   right: -81px;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAAA+BAMAAAChA+qKAAAALVBMVEUAAAD8+v/39//7+v/7+v/8+v/7+v/6+v/79//69P/////6+P/4+P/8+f/7+v8wZBwdAAAADnRSTlMA3iC875+HYEAwEHBwUFsG+S8AAADESURBVEjHjc0xFcIwAADRk1A6MkUCj4kBAWCBx1AJlVAJlVAJ0cDIVAslIZ2KBgR0yN383zt+qvQCBweczBEpz0hZsDJaeUPKPFp5R8o8WrlhZbSyYGVn5TJZ2WLlbGXBykbLYGXBykbL2cqElR8tOyuXYOWKlSctg5UFKxstRyu/WNlq2e+knqPn6Dl6jp6j5+g5eo6eU5lX5NHKHKzcsLK3ckXKPFjZImWapMwRKR9IeaEiDWQHhUxvlMzXgJGH50ilP2w4tGKUzdlnAAAAAElFTkSuQmCC");
+  background-image: url(../img/shape/corner-shape02.png);
   background-repeat: no-repeat;
-  background-position: top left;
-  background-size: 81px 100%; }
+  background-size: 100% 100%; }
   @media (max-width: 1199px) {
     .xb-corner-shape::after {
       right: -70px;

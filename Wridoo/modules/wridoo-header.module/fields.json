@@ -16,20 +16,20 @@
   },
   {
     "name": "header_menu",
-    "label": "Select HubSpot Menu",
+    "label": "HubSpot Navigation Menu",
     "type": "menu",
     "default": null,
-    "help_text": "Select a HubSpot Menu. If not selected, the default clean navigation will be displayed."
+    "help_text": "Select a HubSpot Menu. If unselected, default clean travel navigation will be rendered."
   },
   {
     "name": "cta_text",
-    "label": "CTA Button Text",
+    "label": "Primary CTA Text",
     "type": "text",
     "default": "Start free trial"
   },
   {
     "name": "cta_url",
-    "label": "CTA Button URL",
+    "label": "Primary CTA URL",
     "type": "text",
     "default": "#cta"
   },

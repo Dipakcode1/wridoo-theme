@@ -644,6 +644,72 @@
   box-shadow: none;
 }
 
+/* Dashboard Background Corner Shapes (das_shape01-04 and circle-blur) */
+.dashboard-shape.xb-section-shape .shape,
+.xb-section-shape .shape {
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+  pointer-events: none;
+}
+
+.dashboard-shape .shape--1,
+.xb-section-shape .shape--1 {
+  top: 0;
+  left: 0;
+}
+@media (max-width: 991px) {
+  .dashboard-shape .shape--1,
+  .xb-section-shape .shape--1 {
+    max-width: 110px;
+  }
+}
+
+.dashboard-shape .shape--2,
+.xb-section-shape .shape--2 {
+  top: 0;
+  right: 0;
+}
+@media (max-width: 991px) {
+  .dashboard-shape .shape--2,
+  .xb-section-shape .shape--2 {
+    max-width: 110px;
+  }
+}
+
+.dashboard-shape .shape--3,
+.xb-section-shape .shape--3 {
+  bottom: 0;
+  left: 0;
+}
+@media (max-width: 991px) {
+  .dashboard-shape .shape--3,
+  .xb-section-shape .shape--3 {
+    max-width: 140px;
+  }
+}
+
+.dashboard-shape .shape--4,
+.xb-section-shape .shape--4 {
+  right: 0;
+  bottom: 0;
+}
+@media (max-width: 991px) {
+  .dashboard-shape .shape--4,
+  .xb-section-shape .shape--4 {
+    max-width: 140px;
+  }
+}
+
+.fs-dashboard-wrapper .dashboard-shape .shape--5 {
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  transform: translateX(-50%);
+  position: absolute;
+  z-index: -1;
+}
+
 .wridoo-home .fs-dashboard-nav,
 .fs-dashboard-nav {
   gap: 10px;
@@ -697,10 +763,9 @@
   left: -81px;
   height: 100%;
   width: 81px;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAAA+BAMAAAChA+qKAAAALVBMVEUAAAD7+v/69//7+v/79//39//////8+v/7+v/6+f/69f/7+v/8+f/7+f/7+v/EK8g/AAAADnRSTlMA72CbQCAQ3795MM9Qr0VKcFgAAADLSURBVEjHjcqxCcJAAEDRT+IdJpgVro0gpLYKWIoQiBuIpTscuEBGCGSRjJAZnMAZLFzgv/pRH7/KB7jpSatnmOyk0pNZz0Oyk0XPOtnJoudBT2Y9Kz3p9XzpGZKdDHqWerLqOepZ6UnWc9Bzr2etJ72eDz0LPZn0HPWs9IzZTgY9Sz1jtpNBz0bPmOxk07PRMyY76fRs9IzJTjY9Sz1jtpNRz52edHoWenLRM2Q7eepJq2fo7aRe7aSY7GTX20k42Qn3t51wPaf//AEelLNUhqWq/QAAAABJRU5ErkJggg==");
+  background-image: url('../img/shape/corner-shape01.png');
   background-repeat: no-repeat;
-  background-position: top right;
-  background-size: 81px 100%;
+  background-size: 100% 100%;
   pointer-events: none;
 }
 
@@ -730,10 +795,9 @@
 .xb-corner-shape::after {
   left: auto;
   right: -81px;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAAA+BAMAAAChA+qKAAAALVBMVEUAAAD8+v/39//7+v/7+v/8+v/7+v/6+v/79//69P/////6+P/4+P/8+f/7+v8wZBwdAAAADnRSTlMA3iC875+HYEAwEHBwUFsG+S8AAADESURBVEjHjc0xFcIwAADRk1A6MkUCj4kBAWCBx1AJlVAJlVAJ0cDIVAslIZ2KBgR0yN383zt+qvQCBweczBEpz0hZsDJaeUPKPFp5R8o8WrlhZbSyYGVn5TJZ2WLlbGXBykbLYGXBykbL2cqElR8tOyuXYOWKlSctg5UFKxstRyu/WNlq2e+knqPn6Dl6jp6j5+g5eo6eU5lX5NHKHKzcsLK3ckXKPFjZImWapMwRKR9IeaEiDWQHhUxvlMzXgJGH50ilP2w4tGKUzdlnAAAAAElFTkSuQmCC");
+  background-image: url('../img/shape/corner-shape02.png');
   background-repeat: no-repeat;
-  background-position: top left;
-  background-size: 81px 100%;
+  background-size: 100% 100%;
 }
 
 @media (max-width: 1199px) {
@@ -747,6 +811,12 @@
   .xb-corner-shape::after {
     right: -60px;
     background-size: 60px 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .xb-corner-shape::after {
+    display: none !important;
   }
 }
 
@@ -1697,6 +1767,31 @@
   color: #4E1CE3;
   border-radius: 50px;
   background: rgba(78, 28, 227, 0.1);
+}
+
+.fintech-btn {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 28px;
+  border-radius: 12px;
+  white-space: nowrap !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.fs-footer-newsletter .xb-item--btn {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 15px;
+}
+
+@media (max-width: 575px) {
+  .fs-footer-newsletter .xb-item--btn {
+    flex-wrap: wrap;
+  }
 }
 
 /* Shapes in Feature Cards */

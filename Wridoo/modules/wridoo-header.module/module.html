@@ -1,3 +1,5 @@
+{% set cta_href = module.cta_url.url.href if (module.cta_url and module.cta_url.url and module.cta_url.url.href) else (module.cta_url if module.cta_url is string else '#cta') %}
+
 {# Macro for rendering HubSpot Menu Nodes for Desktop #}
 {% macro render_desktop_node(node) %}
   <li class="{% if node.children %}menu-item-has-children{% endif %} {% if node.activeBranch %}active{% endif %}">
@@ -39,9 +41,9 @@
           <div class="xb-header-logo">
             <a href="/" class="logo">
               {% if module.logo.src %}
-                <img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" style="max-width: {{ module.logo_width }}px; height: auto;">
+                <img src="{{ module.logo.src }}" alt="{{ module.logo.alt or 'Wridoo Logo' }}" style="max-width: {{ module.logo_width or 140 }}px; height: auto;">
               {% else %}
-                <img src="{{ get_asset_url('../../assets/img/logo/logo-black.png') }}" alt="Wridoo Logo" style="max-width: {{ module.logo_width }}px; height: auto;">
+                <img src="{{ get_asset_url('../../assets/img/logo/logo-black.png') }}" alt="Wridoo Logo" style="height: 38px; width: auto;">
               {% endif %}
             </a>
           </div>
@@ -78,7 +80,7 @@
           <!-- Desktop CTA Button -->
           <div class="xb-header-btn d-lg-block d-none">
             {% if module.cta_text %}
-              <a class="thm-btn fintech-btn" href="{{ module.cta_url }}">{{ module.cta_text }}</a>
+              <a class="thm-btn fintech-btn" href="{{ cta_href }}">{{ module.cta_text }}</a>
             {% endif %}
           </div>
 
@@ -102,7 +104,7 @@
             <div class="xb-logo-mobile xb-hide-xl">
               <a href="/" rel="home">
                 {% if module.logo.src %}
-                  <img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}">
+                  <img src="{{ module.logo.src }}" alt="{{ module.logo.alt or 'Wridoo Logo' }}">
                 {% else %}
                   <img src="{{ get_asset_url('../../assets/img/logo/logo-black.png') }}" alt="Wridoo Logo">
                 {% endif %}
@@ -146,7 +148,7 @@
 
             {% if module.cta_text %}
               <div class="xb-header-mobile-btn mt-30 text-center">
-                <a class="thm-btn fintech-btn w-100" href="{{ module.cta_url }}">{{ module.cta_text }}</a>
+                <a class="thm-btn fintech-btn w-100" href="{{ cta_href }}">{{ module.cta_text }}</a>
               </div>
             {% endif %}
           </div>

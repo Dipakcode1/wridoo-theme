@@ -15,86 +15,8 @@
         </div>
         <div class="body-inner" data-bg-color="#fff">
 
-            <!-- header start -->
-            <header id="xb-header-area" class="header-area header-area--four"> 
-                <div class="xb-header">
-                    <div class="container mxw-1330">
-                        <div class="header-wrapper">
-                            <div class="header__wrap border-btm ul_li_between pos-rel">
-                                <div class="xb-header-logo">
-                                    <a href="/" class="logo">
-                                        <img src="{{ get_asset_url('../assets/img/logo/logo-black.png') }}" alt="Wridoo Logo" style="height: 38px; width: auto;">
-                                    </a>
-                                </div>
-                                <div class="main-menu__wrap navbar navbar-expand-lg p-0">
-                                    <nav class="main-menu collapse navbar-collapse">
-                                        <ul>
-                                            <li class="active"><a href="/"><span>Home</span></a></li>
-                                            <li class="menu-item-has-children">
-                                                <a href="#solutions"><span>Solutions</span></a>
-                                                <ul class="submenu">
-                                                    <li><a href="#solutions"><span>Tour Operators</span></a></li>
-                                                    <li><a href="#solutions"><span>Travel Agencies</span></a></li>
-                                                    <li><a href="#solutions"><span>Hotels &amp; Resorts</span></a></li>
-                                                    <li><a href="#solutions"><span>DMCs &amp; Activities</span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#features"><span>Features</span></a></li>
-                                            <li><a href="#pricing"><span>Pricing</span></a></li>
-                                            <li><a href="#faq"><span>FAQ</span></a></li>
-                                            <li><a href="#contact"><span>Contact</span></a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <div class="xb-header-btn d-lg-block d-none">
-                                    <a class="thm-btn fintech-btn" href="#cta">Start free trial</a>
-                                </div>
-                                <div class="header-bar-mobile side-menu d-lg-none">
-                                    <a class="xb-nav-mobile" href="javascript:void(0);" aria-label="Toggle navigation">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Mobile Slide-out Drawer Menu -->
-                        <div class="xb-header-wrap">
-                            <div class="xb-header-menu">
-                                <div class="xb-header-menu-scroll">
-                                    <div class="xb-menu-close xb-hide-xl xb-close" aria-label="Close menu"></div>
-                                    <div class="xb-logo-mobile xb-hide-xl">
-                                        <a href="/" rel="home"><img src="{{ get_asset_url('../assets/img/logo/logo-black.png') }}" alt="Wridoo Logo"></a>
-                                    </div>
-                                    <nav class="xb-header-nav">
-                                        <ul class="xb-menu-primary clearfix">
-                                            <li class="menu-item active"><a href="/"><span>Home</span></a></li>
-                                            <li class="menu-item menu-item-has-children">
-                                                <a href="#solutions"><span>Solutions</span></a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="#solutions"><span>Tour Operators</span></a></li>
-                                                    <li><a href="#solutions"><span>Travel Agencies</span></a></li>
-                                                    <li><a href="#solutions"><span>Hotels &amp; Resorts</span></a></li>
-                                                    <li><a href="#solutions"><span>DMCs &amp; Activities</span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item"><a href="#features"><span>Features</span></a></li>
-                                            <li class="menu-item"><a href="#pricing"><span>Pricing</span></a></li>
-                                            <li class="menu-item"><a href="#faq"><span>FAQ</span></a></li>
-                                            <li class="menu-item"><a href="#contact"><span>Contact</span></a></li>
-                                        </ul>
-                                    </nav>
-                                    <div class="xb-header-mobile-btn mt-30 text-center">
-                                        <a class="thm-btn fintech-btn w-100" href="#cta">Start free trial</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="xb-header-menu-backdrop"></div>
-                        </div>
-                    </div>
-                </div>
-            </header>
+            <!-- header start (HubSpot Module) -->
+            {% module "header" path="../modules/wridoo-header.module", label="Header Navigation" %}
             <!-- header end -->
 
             <!-- main area start -->
@@ -1107,32 +1029,28 @@
                         </div>
                         <div class="fs-footer-inner">
                             <div class="row mt-none-30 align-items-center">
-                                <div class="col-lg-4 col-md-8 mt-30">
+                                <div class="col-lg-5 col-md-12 mt-30">
                                     <div class="fs-footer-widget fs-footer-newsletter">
                                         <p class="fs-widget-title">The Ultimate Travel CRM</p>
                                         <h2 class="xb-item--title">Join The Businesses Scaling Smarter</h2>
                                         <p class="xb-item--content">Smarter bookings, CRM, and websites made easy for travel operators.</p>
-                                        <div class="xb-item--btn gap-10 mt-45 ul_li">
-                                            <a class="thm-btn fintech-btn" href="#pricing">Start Free Trial</a>
-                                            <a class="thm-btn fintech-btn fintech-btn--white" href="#pricing">Book a Demo</a>
+                                        <div class="xb-item--btn gap-15 mt-40 ul_li" style="flex-wrap: nowrap;">
+                                            <a class="thm-btn fintech-btn" href="#pricing" style="white-space: nowrap; padding: 15px 28px;">Start Free Trial</a>
+                                            <a class="thm-btn fintech-btn fintech-btn--white" href="#pricing" style="white-space: nowrap; padding: 15px 28px;">Book A Demo</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 mt-30">
-                                    <div class="fs-footer-widget fs-footer-scanner">
-                                        <div class="xb-item--inner">
-                                            <div class="xb-item--logo mb-2">
-                                                <img src="{{ get_asset_url('../assets/img/logo/logo-black.png') }}" alt="Wridoo Logo" style="max-height: 40px; width: auto;">
+                                <div class="col-lg-3 col-md-4 mt-30">
+                                    <div class="fs-footer-widget fs-footer-scanner text-center">
+                                        <div class="xb-item--inner p-4" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;">
+                                            <div class="xb-item--logo mb-3">
+                                                <img src="{{ get_asset_url('../assets/img/logo/logo-black.png') }}" alt="Wridoo Logo" style="max-height: 44px; width: auto;">
                                             </div>
-                                            <p class="xb-item--text">The all-in-one travel operating platform</p>
-                                            <ul class="xb-item--social list-unstyled ul_li">
-                                                <li><a href="#!" title="Apple Store"><i class="fa-brands fa-apple"></i></a></li>
-                                                <li><a href="#!" title="Google Play"><i class="fa-brands fa-google-play"></i></a></li>
-                                            </ul>
+                                            <p class="xb-item--text" style="font-size: 15px; line-height: 1.5; color: #494569; margin: 0;">The all-in-one travel operating platform</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-6 mt-30">
+                                <div class="col-lg-4 col-md-8 mt-30">
                                     <div class="fs-footer-widget">
                                         <p class="fs-widget-title">Need Any Emergency</p>
                                         <ul class="xb-item--contact list-unstyled">
@@ -1142,7 +1060,9 @@
                                         <p class="fs-widget-title">Subscribe Newsletter</p>
                                         <form class="xb-item--input" action="#!" onsubmit="event.preventDefault();">
                                             <input type="text" placeholder="Enter your email">
-                                            <a href="#!"><i class="fa-solid fa-paper-plane"></i></a>
+                                            <a href="#!" aria-label="Subscribe" style="display: flex; align-items: center; justify-content: center;">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                            </a>
                                         </form>
                                     </div>
                                 </div>
@@ -1166,8 +1086,8 @@
                     <div class="dm-social-media-wrap fs-social-midea-warap">
                         <div class="xb-social-media-item fs-social-media-item ul_li_between">
                             <div class="xb-item--holder ul_li">
-                                <div class="xb-item--icon">
-                                    <i class="fa-brands fa-facebook"></i>
+                                <div class="xb-item--icon" style="display: flex; align-items: center; justify-content: center;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                                 </div>
                                 <span class="xb-item--name">Facebook</span>
                             </div>
@@ -1178,8 +1098,8 @@
                         </div>
                         <div class="xb-social-media-item fs-social-media-item ul_li_between">
                             <div class="xb-item--holder ul_li">
-                                <div class="xb-item--icon">
-                                    <i class="fa-brands fa-x-twitter"></i>
+                                <div class="xb-item--icon" style="display: flex; align-items: center; justify-content: center;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
                                 </div>
                                 <span class="xb-item--name">Twitter</span>
                             </div>
@@ -1190,8 +1110,8 @@
                         </div>
                         <div class="xb-social-media-item fs-social-media-item ul_li_between">
                             <div class="xb-item--holder ul_li">
-                                <div class="xb-item--icon">
-                                    <i class="fa-brands fa-linkedin"></i>
+                                <div class="xb-item--icon" style="display: flex; align-items: center; justify-content: center;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                                 </div>
                                 <span class="xb-item--name">LinkedIn</span>
                             </div>
@@ -1202,8 +1122,8 @@
                         </div>
                         <div class="xb-social-media-item fs-social-media-item ul_li_between">
                             <div class="xb-item--holder ul_li">
-                                <div class="xb-item--icon">
-                                    <i class="fa-brands fa-instagram"></i>
+                                <div class="xb-item--icon" style="display: flex; align-items: center; justify-content: center;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                                 </div>
                                 <span class="xb-item--name">Instagram</span>
                             </div>

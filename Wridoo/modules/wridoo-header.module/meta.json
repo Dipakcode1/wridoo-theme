@@ -1,11 +1,12 @@
 {
-  "global": false,
+  "global": true,
   "content_types": [
     "LANDING_PAGE",
     "SITE_PAGE"
   ],
   "categories": [
-    "body_content"
+    "BODY_CONTENT",
+    "DESIGN"
   ],
   "host_template_types": [
     "PAGE"

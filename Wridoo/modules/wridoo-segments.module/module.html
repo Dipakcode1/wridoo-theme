@@ -24,8 +24,9 @@
       <!-- Right Column: 2-Column 8-Card Grid -->
       <div class="col-lg-7">
         <div class="segments-card-grid">
+          {% set color_classes = ['segment-card--peach', 'segment-card--pink', 'segment-card--lime', 'segment-card--blue', 'segment-card--mint', 'segment-card--cyan', 'segment-card--amber', 'segment-card--purple'] %}
           {% for item in module.segments %}
-            <div class="segment-card">
+            <div class="segment-card {{ color_classes[(loop.index0) % 8] }}">
               <div class="segment-icon-badge">
                 {% if item.icon == 'plane' %}
                   <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5a2.12 2.12 0 0 0-3-3L13 8 4.8 6.2a.5.5 0 0 0-.5.8l3.2 4-2 2-2.2-.6a.5.5 0 0 0-.5.8L5 16l1.8 2.2a.5.5 0 0 0 .8-.5L7 15.5l2-2 4 3.2a.5.5 0 0 0 .8-.5z"/></svg>

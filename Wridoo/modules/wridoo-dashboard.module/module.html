@@ -41,15 +41,15 @@
               {% if item.image.src %}
                 <img src="{{ item.image.src }}" alt="{{ item.image.alt }}">
               {% elif loop.index == 1 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-hero.1466w.png.webp" alt="{{ item.title }}">
+                <img src="{{ get_asset_url('../../assets/img/dashboard/booking-management.png') }}" alt="{{ item.title }}">
               {% elif loop.index == 2 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-1.1344w.jpg.webp" alt="{{ item.title }}">
+                <img src="{{ get_asset_url('../../assets/img/dashboard/traveler-crm.png') }}" alt="{{ item.title }}">
               {% elif loop.index == 3 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-2.1344w.jpg.webp" alt="{{ item.title }}">
+                <img src="{{ get_asset_url('../../assets/img/dashboard/itineraries-tours.png') }}" alt="{{ item.title }}">
               {% elif loop.index == 4 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-3.1344w.jpg.webp" alt="{{ item.title }}">
+                <img src="{{ get_asset_url('../../assets/img/dashboard/smart-automation.png') }}" alt="{{ item.title }}">
               {% else %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-4.1344w.jpg.webp" alt="{{ item.title }}">
+                <img src="{{ get_asset_url('../../assets/img/dashboard/ai-travel-assistant.png') }}" alt="{{ item.title }}">
               {% endif %}
             </div>
           </div>

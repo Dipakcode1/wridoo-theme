@@ -16477,4 +16477,125 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   font-size: 17px;
 }
 
+/* ------------------------------------------------------------
+   Sastik Frequently Asked Questions Layout
+   ------------------------------------------------------------ */
+.fs-faq-wrapper {
+  position: relative;
+}
+
+.fs-faq-image {
+  margin-top: 50px;
+  position: relative;
+}
+
+.fs-faq-image .img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.updown-2 {
+  animation: updown-2 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes updown-2 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-16px) rotate(-1.5deg); }
+}
+
+.fs-faq .accordion_box .block {
+  padding: 0 30px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1.5px solid #ece8f8;
+  box-shadow: 0 4px 20px rgba(17, 12, 41, 0.03);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@media (max-width: 767px) {
+  .fs-faq .accordion_box .block {
+    padding: 0 18px;
+  }
+}
+
+.fs-faq .accordion_box .block:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.fs-faq .accordion_box .block .acc-btn {
+  padding: 22px 45px 22px 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  font-size: 18px;
+  font-weight: 700;
+  color: #110c29;
+  line-height: 1.4;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.fs-faq .accordion_box .block .acc-btn .arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fs-faq .accordion_box .block .acc-btn .arrow::before {
+  content: "+";
+  font-size: 24px;
+  font-weight: 400;
+  color: #110c29;
+  line-height: 1;
+}
+
+.fs-faq .accordion_box .block.active-block {
+  border: 1.5px solid transparent;
+  box-shadow: 0 24px 40px -12px rgba(78, 28, 227, 0.14), 0 0 0 1.5px #ede7ff;
+}
+
+.fs-faq .accordion_box .block.active-block .acc-btn {
+  color: #110c29;
+}
+
+.fs-faq .accordion_box .block.active-block .acc-btn .arrow::before {
+  content: "−";
+  font-size: 26px;
+  font-weight: 600;
+  color: #110c29;
+}
+
+.fs-faq .accordion_box .block .acc_body {
+  display: none;
+}
+
+.fs-faq .accordion_box .block .acc_body.current {
+  display: block;
+}
+
+.fs-faq .accordion_box .block .content {
+  padding: 0 20px 24px 0;
+  border-top: 1px solid #f0edf8;
+  padding-top: 16px;
+}
+
+.fs-faq .accordion_box .block .content p {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #55585b;
+  margin-bottom: 0;
+}
+
+.fs-faq .accordion_box .block .content p span {
+  font-weight: 700;
+  color: #110c29;
+}
+
 /*# sourceMappingURL=main.css.map */

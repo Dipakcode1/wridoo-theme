@@ -911,50 +911,82 @@
                 <!-- pricing end -->
 
                 <!-- faq start -->
-                <section class="faq-area pt-130 pb-130" id="faq">
+                <section class="faq-area pt-80 pb-100" id="faq">
                     <div class="container mxw-1330">
-                        <div class="sec-title--four text-center mb-60">
-                            <span class="sub-title"><span><img src="{{ get_asset_url('../assets/img/icon/sub-icon.svg') }}" alt="icon"></span>FAQ</span>
-                            <h2 class="title">Frequently Asked Questions</h2>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="accordion" id="travelFaq">
-                                    <div class="accordion-item mb-3 border rounded-3 overflow-hidden">
-                                        <h2 class="accordion-header" id="faq1">
-                                            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true">
-                                                Can I connect Wridoo with my existing booking engines and telephony?
-                                            </button>
-                                        </h2>
-                                        <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#travelFaq">
-                                            <div class="accordion-body text-muted">
-                                                Yes, Wridoo provides over 500+ integrations including popular telephony platforms, SMS gateways, payment processors, and a REST API for GDS and channel managers.
+                        <div class="fs-faq-wrapper pos-rel plr-20">
+                            <div class="row mt-none-50 align-items-center">
+                                <div class="col-lg-5 mt-50">
+                                    <div class="xb-faq-left">
+                                        <div class="sec-title mb-40">  
+                                            <h2 class="title wow fadeInUp" data-wow-delay="0ms" data-wow-duration="600ms" style="font-size: clamp(32px, 4vw, 48px); font-weight: 800; color: #110c29; line-height: 1.15;">Frequently Asked<br>Questions</h2>
+                                        </div>
+                                        <div class="fs-faq-image pos-rel">
+                                            <img src="{{ get_asset_url('../assets/img/pricing/img01.png') }}" alt="rock shape" class="img-fluid">
+                                            <div class="img" style="position: absolute; left: 0; top: 0;">
+                                                <img class="updown-2 img-fluid" src="{{ get_asset_url('../assets/img/pricing/img02.png') }}" alt="floating card">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="accordion-item mb-3 border rounded-3 overflow-hidden">
-                                        <h2 class="accordion-header" id="faq2">
-                                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
-                                                Does Wridoo support multi-currency payments and installment plans?
-                                            </button>
-                                        </h2>
-                                        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#travelFaq">
-                                            <div class="accordion-body text-muted">
-                                                Yes, you can issue quotes and invoices in multiple currencies, set up deposit payment schedules, and collect balances automatically before departure dates.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item mb-3 border rounded-3 overflow-hidden">
-                                        <h2 class="accordion-header" id="faq3">
-                                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
-                                                How easy is it to migrate my existing guest list and booking records?
-                                            </button>
-                                        </h2>
-                                        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#travelFaq">
-                                            <div class="accordion-body text-muted">
-                                                You can import your entire customer and booking history via CSV or Excel in just a few clicks. Our onboarding team is also available to assist with custom database migrations.
-                                            </div>
-                                        </div>
+                                </div>
+                                <div class="col-lg-7 mt-50">
+                                    <div class="xb-faq xb-desk-faq fs-faq">
+                                        <ul class="accordion_box clearfix list-unstyled mb-0">
+                                            <li class="accordion block active-block">
+                                                <div class="acc-btn active">
+                                                    What payment methods do you support?
+                                                    <span class="arrow"><span></span></span>
+                                                </div>
+                                                <div class="acc_body current" style="display: block;">
+                                                    <div class="content">
+                                                        <p>We support all major payment methods, including credit and debit cards, digital wallets, and bank transfers both locally and globally worldwide.</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="accordion block">
+                                                <div class="acc-btn">
+                                                    Can I accept payments in multiple currencies?
+                                                    <span class="arrow"><span></span></span>
+                                                </div>
+                                                <div class="acc_body">
+                                                    <div class="content">
+                                                        <p><span>Yes!</span> Our platform allows you to accept payments in multiple currencies and automatically handles foreign exchange (FX) for a global experience.</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="accordion block">
+                                                <div class="acc-btn">
+                                                    Do you support subscription or recurring billing?
+                                                    <span class="arrow"><span></span></span>
+                                                </div>
+                                                <div class="acc_body">
+                                                    <div class="content">
+                                                        <p><span>Yes!</span> Our platform can handle any billing model, including subscriptions, usage-based billing, and one-time payments, giving you full flexibility.</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="accordion block">
+                                                <div class="acc-btn">
+                                                    Is my payment data secure?
+                                                    <span class="arrow"><span></span></span>
+                                                </div>
+                                                <div class="acc_body">
+                                                    <div class="content">
+                                                        <p><span>Absolutely.</span> We use advanced encryption and comply with PCI-DSS standards to ensure your customers’ payment data is safe and secure.</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="accordion block">
+                                                <div class="acc-btn">
+                                                    Can I track cash flow in real time?
+                                                    <span class="arrow"><span></span></span>
+                                                </div>
+                                                <div class="acc_body">
+                                                    <div class="content">
+                                                        <p><span>Yes.</span> Our dashboard gives you real-time insights into incoming and outgoing payments, helping you make smarter financial decisions instantly.</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>

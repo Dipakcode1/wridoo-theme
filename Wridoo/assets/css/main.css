@@ -16135,4 +16135,346 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   font-weight: 800;
 }
 
+/* ------------------------------------------------------------
+   Wridoo Custom Pricing Section & Domain Addon
+   ------------------------------------------------------------ */
+.pricing-sec-subtitle {
+  font-size: 17px;
+  color: #55585b;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.pricing-free-trial-card {
+  background: linear-gradient(135deg, #180949 0%, #301099 45%, #4E1CE3 100%);
+  border-radius: 26px;
+  padding: clamp(32px, 4.5vw, 50px);
+  color: #ffffff;
+  box-shadow: 0 20px 48px -12px rgba(24, 9, 73, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+.free-trial-title {
+  font-family: var(--font-heading);
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.free-trial-sub {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+
+.free-trial-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px 24px;
+}
+
+.free-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15.5px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.free-check {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #4E1CE3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.free-trial-cta-box {
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.free-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.free-currency {
+  font-size: 36px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.free-val {
+  font-size: clamp(52px, 6vw, 68px);
+  font-weight: 900;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.free-badge-tag {
+  background: #00e676;
+  color: #0c4322;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+  align-self: flex-start;
+  margin-top: 6px;
+  box-shadow: 0 2px 8px rgba(0, 230, 118, 0.3);
+}
+
+.free-duration-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.free-trial-btn {
+  background: #ffffff !important;
+  color: #4E1CE3 !important;
+  font-weight: 800 !important;
+  padding: 15px 36px !important;
+  border-radius: 10px !important;
+  font-size: 16px !important;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22) !important;
+  transition: all 0.25s ease !important;
+  text-decoration: none;
+}
+
+.free-trial-btn:hover {
+  background: #ede7ff !important;
+  color: #370fc2 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.free-trial-note {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.plans-subheading {
+  font-size: 26px;
+  font-weight: 800;
+  color: #110c29;
+}
+
+.wridoo-pricing-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 36px 30px;
+  border: 1.5px solid rgba(78, 28, 227, 0.1);
+  box-shadow: 0 10px 30px -10px rgba(17, 12, 41, 0.06);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.wridoo-pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px -12px rgba(78, 28, 227, 0.18);
+  border-color: rgba(78, 28, 227, 0.3);
+}
+
+.wridoo-pricing-card.is-featured {
+  border: 2px solid #4E1CE3;
+  box-shadow: 0 16px 45px -10px rgba(78, 28, 227, 0.22);
+  transform: translateY(-4px);
+}
+
+.popular-ribbon {
+  position: absolute;
+  top: -14px;
+  right: 24px;
+  background: #4E1CE3;
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(78, 28, 227, 0.4);
+}
+
+.plan-badge-top {
+  display: inline-block;
+  background: #ede7ff;
+  color: #4E1CE3;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  letter-spacing: 0.03em;
+}
+
+.plan-badge-free {
+  background: #e6f9ed;
+  color: #0b8a36;
+}
+
+.plan-name {
+  font-size: 17px;
+  font-weight: 800;
+  color: #110c29;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.plan-price {
+  font-size: 36px;
+  font-weight: 900;
+  color: #110c29;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.plan-cycle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #6d6888;
+}
+
+.plan-tagline {
+  font-size: 14px;
+  color: #55585b;
+  line-height: 1.5;
+  min-height: 42px;
+  margin-bottom: 20px;
+}
+
+.plan-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.plan-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: #3b3754;
+  font-weight: 500;
+}
+
+.plan-check {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 50%;
+  background: #ede7ff;
+  color: #4E1CE3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+.feature-highlight {
+  color: #110c29 !important;
+  font-weight: 700 !important;
+}
+
+.domain-info-box {
+  background: #fbfaff;
+  border: 1px solid rgba(78, 28, 227, 0.1);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #403a56;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 15px;
+}
+
+.domain-info-box svg {
+  stroke: #4E1CE3;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pricing-card-footer {
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+.domain-addon-banner {
+  background: #ede7ff;
+  border: 1.5px dashed rgba(78, 28, 227, 0.35);
+  border-radius: 20px;
+  padding: 24px 30px;
+  margin-top: 20px;
+}
+
+.domain-addon-icon {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #4E1CE3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(78, 28, 227, 0.15);
+}
+
+.domain-addon-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #110c29;
+}
+
+.domain-addon-desc {
+  font-size: 14.5px;
+  color: #403a56;
+}
+
+.domain-price-pill {
+  background: #ffffff;
+  border: 1.5px solid #4E1CE3;
+  color: #110c29;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(78, 28, 227, 0.12);
+}
+
+.domain-price-pill strong {
+  color: #4E1CE3;
+  font-size: 17px;
+}
+
 /*# sourceMappingURL=main.css.map */

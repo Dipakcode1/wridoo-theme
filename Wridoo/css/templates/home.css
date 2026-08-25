@@ -2466,36 +2466,63 @@
 }
 
 .fs-faq .accordion_box .block .acc-btn {
-  padding: 22px 45px 22px 0;
-  background: transparent;
-  cursor: pointer;
-  position: relative;
-  font-size: 18px;
-  font-weight: 700;
-  color: #110c29;
-  line-height: 1.4;
-  user-select: none;
-  transition: color 0.2s ease;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 22px 0 !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  position: relative !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #110c29 !important;
+  line-height: 1.4 !important;
+  user-select: none !important;
+  border: none !important;
+  width: 100% !important;
+  text-align: left !important;
 }
 
 .fs-faq .accordion_box .block .acc-btn .arrow {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  left: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid #dfd8ff !important;
+  background: #fbfaff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  margin-left: 16px !important;
+  transition: all 0.25s ease !important;
 }
 
 .fs-faq .accordion_box .block .acc-btn .arrow::before {
-  content: "+";
-  font-size: 24px;
-  font-weight: 400;
-  color: #110c29;
-  line-height: 1;
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  content: "+" !important;
+  font-family: inherit !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #110c29 !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .fs-faq .accordion_box .block.active-block {
@@ -2504,14 +2531,20 @@
 }
 
 .fs-faq .accordion_box .block.active-block .acc-btn {
-  color: #110c29;
+  color: #110c29 !important;
+}
+
+.fs-faq .accordion_box .block.active-block .acc-btn .arrow {
+  background: #4E1CE3 !important;
+  border-color: #4E1CE3 !important;
+  box-shadow: 0 4px 12px rgba(78, 28, 227, 0.25) !important;
 }
 
 .fs-faq .accordion_box .block.active-block .acc-btn .arrow::before {
-  content: "−";
-  font-size: 26px;
-  font-weight: 600;
-  color: #110c29;
+  content: "−" !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
 }
 
 .fs-faq .accordion_box .block .acc_body {

@@ -913,4 +913,22 @@
 
 	});
 
+	/*------------------------------------------
+	= Feature Tabs Interactive Handler
+	-------------------------------------------*/
+	$(document).on('click', '.feature-tab-btn', function () {
+		const $btn = $(this);
+		const targetTab = $btn.attr('data-tab') !== undefined ? $btn.attr('data-tab') : $btn.attr('data-feature-tab');
+		const $wrapper = $btn.closest('.feature-tabs-section');
+		
+		$wrapper.find('.feature-tab-btn').removeClass('is-active');
+		$btn.addClass('is-active');
+		
+		$wrapper.find('.feature-tab-panel').removeClass('is-active').hide();
+		const $targetPanel = $wrapper.find(`.feature-tab-panel[data-panel="${targetTab}"]`);
+		if ($targetPanel.length) {
+			$targetPanel.css('display', 'grid').addClass('is-active');
+		}
+	});
+
 })(jQuery);

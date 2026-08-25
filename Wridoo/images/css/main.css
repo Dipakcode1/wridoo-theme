@@ -15569,12 +15569,45 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
 }
 
 /* ------------------------------------------------------------
+   Header & Navigation Stacking Context
+   ------------------------------------------------------------ */
+.header-area,
+.header-area--four,
+.xb-header,
+.stricky-header,
+.stricky-fixed,
+.header-wrapper {
+  position: relative;
+  z-index: 9999 !important;
+}
+
+.stricky-fixed,
+.stricky-header.stricked-menu,
+.xb-header.sticky,
+.xb-header.is-sticky {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 99999 !important;
+}
+
+.main-menu ul li .submenu,
+.main-menu ul li .sub-menu,
+.xb-header-wrap,
+.xb-header-menu {
+  z-index: 999999 !important;
+}
+
+/* ------------------------------------------------------------
    Partner Benefits Banner Card
    ------------------------------------------------------------ */
 .partner-benefits-section {
   background: #fbfaff;
   padding: 60px 0;
   position: relative;
+  z-index: 1;
 }
 
 .partner-lead {
@@ -15610,7 +15643,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   align-items: flex-end;
   justify-content: center;
   pointer-events: none;
-  z-index: 5;
+  z-index: 2;
 }
 
 .partner-photo {
@@ -15628,7 +15661,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   color: #ffffff;
   width: 100%;
   position: relative;
-  z-index: 6;
+  z-index: 3;
 }
 
 .partner-card-title {
@@ -15747,6 +15780,164 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   }
   .partner-banner-body {
     padding: 15px 20px 30px;
+  }
+}
+
+/* ------------------------------------------------------------
+   Interactive Feature Tabs Section (Wridoo Brand)
+   ------------------------------------------------------------ */
+.feature-tabs-section {
+  background: #ffffff;
+  padding: 65px 0;
+  position: relative;
+}
+
+.feature-tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 45px;
+}
+
+.feature-tab-btn {
+  background: #ede7ff;
+  color: #110c29;
+  border: 1px solid rgba(78, 28, 227, 0.14);
+  border-radius: 9999px;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  outline: none;
+}
+
+.feature-tab-btn svg {
+  stroke: #4E1CE3;
+  transition: stroke 0.25s ease;
+  flex-shrink: 0;
+}
+
+.feature-tab-btn:hover {
+  background: #e2d9ff;
+  transform: translateY(-2px);
+  border-color: rgba(78, 28, 227, 0.3);
+}
+
+.feature-tab-btn.is-active {
+  background: #180949;
+  color: #ffffff;
+  border-color: #180949;
+  box-shadow: 0 8px 24px -4px rgba(24, 9, 73, 0.35);
+  transform: translateY(-2px);
+}
+
+.feature-tab-btn.is-active svg {
+  stroke: #ffffff;
+}
+
+.feature-tab-panel {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 60px);
+}
+
+.feature-tab-panel.is-active {
+  display: grid;
+  animation: tabFadeIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-kicker {
+  font-size: 13.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4E1CE3;
+  margin-bottom: 12px;
+}
+
+.feature-panel-title {
+  font-family: var(--font-heading);
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #110c29;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+}
+
+.feature-points-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.feature-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #403a56;
+}
+
+.feature-point-check {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  background: #4E1CE3;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  box-shadow: 0 3px 8px rgba(78, 28, 227, 0.25);
+  flex-shrink: 0;
+}
+
+.feature-panel-media {
+  position: relative;
+}
+
+.feature-panel-img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px -10px rgba(17, 12, 41, 0.15);
+  border: 1px solid rgba(78, 28, 227, 0.08);
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.feature-panel-img:hover {
+  transform: scale(1.015);
+}
+
+@media (max-width: 991px) {
+  .feature-tab-panel {
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
 }
 

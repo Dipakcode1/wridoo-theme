@@ -1,42 +1,56 @@
-<section class="section">
-  <div class="container">
-    <h2 class="reveal in-view h2 center">{{ module.title }}</h2>
-    
-    <div class="tabs" id="feature-tabs-{{ name }}">
+<section class="feature-tabs-section pt-60 pb-60" id="features">
+  <div class="container mxw-1330">
+    <div class="sec-title--four text-center mb-40">
+      <h2 class="title">{{ module.title or "Take your travel business further with Wridoo" }}</h2>
+    </div>
+
+    <!-- Tab Navigation Pills -->
+    <div class="feature-tabs-nav d-flex flex-wrap justify-content-center gap-2 gap-md-3 mb-50" id="feature-tabs-{{ name }}">
       {% for tab in module.tabs %}
-        <button class="tab-btn {% if loop.first %}is-active{% endif %}" data-feature-tab="{{ loop.index0 }}" data-module="{{ name }}" type="button">
-          {{ tab.tab_name }}
+        <button class="feature-tab-btn {% if loop.first %}is-active{% endif %}" data-feature-tab="{{ loop.index0 }}" data-module="{{ name }}" type="button">
+          {% if loop.index == 1 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>{% endif %}
+          {% if loop.index == 2 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>{% endif %}
+          {% if loop.index == 3 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>{% endif %}
+          {% if loop.index == 4 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>{% endif %}
+          {% if loop.index == 5 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>{% endif %}
+          {% if loop.index == 6 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>{% endif %}
+          <span>{{ tab.tab_name }}</span>
         </button>
       {% endfor %}
     </div>
 
-    {% for tab in module.tabs %}
-      <div class="tab-panel two-col {% if loop.first %}is-entering{% endif %}" id="feature-panel-{{ name }}-{{ loop.index0 }}" {% if not loop.first %}style="display: none;"{% endif %}>
-        <div>
-          <h3 class="tab-kicker">{{ tab.kicker }}</h3>
-          <h3 class="tab-title">{{ tab.tab_title }}</h3>
-          <ul class="check-list">
-            {% if tab.point_1 %}<li><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_1 }}</span></li>{% endif %}
-            {% if tab.point_2 %}<li><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_2 }}</span></li>{% endif %}
-            {% if tab.point_3 %}<li><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_3 }}</span></li>{% endif %}
-            {% if tab.point_4 %}<li><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_4 }}</span></li>{% endif %}
-            {% if tab.point_5 %}<li><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_5 }}</span></li>{% endif %}
-          </ul>
-          <div class="cta">
-            {% if module.primary_cta_text %}
-              <a href="{{ module.primary_cta_link.href }}" class="btn btn-primary">{{ module.primary_cta_text }}</a>
-            {% endif %}
-            {% if module.secondary_cta_text %}
-              <a href="{{ module.secondary_cta_link.href }}" class="btn btn-soft">{{ module.secondary_cta_text }}</a>
+    <!-- Tab Panels Container -->
+    <div class="feature-panels-container">
+      {% for tab in module.tabs %}
+        <div class="feature-tab-panel {% if loop.first %}is-active{% endif %}" id="feature-panel-{{ name }}-{{ loop.index0 }}" data-panel="{{ loop.index0 }}">
+          <div class="feature-panel-text">
+            <h4 class="feature-kicker">{{ tab.kicker }}</h4>
+            <h3 class="feature-panel-title">{{ tab.tab_title }}</h3>
+            <ul class="feature-points-list">
+              {% if tab.point_1 %}<li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_1 }}</span></li>{% endif %}
+              {% if tab.point_2 %}<li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_2 }}</span></li>{% endif %}
+              {% if tab.point_3 %}<li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_3 }}</span></li>{% endif %}
+              {% if tab.point_4 %}<li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_4 }}</span></li>{% endif %}
+              {% if tab.point_5 %}<li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_5 }}</span></li>{% endif %}
+            </ul>
+            <div class="feature-cta-btns ul_li gap-3 mt-30">
+              {% if module.primary_cta_text %}
+                <a href="{{ module.primary_cta_link.href or '#cta' }}" class="thm-btn fintech-btn">{{ module.primary_cta_text }}</a>
+              {% endif %}
+              {% if module.secondary_cta_text %}
+                <a href="{{ module.secondary_cta_link.href or '#demo' }}" class="thm-btn fintech-btn fintech-btn--white">{{ module.secondary_cta_text }}</a>
+              {% endif %}
+            </div>
+          </div>
+          <div class="feature-panel-media">
+            {% if tab.image.src %}
+              <img class="feature-panel-img" loading="lazy" alt="{{ tab.tab_title }}" src="{{ tab.image.src }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-{{ loop.index }}.1344w.jpg.webp';" />
+            {% else %}
+              <img class="feature-panel-img" loading="lazy" alt="{{ tab.tab_title }}" src="{{ get_asset_url('../../assets/img/tabs/img-slider-' ~ loop.index ~ '.webp') }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-{{ loop.index }}.1344w.jpg.webp';" />
             {% endif %}
           </div>
         </div>
-        {% if tab.image.src %}
-          <img class="tab-img" loading="lazy" alt="{{ tab.tab_title }}" src="{{ tab.image.src }}" />
-        {% else %}
-          <img class="tab-img" loading="lazy" alt="{{ tab.tab_title }}" src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-{{ loop.index }}.1344w.jpg.webp" />
-        {% endif %}
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
 </section>

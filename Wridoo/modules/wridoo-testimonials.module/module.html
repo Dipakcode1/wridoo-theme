@@ -1,39 +1,43 @@
-<section class="section section--tint">
-  <div class="container">
-    <h2 class="reveal in-view h2 center">{{ module.title }}</h2>
-    <div class="testimonial-wrap">
+<section class="testimonials-section pt-60 pb-60">
+  <div class="container mxw-1330">
+    <div class="sec-title--four text-center mb-40">
+      <h2 class="title">{{ module.title or "Discover how Wridoo helps deliver better travel experiences" }}</h2>
+    </div>
+    <div class="row g-4 justify-content-center">
       {% for item in module.testimonials %}
-        <div class="testimonial-card" id="testimonial-item-{{ name }}-{{ loop.index0 }}" {% if not loop.first %}style="display: none;"{% endif %}>
-          {% if item.logo.src %}
-            <img class="testimonial-logo" src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" loading="lazy" />
-          {% else %}
-            <img class="testimonial-logo" src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-logo-{{ loop.index }}.540w.png.webp" alt="Customer logo" loading="lazy" />
-          {% endif %}
-          <p class="testimonial-quote">&ldquo;{{ item.quote }}&rdquo;</p>
-          <div class="testimonial-person">
-            {% if item.photo.src %}
-              <img src="{{ item.photo.src }}" alt="{{ item.author_name }}" loading="lazy" />
-            {% elif loop.index == 1 %}
-              <img src="https://www.bitrix24.in/images/content_en/solutions/industry/real-estate/img-slider-helps-foto-felipe-fernandez.png" alt="{{ item.author_name }}" loading="lazy" />
-            {% else %}
-              <img src="https://www.bitrix24.in/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-1.png" alt="{{ item.author_name }}" loading="lazy" />
-            {% endif %}
-            <div>
-              <p class="testimonial-name">{{ item.author_name }}</p>
-              <p class="testimonial-role">{{ item.role }}</p>
+        <div class="col-lg-6">
+          <div class="customer-story-card">
+            <div class="story-logo-wrap mb-30">
+              {% if item.logo.src %}
+                <img class="story-logo" src="{{ item.logo.src }}" alt="{{ item.logo.alt or 'Customer logo' }}" loading="lazy" />
+              {% elif loop.index == 1 %}
+                <img class="story-logo" src="{{ get_asset_url('../../assets/img/testimonial/logo-cayuga.webp') }}" alt="Cayuga Collection" loading="lazy" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-logo-1.540w.png.webp';" />
+              {% else %}
+                <img class="story-logo" src="{{ get_asset_url('../../assets/img/testimonial/logo-immoveo.webp') }}" alt="immoveo" loading="lazy" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-logo-2.540w.png.webp';" />
+              {% endif %}
+            </div>
+            <p class="story-quote">&ldquo;{{ item.quote }}&rdquo;</p>
+            <div class="story-footer ul_li_between align-items-center mt-30">
+              <div class="story-author ul_li gap-3 align-items-center">
+                {% if item.photo.src %}
+                  <img class="story-avatar" src="{{ item.photo.src }}" alt="{{ item.author_name }}" loading="lazy" />
+                {% elif loop.index == 1 %}
+                  <img class="story-avatar" src="{{ get_asset_url('../../assets/img/testimonial/author-felipe.png') }}" alt="{{ item.author_name }}" loading="lazy" onerror="this.onerror=null;this.src='https://www.bitrix24.in/images/content_en/solutions/industry/real-estate/img-slider-helps-foto-felipe-fernandez.png';" />
+                {% else %}
+                  <img class="story-avatar" src="{{ get_asset_url('../../assets/img/testimonial/author-dominik.png') }}" alt="{{ item.author_name }}" loading="lazy" onerror="this.onerror=null;this.src='https://www.bitrix24.in/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-1.png';" />
+                {% endif %}
+                <div>
+                  <h5 class="story-name mb-1">{{ item.author_name }}</h5>
+                  <span class="story-role">{{ item.role }}</span>
+                </div>
+              </div>
+              <a href="{{ item.link.href or '#demo' }}" class="story-arrow-btn" aria-label="Read story">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
             </div>
           </div>
         </div>
       {% endfor %}
-      
-      <div class="carousel-nav">
-        <button class="round-btn testimonial-prev" data-module="{{ name }}" aria-label="Previous testimonial" type="button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-        </button>
-        <button class="round-btn testimonial-next" data-module="{{ name }}" aria-label="Next testimonial" type="button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-        </button>
-      </div>
     </div>
   </div>
 </section>

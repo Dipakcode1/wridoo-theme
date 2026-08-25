@@ -630,27 +630,56 @@
                 <!-- feature tabs end -->
 
                 <!-- story / testimonials start -->
-                <section class="story-area pt-130 pb-130">
+                <section class="testimonials-section pt-60 pb-60">
                     <div class="container mxw-1330">
-                        <div class="sec-title--four text-center mb-60">
-                            <span class="sub-title"><span><img src="{{ get_asset_url('../assets/img/icon/sub-icon.svg') }}" alt="icon"></span>Customer Success</span>
-                            <h2 class="title">Discover how Wridoo elevates travel businesses</h2>
+                        <div class="sec-title--four text-center mb-40">
+                            <h2 class="title">Discover how Wridoo helps deliver better travel experiences</h2>
                         </div>
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="card p-5 border-0 shadow-lg rounded-4 text-center bg-white">
-                                    <div class="mb-4">
-                                        <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-logo-1.540w.png.webp" alt="Cayuga" style="max-height: 40px; margin: 0 auto;">
+                        <div class="row g-4 justify-content-center">
+                            <!-- Testimonial Card 1 -->
+                            <div class="col-lg-6">
+                                <div class="customer-story-card">
+                                    <div class="story-logo-wrap mb-30">
+                                        <img src="{{ get_asset_url('../assets/img/testimonial/logo-cayuga.webp') }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-logo-1.540w.png.webp';" alt="Cayuga Collection" class="story-logo">
                                     </div>
-                                    <p class="fs-5 fst-italic text-secondary mb-4">
-                                        &ldquo;Switching to Wridoo has allowed us to streamline travel bookings, automate itinerary proposals, and improve both guest satisfaction and repeat bookings by 42%.&rdquo;
+                                    <p class="story-quote">
+                                        &ldquo;Switching to Wridoo has allowed us to streamline operations and improve both efficiency and customer satisfaction.&rdquo;
                                     </p>
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <img src="https://www.bitrix24.in/images/content_en/solutions/industry/real-estate/img-slider-helps-foto-felipe-fernandez.png" alt="Felipe Fernández" class="rounded-circle me-3" style="width: 54px; height: 54px; object-fit: cover;">
-                                        <div class="text-start">
-                                            <h6 class="mb-0 fw-bold">Felipe Fernández</h6>
-                                            <small class="text-muted">Sales &amp; Marketing Director, Cayuga Travel</small>
+                                    <div class="story-footer ul_li_between align-items-center mt-30">
+                                        <div class="story-author ul_li gap-3 align-items-center">
+                                            <img src="{{ get_asset_url('../assets/img/testimonial/author-felipe.png') }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/images/content_en/solutions/industry/real-estate/img-slider-helps-foto-felipe-fernandez.png';" alt="Felipe Fernández" class="story-avatar">
+                                            <div>
+                                                <h5 class="story-name mb-1">Felipe Fernández</h5>
+                                                <span class="story-role">Sales &amp; Marketing Director, Cayuga</span>
+                                            </div>
                                         </div>
+                                        <a href="#demo" class="story-arrow-btn" aria-label="Read story">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial Card 2 -->
+                            <div class="col-lg-6">
+                                <div class="customer-story-card">
+                                    <div class="story-logo-wrap mb-30">
+                                        <img src="{{ get_asset_url('../assets/img/testimonial/logo-immoveo.webp') }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-logo-2.540w.png.webp';" alt="immoveo" class="story-logo">
+                                    </div>
+                                    <p class="story-quote">
+                                        &ldquo;From the very beginning we were amazed by the combination of many useful features Wridoo has to offer. We use Wridoo in the fields of project management, CRM, and internal company communication.&rdquo;
+                                    </p>
+                                    <div class="story-footer ul_li_between align-items-center mt-30">
+                                        <div class="story-author ul_li gap-3 align-items-center">
+                                            <img src="{{ get_asset_url('../assets/img/testimonial/author-dominik.png') }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/images/content_en/solutions/industry/travel-crm-software/img-slider-helps-1.png';" alt="Dominik Groebler" class="story-avatar">
+                                            <div>
+                                                <h5 class="story-name mb-1">Dominik Groebler</h5>
+                                                <span class="story-role">CEO, immoveo.de</span>
+                                            </div>
+                                        </div>
+                                        <a href="#demo" class="story-arrow-btn" aria-label="Read story">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -658,6 +687,58 @@
                     </div>
                 </section>
                 <!-- story / testimonials end -->
+
+                <!-- integrations start -->
+                <section class="integrations-section pt-60 pb-60" id="integrations">
+                    <div class="container mxw-1330">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6">
+                                <div class="integrations-media">
+                                    <img src="{{ get_asset_url('../assets/img/integrations/img-integration.webp') }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/healthcare-crm-software/img-integration.1300w.jpg.webp';" alt="Smart integrations for travel operations" class="integrations-img">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="integrations-content">
+                                    <h2 class="integrations-title mb-20">Smart integrations to elevate your travel operations</h2>
+                                    <p class="integrations-lead mb-30">Connect external marketing platforms, telephony, and more through 500+ integrations and a robust REST API</p>
+                                    
+                                    <ul class="integrations-checklist mb-40">
+                                        <li class="integrations-check-item">
+                                            <span class="integrations-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                                            <div class="integrations-check-text">
+                                                <strong>SMS, chat &amp; call services:</strong> Consult and support travelers through any channel
+                                            </div>
+                                        </li>
+                                        <li class="integrations-check-item">
+                                            <span class="integrations-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                                            <div class="integrations-check-text">
+                                                <strong>Marketing platforms:</strong> Export customer data to launch targeted ad campaigns
+                                            </div>
+                                        </li>
+                                        <li class="integrations-check-item">
+                                            <span class="integrations-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                                            <div class="integrations-check-text">
+                                                <strong>Payment systems:</strong> Manage invoices and process payments effortlessly
+                                            </div>
+                                        </li>
+                                        <li class="integrations-check-item">
+                                            <span class="integrations-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                                            <div class="integrations-check-text">
+                                                <strong>Custom integrations from Wridoo partners:</strong> Because every business is unique
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <div class="integrations-cta-btns ul_li gap-3">
+                                        <a href="#cta" class="thm-btn fintech-btn">START FOR FREE</a>
+                                        <a href="#demo" class="thm-btn fintech-btn fintech-btn--white">BOOK A DEMO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- integrations end -->
 
                 <!-- pricing start -->
                 <section class="pricing-area pt-130 pb-130" id="pricing">

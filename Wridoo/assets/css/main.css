@@ -15941,4 +15941,198 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   }
 }
 
+/* ------------------------------------------------------------
+   Testimonials / Customer Stories Grid (2-Cards)
+   ------------------------------------------------------------ */
+.testimonials-section {
+  background: #fbfaff;
+  padding: 60px 0;
+  position: relative;
+}
+
+.customer-story-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: clamp(28px, 4vw, 42px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px -10px rgba(17, 12, 41, 0.07);
+  border: 1px solid rgba(78, 28, 227, 0.08);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.customer-story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px -12px rgba(78, 28, 227, 0.16);
+  border-color: rgba(78, 28, 227, 0.2);
+}
+
+.story-logo-wrap {
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.story-logo {
+  max-height: 40px;
+  max-width: 180px;
+  object-fit: contain;
+  display: block;
+}
+
+.story-quote {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: #3b3754;
+  margin-bottom: auto;
+  font-weight: 500;
+}
+
+.story-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(78, 28, 227, 0.08);
+}
+
+.story-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.story-avatar {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ede7ff;
+}
+
+.story-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #110c29;
+  margin-bottom: 2px;
+}
+
+.story-role {
+  font-size: 13.5px;
+  color: #6d6888;
+  font-weight: 500;
+  display: block;
+}
+
+.story-arrow-btn {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 10px;
+  border: 1.5px solid #4E1CE3;
+  color: #4E1CE3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  background: transparent;
+  text-decoration: none;
+}
+
+.story-arrow-btn:hover {
+  background: #4E1CE3;
+  color: #ffffff;
+  transform: translateX(3px);
+  box-shadow: 0 4px 12px rgba(78, 28, 227, 0.3);
+}
+
+.story-arrow-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.story-arrow-btn:hover svg {
+  transform: translateX(2px);
+}
+
+/* ------------------------------------------------------------
+   Integrations Section (Wridoo Brand)
+   ------------------------------------------------------------ */
+.integrations-section {
+  background: #ffffff;
+  padding: 65px 0;
+  position: relative;
+}
+
+.integrations-media {
+  position: relative;
+}
+
+.integrations-img {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 16px 40px -12px rgba(17, 12, 41, 0.12);
+  border: 1px solid rgba(78, 28, 227, 0.08);
+  display: block;
+}
+
+.integrations-title {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 800;
+  line-height: 1.18;
+  color: #110c29;
+  letter-spacing: -0.025em;
+}
+
+.integrations-lead {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: #55585b;
+}
+
+.integrations-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.integrations-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.integrations-check-icon {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  background: #4E1CE3;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3px;
+  box-shadow: 0 3px 8px rgba(78, 28, 227, 0.25);
+  flex-shrink: 0;
+}
+
+.integrations-check-text {
+  font-size: 16px;
+  line-height: 1.55;
+  color: #3b3754;
+}
+
+.integrations-check-text strong {
+  color: #110c29;
+  font-weight: 800;
+}
+
 /*# sourceMappingURL=main.css.map */

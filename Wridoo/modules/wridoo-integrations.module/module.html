@@ -1,26 +1,40 @@
-<section class="section">
-  <div class="container two-col">
-    <img class="reveal in-view img-fluid rounded"
-      src="{{ module.image.src }}"
-      alt="{{ module.image.alt }}" loading="lazy" />
-    <div class="reveal in-view">
-      <h2 class="h2">{{ module.title }}</h2>
-      <p class="lead">{{ module.lead }}</p>
-      <ul class="check-list">
-        {% for item in module.checklist %}
-          <li>
-            <span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <span><strong>{{ item.bold_title }}</strong> {{ item.description }}</span>
-          </li>
-        {% endfor %}
-      </ul>
-      <div class="cta">
-        {% if module.primary_cta_text %}
-          <a href="{{ module.primary_cta_link.href }}" class="btn btn-primary">{{ module.primary_cta_text }}</a>
-        {% endif %}
-        {% if module.secondary_cta_text %}
-          <a href="{{ module.secondary_cta_link.href }}" class="btn btn-soft">{{ module.secondary_cta_text }}</a>
-        {% endif %}
+<section class="integrations-section pt-60 pb-60" id="integrations">
+  <div class="container mxw-1330">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="integrations-media">
+          {% if module.image.src %}
+            <img class="integrations-img" src="{{ module.image.src }}" alt="{{ module.image.alt or 'Smart integrations for travel operations' }}" loading="lazy" />
+          {% else %}
+            <img class="integrations-img" src="{{ get_asset_url('../../assets/img/integrations/img-integration.webp') }}" alt="Smart integrations for travel operations" loading="lazy" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/healthcare-crm-software/img-integration.1300w.jpg.webp';" />
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="integrations-content">
+          <h2 class="integrations-title mb-20">{{ module.title or "Smart integrations to elevate your travel operations" }}</h2>
+          <p class="integrations-lead mb-30">{{ module.lead or "Connect external marketing platforms, telephony, and more through 500+ integrations and a robust REST API" }}</p>
+          
+          <ul class="integrations-checklist mb-40">
+            {% for item in module.checklist %}
+              <li class="integrations-check-item">
+                <span class="integrations-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <div class="integrations-check-text">
+                  <strong>{{ item.bold_title }}</strong> {{ item.description }}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+
+          <div class="integrations-cta-btns ul_li gap-3">
+            {% if module.primary_cta_text %}
+              <a href="{{ module.primary_cta_link.href or '#cta' }}" class="thm-btn fintech-btn">{{ module.primary_cta_text }}</a>
+            {% endif %}
+            {% if module.secondary_cta_text %}
+              <a href="{{ module.secondary_cta_link.href or '#demo' }}" class="thm-btn fintech-btn fintech-btn--white">{{ module.secondary_cta_text }}</a>
+            {% endif %}
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -16718,8 +16718,27 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   display: flex;
   align-items: center;
   gap: 12px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-top: 30px;
+}
+@media (max-width: 575px) {
+  .fs-footer-widget .xb-item--btn {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    width: 100%;
+  }
+  .fs-footer-widget .xb-item--btn .thm-btn {
+    padding: 12px 12px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    flex: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
 }
 
 .fs-footer-scanner {

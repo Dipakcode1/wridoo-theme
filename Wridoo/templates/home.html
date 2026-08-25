@@ -741,168 +741,184 @@
                 <!-- integrations end -->
 
                 <!-- pricing start -->
-                <section class="pricing-area pt-60 pb-60" id="pricing">
+                <section class="pricing-area pt-80 pb-80 pos-rel" id="pricing">
                     <div class="container mxw-1330">
-                        <div class="sec-title--four text-center mb-40">
-                            <h2 class="title">Simple Pricing. No Confusion.</h2>
-                            <p class="pricing-sec-subtitle">Start Free. Pay When You're Ready.</p>
-                        </div>
-
-                        <!-- First 3 Months Free Banner Card -->
-                        <div class="pricing-free-trial-card mb-50">
-                            <div class="row align-items-center g-4">
-                                <div class="col-lg-7 col-xl-8">
-                                    <h3 class="free-trial-title mb-10">Start with 3 Months Completely on Us</h3>
-                                    <p class="free-trial-sub mb-25">Get everything you need to launch, manage bookings, and scale:</p>
-                                    <div class="free-trial-features-grid">
-                                        <div class="free-feature-item">
-                                            <span class="free-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-                                            <span>Professional website</span>
-                                        </div>
-                                        <div class="free-feature-item">
-                                            <span class="free-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-                                            <span>Wridoo CRM</span>
-                                        </div>
-                                        <div class="free-feature-item">
-                                            <span class="free-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-                                            <span>Lead management</span>
-                                        </div>
-                                        <div class="free-feature-item">
-                                            <span class="free-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-                                            <span>Enquiry management</span>
-                                        </div>
-                                        <div class="free-feature-item">
-                                            <span class="free-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-                                            <span>Package management</span>
-                                        </div>
-                                        <div class="free-feature-item">
-                                            <span class="free-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-                                            <span>Mobile-friendly website</span>
-                                        </div>
-                                        <div class="free-feature-item">
-                                            <span class="free-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-                                            <span>Setup assistance</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-5 col-xl-4 text-center">
-                                    <div class="free-trial-cta-box">
-                                        <div class="free-price-row mb-10">
-                                            <span class="free-currency">₹</span><span class="free-val">0</span>
-                                            <span class="free-badge-tag">FREE</span>
-                                        </div>
-                                        <div class="free-duration-text mb-20">Full Access for 3 Months</div>
-                                        <a href="#cta" class="free-trial-btn w-100 mb-15">Start Free</a>
-                                        <p class="free-trial-note mb-0">After the free period, an active paid plan is required to keep your Wridoo website and CRM running.</p>
-                                    </div>
-                                </div>
+                        <div class="fs-pricing-wrapper">
+                            <div class="sec-title text-center mb-50 plr-20">
+                                <h2 class="title" style="font-size: clamp(30px, 4vw, 44px); font-weight: 800; color: #110c29; margin-bottom: 12px; letter-spacing: -0.02em;">Simple Plans for Every Stage</h2>
+                                <p class="pricing-sec-subtitle" style="font-size: 18px; color: #6e6b80; margin: 0;">Start Free. Pay When You're Ready.</p>
                             </div>
-                        </div>
+                            
+                            <div class="fs-pricing-inner pos-rel z-1">
+                                <div class="fs-pricing-wrap">
+                                    <div class="row g-4">
+                                        <!-- Card 1: 3 Months Free Plan (Then ₹1,000/mo after 3 months) -->
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="fs-pricing-item">
+                                                <div class="xb-item--holder">
+                                                    <div class="xb-item--top">
+                                                        <div class="xb-item--content">
+                                                            <div class="xb-iem--icon">
+                                                                <img src="{{ get_asset_url('../assets/img/pricing/icon01.png') }}" alt="icon">
+                                                            </div>
+                                                            <h2 class="xb-item--title">3 Months Free Plan</h2>
+                                                            <p class="xb-item--text">Best for startups. After 3 months, ₹1,000 / month.</p>
+                                                        </div>
+                                                        <div class="xb-item--price_box">
+                                                            <h3 class="xb-item--price">₹0</h3>
+                                                            <span class="xb-item--text">Then ₹1,000/mo</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="xb-item--btn">
+                                                        <a class="thm-btn fintech-btn" href="#cta">Start Free</a>
+                                                    </div>
+                                                </div>
+                                                <div class="xb-item--list_box">
+                                                    <h3 class="xb-item--list_title">Features Includes</h3>
+                                                    <ul class="xb-item--list list-unstyled">
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Full 3 Months 100% Free Access.
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Then ₹1,000/month to keep running.
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Professional travel agency website.
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Wridoo CRM & customer portal access.
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Automated lead & enquiry management.
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Package & itinerary management.
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Mobile-friendly responsive website.
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            1-on-1 setup assistance & onboarding.
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                        <!-- Choose Your Plan Title -->
-                        <div class="text-center mb-35">
-                            <h3 class="plans-subheading">Choose Your Plan</h3>
-                        </div>
+                                        <!-- Card 2: 6 Months Value Plan -->
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="fs-pricing-item">
+                                                <div class="xb-item--holder">
+                                                    <div class="xb-item--top">
+                                                        <div class="xb-item--content">
+                                                            <div class="xb-iem--icon">
+                                                                <img src="{{ get_asset_url('../assets/img/pricing/icon01.png') }}" alt="icon">
+                                                            </div>
+                                                            <h2 class="xb-item--title">6 Months Plan</h2>
+                                                            <p class="xb-item--text">Best for growing agencies looking for value.</p>
+                                                        </div>
+                                                        <div class="xb-item--price_box">
+                                                            <h3 class="xb-item--price">₹6,000</h3>
+                                                            <span class="xb-item--text">For 6 months</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="xb-item--btn">
+                                                        <a class="thm-btn fintech-btn" href="#cta">Get Started</a>
+                                                    </div>
+                                                </div>
+                                                <div class="xb-item--list_box">
+                                                    <h3 class="xb-item--list_title">Features Includes</h3>
+                                                    <ul class="xb-item--list list-unstyled">
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Free Custom Domain included (.com/.in).
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Complete website & CRM management.
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Automated lead & enquiry tracking.
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Unlimited package & itinerary listings.
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Customer database & follow-up reminders.
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Priority email & chat support.
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                        <!-- 3 Pricing Cards Row -->
-                        <div class="row g-4 justify-content-center mb-50">
-                            <!-- Card 1: Monthly -->
-                            <div class="col-lg-4 col-md-6">
-                                <div class="wridoo-pricing-card">
-                                    <div class="pricing-card-header">
-                                        <h4 class="plan-name">MONTHLY</h4>
-                                        <div class="plan-price">₹1,000 <span class="plan-cycle">/ month</span></div>
-                                        <p class="plan-tagline">Perfect if you want flexibility.</p>
-                                    </div>
-                                    <div class="pricing-card-body">
-                                        <ul class="plan-features-list">
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Website</li>
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> CRM</li>
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Lead management</li>
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Package management</li>
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Customer management</li>
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Follow-ups</li>
-                                        </ul>
-                                        <div class="domain-info-box">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-                                            <span><strong>Custom domain:</strong> Bring your own domain free, or purchase one separately.</span>
+                                        <!-- Card 3: 1 Year Plan (Best Value / 13 Months) -->
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="fs-pricing-item">
+                                                <div class="xb-item--holder">
+                                                    <div class="xb-item--top">
+                                                        <div class="xb-item--content">
+                                                            <div class="xb-iem--icon">
+                                                                <img src="{{ get_asset_url('../assets/img/pricing/icon02.png') }}" alt="icon">
+                                                            </div>
+                                                            <h2 class="xb-item--title">1 Year Plan</h2>
+                                                            <p class="xb-item--text">Pay for 12, Get 13 Months + Free Domain.</p>
+                                                        </div>
+                                                        <div class="xb-item--price_box">
+                                                            <h3 class="xb-item--price">₹12,000</h3>
+                                                            <span class="xb-item--text">Per year</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="xb-item--btn">
+                                                        <a class="thm-btn fintech-btn" href="#cta">Get Started</a>
+                                                    </div>
+                                                </div>
+                                                <div class="xb-item--list_box">
+                                                    <h3 class="xb-item--list_title">Features Includes</h3>
+                                                    <ul class="xb-item--list list-unstyled">
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            13 Months Service (1 Month Extra FREE).
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Free Custom Domain included (.com/.in).
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Complete website & full CRM suite.
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Advanced lead & enquiry automation.
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Unlimited travel package management.
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ get_asset_url('../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                                                            Priority 24/7 dedicated support & SLA.
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="pricing-card-footer">
-                                        <a href="#cta" class="thm-btn fintech-btn fintech-btn--white w-100 text-center">Choose Monthly</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card 2: 6 Months -->
-                            <div class="col-lg-4 col-md-6">
-                                <div class="wridoo-pricing-card">
-                                    <div class="pricing-card-header">
-                                        <div class="plan-badge-top">Domain FREE</div>
-                                        <h4 class="plan-name">6 MONTHS</h4>
-                                        <div class="plan-price">₹6,000 <span class="plan-cycle">/ 6 months</span></div>
-                                        <p class="plan-tagline">Get everything you need for 6 months.</p>
-                                    </div>
-                                    <div class="pricing-card-body">
-                                        <ul class="plan-features-list">
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Website</li>
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> CRM</li>
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Lead management</li>
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Package management</li>
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Customer management</li>
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Follow-ups</li>
-                                            <li class="feature-highlight"><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Custom domain included</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pricing-card-footer">
-                                        <a href="#cta" class="thm-btn fintech-btn fintech-btn--white w-100 text-center">Choose 6 Months</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card 3: 12 Months + 1 Month Free (Popular) -->
-                            <div class="col-lg-4 col-md-6">
-                                <div class="wridoo-pricing-card is-featured">
-                                    <div class="popular-ribbon">⭐ BEST VALUE</div>
-                                    <div class="pricing-card-header">
-                                        <div class="plan-badge-top plan-badge-free">+1 MONTH FREE</div>
-                                        <h4 class="plan-name">12 MONTHS</h4>
-                                        <div class="plan-price">₹12,000 <span class="plan-cycle">/ year</span></div>
-                                        <p class="plan-tagline"><strong>Pay for 12. Get 13.</strong> Get one additional month absolutely free.</p>
-                                    </div>
-                                    <div class="pricing-card-body">
-                                        <ul class="plan-features-list">
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Website</li>
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> CRM</li>
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Lead management</li>
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Package management</li>
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Customer management</li>
-                                            <li><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Follow-ups</li>
-                                            <li class="feature-highlight"><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Custom domain included</li>
-                                            <li class="feature-highlight"><span class="plan-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> 13 months of service</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pricing-card-footer">
-                                        <a href="#cta" class="thm-btn fintech-btn w-100 text-center">Choose 1 Year</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Domain Addon Banner -->
-                        <div class="domain-addon-banner">
-                            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="domain-addon-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="domain-addon-title mb-1">Don't Have a Domain? We've got you covered.</h4>
-                                        <p class="domain-addon-desc mb-0">We'll help you connect your domain to your Wridoo website. <small class="text-muted d-block mt-1">*Domain registration cost only. Actual pricing may vary depending on the domain extension.</small></p>
-                                    </div>
-                                </div>
-                                <div class="domain-price-pill">
-                                    Get a Custom Domain for <strong>₹1,000*</strong>
                                 </div>
                             </div>
                         </div>
@@ -995,41 +1011,133 @@
                 </section>
                 <!-- faq end -->
 
-                <!-- cta start -->
-                <section class="cta-area pt-100 pb-100" id="cta">
-                    <div class="container mxw-1330">
-                        <div class="p-5 rounded-4 text-center position-relative overflow-hidden" style="background: linear-gradient(135deg, #180949 0%, #3410a8 45%, #4E1CE3 100%) !important;">
-                            <h2 class="text-white mb-3 fw-bold">Ready to take your travel business further?</h2>
-                            <p class="text-white-50 mb-4 fs-5 mx-auto" style="max-width: 600px;">Join 620,000+ travel operators worldwide. Start your 14-day free trial today with no credit card required.</p>
-                            <a href="#cta" class="thm-btn fintech-btn fintech-btn--white">Start Free Trial Now</a>
-                        </div>
-                    </div>
-                </section>
-                <!-- cta end -->
             </main>
             <!-- main area end -->
 
             <!-- footer start -->
-            <footer class="footer-area footer-area--four pt-80 pb-50">
+            <footer class="footer pt-60 pb-30">
                 <div class="container mxw-1330">
-                    <div class="row align-items-center justify-content-between pb-40 border-bottom mb-40">
-                        <div class="col-md-4 mb-3 mb-md-0">
-                            <a href="/" class="logo">
-                                <img src="{{ get_asset_url('../assets/img/logo/logo-black.png') }}" alt="Wridoo Logo" style="height: 38px; width: auto;">
-                            </a>
-                            <p class="text-muted small mt-2 mb-0">The all-in-one travel CRM platform for tour operators, travel agencies, and hospitality businesses.</p>
+                    <div class="fs-footer-wrapper pos-rel z-1">
+                        <div class="fs-footer-nav-wrap">
+                            <ul class="xb-footer-nav xb-corner-shape ul_li list-unstyled">
+                                <li><a href="#features">Features</a></li>
+                                <li><a href="#integration">Integration</a></li>
+                                <li><a href="#pricing">Pricing</a></li>
+                                <li><a href="#comparison">Comparison</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
                         </div>
-                        <div class="col-md-6 text-md-end">
-                            <a href="mailto:support@wridoo.com" class="text-dark me-4 text-decoration-none fw-bold"><i class="fa-solid fa-envelope me-2 text-primary"></i>support@wridoo.com</a>
-                            <a href="tel:+15551234567" class="text-dark text-decoration-none fw-bold"><i class="fa-solid fa-phone me-2 text-primary"></i>+1 555-123-4567</a>
+                        <div class="fs-footer-inner">
+                            <div class="row mt-none-30 align-items-center">
+                                <div class="col-lg-4 col-md-8 mt-30">
+                                    <div class="fs-footer-widget fs-footer-newsletter">
+                                        <p class="fs-widget-title">The Ultimate Travel CRM</p>
+                                        <h2 class="xb-item--title">Join The Businesses Scaling Smarter</h2>
+                                        <p class="xb-item--content">Smarter bookings, CRM, and websites made easy for travel operators.</p>
+                                        <div class="xb-item--btn gap-10 mt-45 ul_li">
+                                            <a class="thm-btn fintech-btn" href="#pricing">Start Free Trial</a>
+                                            <a class="thm-btn fintech-btn fintech-btn--white" href="#pricing">Book a Demo</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 mt-30">
+                                    <div class="fs-footer-widget fs-footer-scanner">
+                                        <div class="xb-item--inner">
+                                            <div class="xb-item--logo mb-2">
+                                                <img src="{{ get_asset_url('../assets/img/logo/logo-black.png') }}" alt="Wridoo Logo" style="max-height: 40px; width: auto;">
+                                            </div>
+                                            <p class="xb-item--text">The all-in-one travel operating platform</p>
+                                            <ul class="xb-item--social list-unstyled ul_li">
+                                                <li><a href="#!" title="Apple Store"><i class="fa-brands fa-apple"></i></a></li>
+                                                <li><a href="#!" title="Google Play"><i class="fa-brands fa-google-play"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mt-30">
+                                    <div class="fs-footer-widget">
+                                        <p class="fs-widget-title">Need Any Emergency</p>
+                                        <ul class="xb-item--contact list-unstyled">
+                                            <li><span><img src="{{ get_asset_url('../assets/img/icon/call-icon02.svg') }}" alt="call"></span><a href="tel:+15551234567">+1 555-123-4567</a></li>
+                                            <li><span><img src="{{ get_asset_url('../assets/img/icon/sms-icon.svg') }}" alt="sms"></span><a href="mailto:support@wridoo.com">support@wridoo.com</a></li>
+                                        </ul>
+                                        <p class="fs-widget-title">Subscribe Newsletter</p>
+                                        <form class="xb-item--input" action="#!" onsubmit="event.preventDefault();">
+                                            <input type="text" placeholder="Enter your email">
+                                            <a href="#!"><i class="fa-solid fa-paper-plane"></i></a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xb-section-shape">
+                            <div class="shape shape--1">
+                                <img src="{{ get_asset_url('../assets/img/shape/fea-shape01.png') }}" alt="shape">
+                            </div>
+                            <div class="shape shape--2">
+                                <img src="{{ get_asset_url('../assets/img/shape/fea-shape02.png') }}" alt="shape">
+                            </div>
+                            <div class="shape shape--3">
+                                <img src="{{ get_asset_url('../assets/img/shape/footer_shape01.png') }}" alt="shape">
+                            </div>
+                            <div class="shape shape--4">
+                                <img src="{{ get_asset_url('../assets/img/shape/footer_shape02.png') }}" alt="shape">
+                            </div>
                         </div>
                     </div>
-                    <div class="d-flex flex-wrap justify-content-between align-items-center text-muted small">
-                        <p class="mb-0">&copy; {{ local_dt|datetimeformat("%Y") if local_dt else "2026" }} Wridoo. All rights reserved.</p>
-                        <div>
-                            <a href="#!" class="text-muted me-3 text-decoration-none">Terms of Service</a>
-                            <a href="#!" class="text-muted text-decoration-none">Privacy Policy</a>
+                    <div class="dm-social-media-wrap fs-social-midea-warap">
+                        <div class="xb-social-media-item fs-social-media-item ul_li_between">
+                            <div class="xb-item--holder ul_li">
+                                <div class="xb-item--icon">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </div>
+                                <span class="xb-item--name">Facebook</span>
+                            </div>
+                            <span class="xb-item--arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            </span>
+                            <a class="xb-overlay" href="#!"></a>
                         </div>
+                        <div class="xb-social-media-item fs-social-media-item ul_li_between">
+                            <div class="xb-item--holder ul_li">
+                                <div class="xb-item--icon">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </div>
+                                <span class="xb-item--name">Twitter</span>
+                            </div>
+                            <span class="xb-item--arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            </span>
+                            <a class="xb-overlay" href="#!"></a>
+                        </div>
+                        <div class="xb-social-media-item fs-social-media-item ul_li_between">
+                            <div class="xb-item--holder ul_li">
+                                <div class="xb-item--icon">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </div>
+                                <span class="xb-item--name">LinkedIn</span>
+                            </div>
+                            <span class="xb-item--arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            </span>
+                            <a class="xb-overlay" href="#!"></a>
+                        </div>
+                        <div class="xb-social-media-item fs-social-media-item ul_li_between">
+                            <div class="xb-item--holder ul_li">
+                                <div class="xb-item--icon">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
+                                <span class="xb-item--name">Instagram</span>
+                            </div>
+                            <span class="xb-item--arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            </span>
+                            <a class="xb-overlay" href="#!"></a>
+                        </div>
+                    </div>
+                    <div class="xb-footer_bottom fs-footer_bottom ul_li_between">
+                        <p>Copyright © {{ local_dt|datetimeformat("%Y") if local_dt else "2026" }} <a href="/" class="fw-bold text-dark">Wridoo</a>, All rights reserved.</p>
+                        <p><a href="#!" class="text-muted me-3">Terms of Service</a> <a href="#!" class="text-muted">Privacy Policy</a></p>
                     </div>
                 </div>
             </footer>

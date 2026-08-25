@@ -931,4 +931,25 @@
 		}
 	});
 
+	/*------------------------------------------
+	= Earth Video Playback
+	-------------------------------------------*/
+	function playEarthVideo() {
+		var earthVideos = document.querySelectorAll('.xb-item--earth video');
+		earthVideos.forEach(function(video) {
+			video.muted = true;
+			video.defaultMuted = true;
+			video.setAttribute('muted', '');
+			video.setAttribute('playsinline', '');
+			video.setAttribute('autoplay', '');
+			video.setAttribute('loop', '');
+			var p = video.play();
+			if (p !== undefined) {
+				p.catch(function() {});
+			}
+		});
+	}
+	$(document).ready(playEarthVideo);
+	$(window).on('load scroll', playEarthVideo);
+
 })(jQuery);

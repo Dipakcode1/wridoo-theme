@@ -1,3 +1,6 @@
+{% set primary_url = module.primary_cta_link.url.href or module.primary_cta_link.href or (module.primary_cta_link if module.primary_cta_link is string else '#cta') %}
+{% set secondary_url = module.secondary_cta_link.url.href or module.secondary_cta_link.href or (module.secondary_cta_link if module.secondary_cta_link is string else '#demo') %}
+
 <section class="feature-tabs-section pt-60 pb-60" id="features">
   <div class="container mxw-1330">
     <div class="sec-title--four text-center mb-40">
@@ -6,51 +9,232 @@
 
     <!-- Tab Navigation Pills -->
     <div class="feature-tabs-nav d-flex flex-wrap justify-content-center gap-2 gap-md-3 mb-50" id="feature-tabs-{{ name }}">
-      {% for tab in module.tabs %}
-        <button class="feature-tab-btn {% if loop.first %}is-active{% endif %}" data-feature-tab="{{ loop.index0 }}" data-module="{{ name }}" type="button">
-          {% if loop.index == 1 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>{% endif %}
-          {% if loop.index == 2 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>{% endif %}
-          {% if loop.index == 3 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>{% endif %}
-          {% if loop.index == 4 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>{% endif %}
-          {% if loop.index == 5 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>{% endif %}
-          {% if loop.index == 6 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>{% endif %}
-          <span>{{ tab.tab_name }}</span>
+      {% if module.tabs and module.tabs|length > 0 %}
+        {% for tab in module.tabs %}
+          <button class="feature-tab-btn {% if loop.first %}is-active{% endif %}" data-feature-tab="{{ loop.index0 }}" data-module="{{ name }}" type="button">
+            {% if loop.index == 1 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>{% endif %}
+            {% if loop.index == 2 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>{% endif %}
+            {% if loop.index == 3 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>{% endif %}
+            {% if loop.index == 4 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>{% endif %}
+            {% if loop.index == 5 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>{% endif %}
+            {% if loop.index == 6 %}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>{% endif %}
+            <span>{{ tab.tab_name }}</span>
+          </button>
+        {% endfor %}
+      {% else %}
+        <button class="feature-tab-btn is-active" data-feature-tab="0" data-module="{{ name }}" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+          <span>Online booking management</span>
         </button>
-      {% endfor %}
+        <button class="feature-tab-btn" data-feature-tab="1" data-module="{{ name }}" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>Traveler interaction</span>
+        </button>
+        <button class="feature-tab-btn" data-feature-tab="2" data-module="{{ name }}" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Document control</span>
+        </button>
+        <button class="feature-tab-btn" data-feature-tab="3" data-module="{{ name }}" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Team dynamics</span>
+        </button>
+        <button class="feature-tab-btn" data-feature-tab="4" data-module="{{ name }}" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+          <span>Personalised marketing campaigns</span>
+        </button>
+        <button class="feature-tab-btn" data-feature-tab="5" data-module="{{ name }}" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <span>Strategic analytics</span>
+        </button>
+      {% endif %}
     </div>
 
     <!-- Tab Panels Container -->
     <div class="feature-panels-container">
-      {% for tab in module.tabs %}
-        <div class="feature-tab-panel {% if loop.first %}is-active{% endif %}" id="feature-panel-{{ name }}-{{ loop.index0 }}" data-panel="{{ loop.index0 }}">
-          <div class="feature-panel-text">
-            <h4 class="feature-kicker">{{ tab.kicker }}</h4>
-            <h3 class="feature-panel-title">{{ tab.tab_title }}</h3>
-            <ul class="feature-points-list">
-              {% if tab.point_1 %}<li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_1 }}</span></li>{% endif %}
-              {% if tab.point_2 %}<li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_2 }}</span></li>{% endif %}
-              {% if tab.point_3 %}<li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_3 }}</span></li>{% endif %}
-              {% if tab.point_4 %}<li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_4 }}</span></li>{% endif %}
-              {% if tab.point_5 %}<li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_5 }}</span></li>{% endif %}
-            </ul>
-            <div class="feature-cta-btns ul_li gap-3 mt-30">
-              {% if module.primary_cta_text %}
-                <a href="{{ module.primary_cta_link.href or '#cta' }}" class="thm-btn fintech-btn">{{ module.primary_cta_text }}</a>
-              {% endif %}
-              {% if module.secondary_cta_text %}
-                <a href="{{ module.secondary_cta_link.href or '#demo' }}" class="thm-btn fintech-btn fintech-btn--white">{{ module.secondary_cta_text }}</a>
+      {% if module.tabs and module.tabs|length > 0 %}
+        {% for tab in module.tabs %}
+          <div class="feature-tab-panel {% if loop.first %}is-active{% endif %}" id="feature-panel-{{ name }}-{{ loop.index0 }}" data-panel="{{ loop.index0 }}">
+            <div class="feature-panel-text">
+              <h4 class="feature-kicker">{{ tab.kicker }}</h4>
+              <h3 class="feature-panel-title">{{ tab.tab_title }}</h3>
+              <ul class="feature-points-list">
+                {% if tab.point_1 %}<li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_1 }}</span></li>{% endif %}
+                {% if tab.point_2 %}<li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_2 }}</span></li>{% endif %}
+                {% if tab.point_3 %}<li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_3 }}</span></li>{% endif %}
+                {% if tab.point_4 %}<li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_4 }}</span></li>{% endif %}
+                {% if tab.point_5 %}<li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>{{ tab.point_5 }}</span></li>{% endif %}
+              </ul>
+              <div class="feature-cta-btns ul_li gap-3 mt-30">
+                <a href="{{ primary_url }}" class="thm-btn fintech-btn">{{ module.primary_cta_text or "START FOR FREE" }}</a>
+                <a href="{{ secondary_url }}" class="thm-btn fintech-btn fintech-btn--white">{{ module.secondary_cta_text or "BOOK A DEMO" }}</a>
+              </div>
+            </div>
+            <div class="feature-panel-media">
+              {% if tab.image.src %}
+                <img class="feature-panel-img" loading="lazy" alt="{{ tab.tab_title }}" src="{{ tab.image.src }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-{{ loop.index }}.1344w.jpg.webp';" />
+              {% else %}
+                <img class="feature-panel-img" loading="lazy" alt="{{ tab.tab_title }}" src="{{ get_asset_url('../../assets/img/tabs/img-slider-' ~ loop.index ~ '.webp') }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-{{ loop.index }}.1344w.jpg.webp';" />
               {% endif %}
             </div>
           </div>
+        {% endfor %}
+      {% else %}
+        <!-- Panel 0: Online Booking -->
+        <div class="feature-tab-panel is-active" data-panel="0">
+          <div class="feature-panel-text">
+            <h4 class="feature-kicker">Online booking management</h4>
+            <h3 class="feature-panel-title">Handle customer reservations with ease</h3>
+            <ul class="feature-points-list">
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Allow clients to easily schedule meetings or reserve hotel rooms</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Notify travelers about bookings to reduce no-shows</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Monitor availability, workload, and occupied slots in real time</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Add travelers to waitlists to quickly fill canceled bookings</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Link every booking to a CRM card with full customer details</span></li>
+            </ul>
+            <div class="feature-cta-btns ul_li gap-3 mt-30">
+              <a href="#cta" class="thm-btn fintech-btn">START FOR FREE</a>
+              <a href="#demo" class="thm-btn fintech-btn fintech-btn--white">BOOK A DEMO</a>
+            </div>
+          </div>
           <div class="feature-panel-media">
-            {% if tab.image.src %}
-              <img class="feature-panel-img" loading="lazy" alt="{{ tab.tab_title }}" src="{{ tab.image.src }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-{{ loop.index }}.1344w.jpg.webp';" />
-            {% else %}
-              <img class="feature-panel-img" loading="lazy" alt="{{ tab.tab_title }}" src="{{ get_asset_url('../../assets/img/tabs/img-slider-' ~ loop.index ~ '.webp') }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-{{ loop.index }}.1344w.jpg.webp';" />
-            {% endif %}
+            <img src="{{ get_asset_url('../../assets/img/tabs/img-slider-1.webp') }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-1.1344w.jpg.webp';" alt="Handle customer reservations with ease" class="feature-panel-img">
           </div>
         </div>
-      {% endfor %}
+
+        <!-- Panel 1: Traveler Interaction -->
+        <div class="feature-tab-panel" data-panel="1">
+          <div class="feature-panel-text">
+            <h4 class="feature-kicker">Traveler interaction</h4>
+            <h3 class="feature-panel-title">Stay connected with tourists at every step of their journey</h3>
+            <ul class="feature-points-list">
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Consult clients via calls, chat, or messengers from one interface</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Use chatbots to handle routine inquiries and provide quick responses</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Send travel details, confirmations, and updates via email</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Run video meetings and automatically summarize call outcomes</span></li>
+            </ul>
+            <div class="feature-cta-btns ul_li gap-3 mt-30">
+              <a href="#cta" class="thm-btn fintech-btn">START FOR FREE</a>
+              <a href="#demo" class="thm-btn fintech-btn fintech-btn--white">BOOK A DEMO</a>
+            </div>
+          </div>
+          <div class="feature-panel-media">
+            <img src="{{ get_asset_url('../../assets/img/tabs/img-slider-2.webp') }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-2.1344w.jpg.webp';" alt="Stay connected with tourists" class="feature-panel-img">
+          </div>
+        </div>
+
+        <!-- Panel 2: Document Control -->
+        <div class="feature-tab-panel" data-panel="2">
+          <div class="feature-panel-text">
+            <h4 class="feature-kicker">Document control</h4>
+            <h3 class="feature-panel-title">Handle sensitive data securely and efficiently</h3>
+            <ul class="feature-points-list">
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Collect consent for data processing directly via live chat</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Sign hotel placement agreements with travelers through SMS or email</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Monitor the signing process in real time to avoid missing important documents</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Store passport scans and client files securely in Wridoo.Drive</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Set detailed access permissions to restrict sensitive data</span></li>
+            </ul>
+            <div class="feature-cta-btns ul_li gap-3 mt-30">
+              <a href="#cta" class="thm-btn fintech-btn">START FOR FREE</a>
+              <a href="#demo" class="thm-btn fintech-btn fintech-btn--white">BOOK A DEMO</a>
+            </div>
+          </div>
+          <div class="feature-panel-media">
+            <img src="{{ get_asset_url('../../assets/img/tabs/img-slider-3.webp') }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-3.1344w.jpg.webp';" alt="Handle sensitive data securely" class="feature-panel-img">
+          </div>
+        </div>
+
+        <!-- Panel 3: Team Dynamics -->
+        <div class="feature-tab-panel" data-panel="3">
+          <div class="feature-panel-text">
+            <h4 class="feature-kicker">Team dynamics</h4>
+            <h3 class="feature-panel-title">Keep your managers organized for seamless journeys</h3>
+            <ul class="feature-points-list">
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Receive automatic reminders for events, tasks, and activities</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Use sales scripts and promote top tours effectively</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Sync calendars with external services to ensure no meetings are missed</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Access complete client information anytime using the mobile app</span></li>
+            </ul>
+            <div class="feature-cta-btns ul_li gap-3 mt-30">
+              <a href="#cta" class="thm-btn fintech-btn">START FOR FREE</a>
+              <a href="#demo" class="thm-btn fintech-btn fintech-btn--white">BOOK A DEMO</a>
+            </div>
+          </div>
+          <div class="feature-panel-media">
+            <img src="{{ get_asset_url('../../assets/img/tabs/img-slider-4.webp') }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-4.1344w.jpg.webp';" alt="Keep your managers organized" class="feature-panel-img">
+          </div>
+        </div>
+
+        <!-- Panel 4: Personalised Marketing Campaigns -->
+        <div class="feature-tab-panel" data-panel="4">
+          <div class="feature-panel-text">
+            <h4 class="feature-kicker">Personalised marketing campaigns</h4>
+            <h3 class="feature-panel-title">Attract new travelers and increase your loyal client base</h3>
+            <ul class="feature-points-list">
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Create personalized offers for families, adventure seekers, or luxury travelers</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Keep ready-to-use templates for peak travel seasons</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Connect with potential clients interested in new journeys</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Launch targeted social media ad campaigns to attract travelers</span></li>
+            </ul>
+            <div class="feature-cta-btns ul_li gap-3 mt-30">
+              <a href="#cta" class="thm-btn fintech-btn">START FOR FREE</a>
+              <a href="#demo" class="thm-btn fintech-btn fintech-btn--white">BOOK A DEMO</a>
+            </div>
+          </div>
+          <div class="feature-panel-media">
+            <img src="{{ get_asset_url('../../assets/img/tabs/img-slider-5.webp') }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-5.1344w.jpg.webp';" alt="Attract new travelers" class="feature-panel-img">
+          </div>
+        </div>
+
+        <!-- Panel 5: Strategic Analytics -->
+        <div class="feature-tab-panel" data-panel="5">
+          <div class="feature-panel-text">
+            <h4 class="feature-kicker">Strategic analytics</h4>
+            <h3 class="feature-panel-title">Make smarter decisions based on real data</h3>
+            <ul class="feature-points-list">
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Analyze top-performing ad channels and improve campaign outcomes</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Identify frequent travelers and offer personalized discounts</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Measure how your marketing campaigns perform with detailed analytics</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Monitor agent's response speed to boost effectiveness</span></li>
+              <li class="feature-point-item"><span class="feature-point-check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Gather honest feedback from travelers through CRM-forms</span></li>
+            </ul>
+            <div class="feature-cta-btns ul_li gap-3 mt-30">
+              <a href="#cta" class="thm-btn fintech-btn">START FOR FREE</a>
+              <a href="#demo" class="thm-btn fintech-btn fintech-btn--white">BOOK A DEMO</a>
+            </div>
+          </div>
+          <div class="feature-panel-media">
+            <img src="{{ get_asset_url('../../assets/img/tabs/img-slider-6.webp') }}" onerror="this.onerror=null;this.src='https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-6.1344w.jpg.webp';" alt="Make smarter decisions" class="feature-panel-img">
+          </div>
+        </div>
+      {% endif %}
     </div>
   </div>
 </section>
+
+{% require_js %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var nav = document.getElementById('feature-tabs-{{ name }}');
+    if (!nav) return;
+    var btns = nav.querySelectorAll('.feature-tab-btn');
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var idx = btn.getAttribute('data-feature-tab');
+        var section = btn.closest('.feature-tabs-section');
+        if (!section) return;
+        btns.forEach(function(b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        var panels = section.querySelectorAll('.feature-tab-panel');
+        panels.forEach(function(p) {
+          if (p.getAttribute('data-panel') === idx) {
+            p.classList.add('is-active');
+          } else {
+            p.classList.remove('is-active');
+          }
+        });
+      });
+    });
+  });
+</script>
+{% end_require_js %}

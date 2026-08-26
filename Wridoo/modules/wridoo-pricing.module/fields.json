@@ -1,0 +1,161 @@
+[
+  {
+    "name": "section_id",
+    "label": "Section Anchor ID",
+    "type": "text",
+    "default": "pricing"
+  },
+  {
+    "name": "section_title",
+    "label": "Section Heading",
+    "type": "text",
+    "default": "Simple Plans for Every Stage"
+  },
+  {
+    "name": "section_subtitle",
+    "label": "Section Subtitle",
+    "type": "text",
+    "default": "Start Free. Pay When You're Ready."
+  },
+  {
+    "name": "plans",
+    "label": "Pricing Plans",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "default": 3
+    },
+    "children": [
+      {
+        "name": "plan_name",
+        "label": "Plan Name",
+        "type": "text",
+        "default": "3 Months Free Plan"
+      },
+      {
+        "name": "description",
+        "label": "Plan Tagline / Description",
+        "type": "text",
+        "default": "Best for startups. After 3 months, ₹1,000 / month."
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "text",
+        "default": "₹0"
+      },
+      {
+        "name": "period",
+        "label": "Billing Period / Note",
+        "type": "text",
+        "default": "Then ₹1,000/mo"
+      },
+      {
+        "name": "button_text",
+        "label": "Button Text",
+        "type": "text",
+        "default": "Start Free"
+      },
+      {
+        "name": "button_link",
+        "label": "Button Link",
+        "type": "url",
+        "default": { "href": "#cta" }
+      },
+      {
+        "name": "icon",
+        "label": "Plan Icon",
+        "type": "image",
+        "default": { "src": "", "alt": "icon" }
+      },
+      {
+        "name": "features_title",
+        "label": "Features Title",
+        "type": "text",
+        "default": "Features Includes"
+      },
+      {
+        "name": "features",
+        "label": "Plan Features",
+        "type": "group",
+        "occurrence": {
+          "min": 1,
+          "max": 20,
+          "default": 6
+        },
+        "children": [
+          {
+            "name": "text",
+            "label": "Feature Item",
+            "type": "text",
+            "default": "Feature description"
+          }
+        ],
+        "default": [
+          { "text": "Full 3 Months 100% Free Access." },
+          { "text": "Then ₹1,000/month to keep running." },
+          { "text": "Professional travel agency website." },
+          { "text": "Wridoo CRM & customer portal access." },
+          { "text": "Automated lead & enquiry management." },
+          { "text": "Package & itinerary management." }
+        ]
+      }
+    ],
+    "default": [
+      {
+        "plan_name": "3 Months Free Plan",
+        "description": "Best for startups. After 3 months, ₹1,000 / month.",
+        "price": "₹0",
+        "period": "Then ₹1,000/mo",
+        "button_text": "Start Free",
+        "button_link": { "href": "#cta" },
+        "features_title": "Features Includes",
+        "features": [
+          { "text": "Full 3 Months 100% Free Access." },
+          { "text": "Then ₹1,000/month to keep running." },
+          { "text": "Professional travel agency website." },
+          { "text": "Wridoo CRM & customer portal access." },
+          { "text": "Automated lead & enquiry management." },
+          { "text": "Package & itinerary management." },
+          { "text": "Mobile-friendly responsive website." },
+          { "text": "1-on-1 setup assistance & onboarding." }
+        ]
+      },
+      {
+        "plan_name": "6 Months Plan",
+        "description": "Best for growing agencies looking for value.",
+        "price": "₹6,000",
+        "period": "For 6 months",
+        "button_text": "Get Started",
+        "button_link": { "href": "#cta" },
+        "features_title": "Features Includes",
+        "features": [
+          { "text": "Free Custom Domain included (.com/.in)." },
+          { "text": "Complete website & CRM management." },
+          { "text": "Automated lead & enquiry tracking." },
+          { "text": "Unlimited package & itinerary listings." },
+          { "text": "Customer database & follow-up reminders." },
+          { "text": "Priority email & chat support." }
+        ]
+      },
+      {
+        "plan_name": "1 Year Plan",
+        "description": "Pay for 12, Get 13 Months + Free Domain.",
+        "price": "₹12,000",
+        "period": "Per year",
+        "button_text": "Get Started",
+        "button_link": { "href": "#cta" },
+        "features_title": "Features Includes",
+        "features": [
+          { "text": "13 Months Service (1 Month Extra FREE)." },
+          { "text": "Free Custom Domain included (.com/.in)." },
+          { "text": "Complete website & full CRM suite." },
+          { "text": "Advanced lead & enquiry automation." },
+          { "text": "Unlimited travel package management." },
+          { "text": "Priority 24/7 dedicated support & SLA." }
+        ]
+      }
+    ]
+  }
+]

@@ -1,5 +1,11 @@
 [
   {
+    "name": "section_id",
+    "label": "Section Anchor ID",
+    "type": "text",
+    "default": "demo"
+  },
+  {
     "name": "tabs",
     "label": "Dashboard Tabs",
     "required": false,
@@ -17,20 +23,11 @@
         "default": "Booking management"
       },
       {
-        "name": "icon",
-        "label": "Tab Icon",
-        "type": "image",
-        "default": {
-          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-hero.1466w.png.webp",
-          "alt": "icon"
-        }
-      },
-      {
         "name": "image",
         "label": "Dashboard Preview Image",
         "type": "image",
         "default": {
-          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-hero.1466w.png.webp",
+          "src": "",
           "alt": "Dashboard Preview"
         }
       }
@@ -38,56 +35,36 @@
     "default": [
       {
         "title": "Booking management",
-        "icon": {
-          "src": "",
-          "alt": "icon"
-        },
         "image": {
-          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-hero.1466w.png.webp",
+          "src": "",
           "alt": "Booking management CRM dashboard"
         }
       },
       {
         "title": "Traveler CRM",
-        "icon": {
-          "src": "",
-          "alt": "icon"
-        },
         "image": {
-          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-1.1344w.jpg.webp",
+          "src": "",
           "alt": "Traveler communication & CRM setup"
         }
       },
       {
         "title": "Itineraries & tours",
-        "icon": {
-          "src": "",
-          "alt": "icon"
-        },
         "image": {
-          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-2.1344w.jpg.webp",
+          "src": "",
           "alt": "Itineraries & tour performance insights"
         }
       },
       {
         "title": "Smart automation",
-        "icon": {
-          "src": "",
-          "alt": "icon"
-        },
         "image": {
-          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-3.1344w.jpg.webp",
+          "src": "",
           "alt": "Smart routing and travel automation dashboard"
         }
       },
       {
         "title": "AI travel assistant",
-        "icon": {
-          "src": "",
-          "alt": "icon"
-        },
         "image": {
-          "src": "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/solutions/industry/travel-crm-software/img-slider-4.1344w.jpg.webp",
+          "src": "",
           "alt": "AI travel assistant dashboard"
         }
       }

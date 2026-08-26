@@ -3,7 +3,7 @@
     "name": "title",
     "label": "Hero Title",
     "required": false,
-    "type": "text",
+    "type": "richtext",
     "default": "Take control of every travel booking flow"
   },
   {
@@ -11,7 +11,7 @@
     "label": "Hero Description",
     "required": false,
     "type": "text",
-    "default": "All-in-one travel CRM solution to manage bookings, guest communications, itineraries, and grow your travel business."
+    "default": "All-in-one travel CRM solution to manage bookings, guest communications, itineraries, and scale your tour business."
   },
   {
     "name": "primary_cta_text",
@@ -26,7 +26,7 @@
     "required": false,
     "type": "url",
     "default": {
-      "href": "#demo"
+      "href": "#cta"
     }
   },
   {
@@ -44,5 +44,11 @@
     "default": {
       "href": "#demo"
     }
+  },
+  {
+    "name": "show_floating_icons",
+    "label": "Show Floating Floating Icons",
+    "type": "boolean",
+    "default": true
   }
 ]

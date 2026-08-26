@@ -1,23 +1,32 @@
+{% set badges_btn_url = module.link_url.url.href or module.link_url.href or (module.link_url if module.link_url is string else '#demo') %}
+
 <section class="badges-section pt-70 pb-70">
   <div class="container mxw-1330 text-center">
     <div class="sec-title--four text-center mb-40">
       <h2 class="title">{{ module.title or "See why customers love Wridoo" }}</h2>
     </div>
     <div class="badges-row d-flex flex-wrap align-items-center justify-content-center gap-4 gap-lg-5 mb-40">
-      {% for item in module.badges %}
-        <div class="badge-item">
-          {% if item.image.src %}
-            <img src="{{ item.image.src }}" alt="{{ item.image.alt or 'Wridoo award badge' }}" class="badge-img" loading="lazy" />
-          {% else %}
-            <img src="{{ get_asset_url('../../assets/img/badges/img-badge-' ~ loop.index ~ '.png') }}" alt="Wridoo award badge {{ loop.index }}" class="badge-img" loading="lazy" />
-          {% endif %}
-        </div>
-      {% endfor %}
+      {% if module.badges and module.badges|length > 0 %}
+        {% for item in module.badges %}
+          <div class="badge-item">
+            {% if item.image.src %}
+              <img src="{{ item.image.src }}" alt="{{ item.image.alt or 'Wridoo award badge' }}" class="badge-img" loading="lazy" />
+            {% else %}
+              <img src="{{ get_asset_url('../../assets/img/badges/img-badge-' ~ loop.index ~ '.png') }}" alt="Wridoo award badge {{ loop.index }}" class="badge-img" loading="lazy" />
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="badge-item"><img src="{{ get_asset_url('../../assets/img/badges/img-badge-1.png') }}" alt="High Performer - Cloud Content Collaboration" class="badge-img"></div>
+        <div class="badge-item"><img src="{{ get_asset_url('../../assets/img/badges/img-badge-2.png') }}" alt="Easiest To Do Business With - AI Writing Assistant" class="badge-img"></div>
+        <div class="badge-item"><img src="{{ get_asset_url('../../assets/img/badges/img-badge-3.png') }}" alt="Capterra Shortlist 2026 - Task Management" class="badge-img"></div>
+        <div class="badge-item"><img src="{{ get_asset_url('../../assets/img/badges/img-badge-4.png') }}" alt="Capterra Shortlist 2026 - CRM" class="badge-img"></div>
+        <div class="badge-item"><img src="{{ get_asset_url('../../assets/img/badges/img-badge-5.png') }}" alt="Capterra Shortlist 2026 - Customer Service" class="badge-img"></div>
+        <div class="badge-item"><img src="{{ get_asset_url('../../assets/img/badges/img-badge-6.png') }}" alt="Software Advice Front Runners 2026 - Business Intelligence" class="badge-img"></div>
+      {% endif %}
     </div>
-    {% if module.link_text %}
-      <div class="badges-btn text-center">
-        <a href="{{ module.link_url.href or '#demo' }}" class="thm-btn fintech-btn fintech-btn--white">{{ module.link_text }}</a>
-      </div>
-    {% endif %}
+    <div class="badges-btn text-center">
+      <a href="{{ badges_btn_url }}" class="thm-btn fintech-btn fintech-btn--white">{{ module.link_text or "LEARN MORE" }}</a>
+    </div>
   </div>
 </section>

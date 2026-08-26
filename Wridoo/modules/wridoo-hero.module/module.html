@@ -1,3 +1,6 @@
+{% set primary_url = module.primary_cta_link.url.href or module.primary_cta_link.href or (module.primary_cta_link if module.primary_cta_link is string else '#cta') %}
+{% set secondary_url = module.secondary_cta_link.url.href or module.secondary_cta_link.href or (module.secondary_cta_link if module.secondary_cta_link is string else '#demo') %}
+
 <section class="hero-area hero-area--four pos-rel">
   <div class="container mxw-1330">
     <div class="row justify-content-center">
@@ -5,7 +8,11 @@
         <div class="xb-hero-content text-center">
           <div class="sec-title">
             <h1 class="title xb-blur-title heroTitleUp" data-animation-delay="0ms">
-              Take control <span class="dollar"><img src="{{ get_asset_url('../../assets/img/hero/moneybrick_small.gif') }}" alt="gif"></span> of every travel booking flow
+              {% if module.title %}
+                {{ module.title }}
+              {% else %}
+                Take control of every travel booking flow
+              {% endif %}
             </h1>
           </div>
           <p class="xb-item--content xb-blur-content xbFadeUpContent" data-animation-delay="100ms">
@@ -13,22 +20,24 @@
           </p>
           <div class="xb-hero-btn xb-item--btn ul_li justify-content-center xbFadeUpItem" data-animation-delay="200ms">
             {% if module.primary_cta_text %}
-              <a class="thm-btn fintech-btn" href="{{ module.primary_cta_link.href or '#cta' }}">{{ module.primary_cta_text }}</a>
+              <a class="thm-btn fintech-btn" href="{{ primary_url }}">{{ module.primary_cta_text }}</a>
             {% endif %}
             {% if module.secondary_cta_text %}
-              <a class="thm-btn fintech-btn fintech-btn--white" href="{{ module.secondary_cta_link.href or '#demo' }}">{{ module.secondary_cta_text }}</a>
+              <a class="thm-btn fintech-btn fintech-btn--white" href="{{ secondary_url }}">{{ module.secondary_cta_text }}</a>
             {% endif %}
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="xb-hero-shape">
-    <div class="shape shape--1 xb-blur-title xbFadeUpItem" data-animation-delay="250ms">
-      <img class="updown" src="{{ get_asset_url('../../assets/img/hero/icon-img01.png') }}" alt="icon">
+  {% if module.show_floating_icons %}
+    <div class="xb-hero-shape">
+      <div class="shape shape--1 xb-blur-title xbFadeUpItem" data-animation-delay="250ms">
+        <img class="updown" src="{{ get_asset_url('../../assets/img/hero/icon-img01.png') }}" alt="icon">
+      </div>
+      <div class="shape shape--2 xb-blur-title xbFadeUpItem" data-animation-delay="350ms">
+        <img class="updown-2" src="{{ get_asset_url('../../assets/img/hero/icon-img02.png') }}" alt="icon">
+      </div>
     </div>
-    <div class="shape shape--2 xb-blur-title xbFadeUpItem" data-animation-delay="350ms">
-      <img class="updown-2" src="{{ get_asset_url('../../assets/img/hero/icon-img02.png') }}" alt="icon">
-    </div>
-  </div>
+  {% endif %}
 </section>

@@ -1,0 +1,217 @@
+<section class="feature border-btm pos-rel pt-100 pb-110" id="{{ module.section_id or 'solutions' }}">
+  <div class="container mxw-1330">
+    <div class="fs-feature-wrapper plr-20">
+      <div class="sec-title text-center mb-65">
+        <h2 class="title wow fadeInUp" data-wow-delay="0ms" data-wow-duration="600ms">
+          {{ module.section_title or "Smarter Travel Operations Start Here" }}
+        </h2>
+      </div>
+      <div class="row mt-none-30">
+        <!-- Card 1: Large Item -->
+        <div class="col-xl-8 col-lg-12 mt-30">
+          <div class="fs-feature-item large-item">
+            <div class="xb-item--top mb-35">
+              <h2 class="xb-item--title">{{ module.card_1.title or "Global Tour Bookings &amp; Checkout" }}</h2>
+              <p class="xb-item--content">{{ module.card_1.description or "Accept reservations from international travelers anywhere in the world with instant multi-currency checkout and automated booking confirmations." }}</p>
+            </div>
+            <div class="xb-item--img">
+              <div class="img-1">
+                {% if module.card_1.image_1.src %}
+                  <img src="{{ module.card_1.image_1.src }}" alt="{{ module.card_1.image_1.alt or 'image' }}">
+                {% else %}
+                  <img src="{{ get_asset_url('../../assets/img/feature/fea-img01.png') }}" alt="image">
+                {% endif %}
+              </div>
+              <div class="img-2 wow zoomIn" data-wow-delay="0ms" data-wow-duration="600ms">
+                {% if module.card_1.image_2.src %}
+                  <img src="{{ module.card_1.image_2.src }}" alt="{{ module.card_1.image_2.alt or 'image' }}">
+                {% else %}
+                  <img src="{{ get_asset_url('../../assets/img/feature/fea-img02.png') }}" alt="image">
+                {% endif %}
+              </div>
+            </div>
+            <div class="xb-item--shape_box">
+              <div class="shape shape--1">
+                <img src="{{ get_asset_url('../../assets/img/shape/dot-shape.png') }}" alt="">
+              </div>
+              <div class="shape shape--2 zoominup">
+                <img src="{{ get_asset_url('../../assets/img/shape/line_shape.png') }}" alt="">
+              </div>
+              <div class="shape shape--3"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Multi-Channel Guest Payments -->
+        <div class="col-xl-4 col-md-6 mt-30">
+          <div class="fs-feature-item light_green">
+            <div class="xb-item--top mb-35">
+              <h2 class="xb-item--title">{{ module.card_2.title or "Multi-Channel Guest Payments" }}</h2>
+              <p class="xb-item--content">{{ module.card_2.description or "Make tour deposits, balance payments, and travel add-ons simple, secure, and hassle-free for all your guests." }}</p>
+            </div>
+            <div class="xb-item--marquee_wrap">
+              <div class="xb-item--marquee_inner ul_li_between">
+                <div class="xb-item--marquee marquee-first">
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo01.jpg') }}" alt="logo"></div>
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo02.jpg') }}" alt="logo"></div>
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo03.jpg') }}" alt="logo"></div>
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo04.jpg') }}" alt="logo"></div>
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo01.jpg') }}" alt="logo"></div>
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo02.jpg') }}" alt="logo"></div>
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo03.jpg') }}" alt="logo"></div>
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo04.jpg') }}" alt="logo"></div>
+                </div>
+                <div class="xb-item--card">
+                  {% if module.card_2.card_image.src %}
+                    <img src="{{ module.card_2.card_image.src }}" alt="{{ module.card_2.card_image.alt or 'image' }}">
+                  {% else %}
+                    <img src="{{ get_asset_url('../../assets/img/feature/card-img.png') }}" alt="image">
+                  {% endif %}
+                </div>
+                <div class="xb-item--marquee marquee-2">
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo05.jpg') }}" alt="logo"></div>
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo06.jpg') }}" alt="logo"></div>
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo07.jpg') }}" alt="logo"></div>
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo08.jpg') }}" alt="logo"></div>
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo05.jpg') }}" alt="logo"></div>
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo06.jpg') }}" alt="logo"></div>
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo07.jpg') }}" alt="logo"></div>
+                  <div class="xb-logo"><img src="{{ get_asset_url('../../assets/img/feature/logo08.jpg') }}" alt="logo"></div>
+                </div>
+              </div>
+            </div>
+            <div class="xb-item--logo">
+              <div class="xb-circle">
+                <div class="xb-logo">
+                  <img src="{{ get_asset_url('../../assets/img/logo/fav-icon.png') }}" alt="Wridoo Favicon" style="max-width: 44px; max-height: 44px; object-fit: contain;">
+                </div>
+                <div class="round-shape"><img src="{{ get_asset_url('../../assets/img/shape/round-shape.png') }}" alt=""></div>
+              </div>
+              <div class="shape"><img src="{{ get_asset_url('../../assets/img/shape/round-shape02.png') }}" alt=""></div>
+            </div>
+            <div class="xb-item--shape">
+              <div class="shape shape--1">
+                <img src="{{ get_asset_url('../../assets/img/shape/blur-shape.png') }}" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Automated Itinerary & CRM -->
+        <div class="col-xl-4 col-md-6 mt-30">
+          <div class="fs-feature-item light_cream">
+            <div class="xb-item--top mb-45">
+              <h2 class="xb-item--title">{{ module.card_3.title or "Automated Itinerary &amp; CRM" }}</h2>
+              <p class="xb-item--content">{{ module.card_3.description or "Streamline custom tour itineraries, guest communication, and supplier bookings from one unified dashboard." }}</p>
+            </div>
+            <div class="xb-item--dashboard_img">
+              <div class="img img--one">
+                {% if module.card_3.image_1.src %}
+                  <img src="{{ module.card_3.image_1.src }}" alt="{{ module.card_3.image_1.alt or 'image' }}">
+                {% else %}
+                  <img src="{{ get_asset_url('../../assets/img/feature/fea-img03.png') }}" alt="image">
+                {% endif %}
+              </div>
+              <div class="img img--two">
+                <div class="img">
+                  {% if module.card_3.image_2.src %}
+                    <img src="{{ module.card_3.image_2.src }}" alt="{{ module.card_3.image_2.alt or 'image' }}">
+                  {% else %}
+                    <img src="{{ get_asset_url('../../assets/img/feature/fea-img04.png') }}" alt="image">
+                  {% endif %}
+                  <div class="round-circle">
+                    <img src="{{ get_asset_url('../../assets/img/shape/round-shape03.png') }}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="xb-item--shape">
+              <div class="shape shape--1">
+                <img src="{{ get_asset_url('../../assets/img/shape/fea_shape01.png') }}" alt="">
+              </div>
+              <div class="shape shape--2 updown">
+                <img src="{{ get_asset_url('../../assets/img/shape/arrow_shape.png') }}" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Real-Time Booking Analytics -->
+        <div class="col-xl-4 col-md-6 mt-30">
+          <div class="fs-feature-item light_pink">
+            <div class="xb-item--top mb-45">
+              <h2 class="xb-item--title">{{ module.card_4.title or "Real-Time Booking Analytics" }}</h2>
+              <p class="xb-item--content">{{ module.card_4.description or "Track monthly booking volume, profit margins, and tour operator performance with live revenue analytics." }}</p>
+            </div>
+            <div class="xb-item--review_container wow">
+              <div class="xb-item--review_box">
+                <h2 class="xb-title">{{ module.card_4.box_title or "Revenue Overview" }}</h2>
+                <div class="xb-chart">
+                  <div class="chart-item"><span></span><p>Jan</p></div>
+                  <div class="chart-item"><span></span><p>Feb</p></div>
+                  <div class="chart-item"><span></span><p>Mar</p></div>
+                  <div class="chart-item"><span></span><p>Apr</p></div>
+                  <div class="chart-item"><span></span><p>May</p></div>
+                  <div class="chart-item"><span></span><p>Jun</p></div>
+                  <div class="chart-item"><span></span><p>Jul</p></div>
+                  <div class="chart-item"><span></span><p>Aug</p></div>
+                </div>
+                <div class="xb-item--price_box ul_li">
+                  <h3 class="xb-price">{{ module.card_4.price or "$3,286" }}</h3>
+                  <span class="xb-discount"><i class="fa-regular fa-arrow-up"></i> {{ module.card_4.discount_text or "125%" }}</span>
+                </div>
+                <p class="xb-item--text">
+                  {% if module.card_4.footer_text %}
+                    {{ module.card_4.footer_text }}
+                  {% else %}
+                    Revenue is <span>up +$427</span> compared to last month.
+                  {% endif %}
+                </p>
+              </div>
+            </div>
+            <div class="xb-item--shape">
+              <div class="shape shape--1">
+                <img src="{{ get_asset_url('../../assets/img/shape/fea_shape02.png') }}" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Flexible Travel Packages & Pricing -->
+        <div class="col-xl-4 col-md-6 mt-30">
+          <div class="fs-feature-item Pale_green">
+            <div class="xb-item--top mb-45">
+              <h2 class="xb-item--title">{{ module.card_5.title or "Flexible Travel Packages &amp; Pricing" }}</h2>
+              <p class="xb-item--content">{{ module.card_5.description or "Easily manage seasonal tour rates, group discounts, split deposits, and customized private travel packages." }}</p>
+            </div>
+            <div class="xb-item--img">
+              <div class="img-3">
+                {% if module.card_5.image_1.src %}
+                  <img src="{{ module.card_5.image_1.src }}" alt="{{ module.card_5.image_1.alt or 'image' }}">
+                {% else %}
+                  <img src="{{ get_asset_url('../../assets/img/feature/fea-img05.png') }}" alt="image">
+                {% endif %}
+              </div>
+              <div class="img-4 updown">
+                {% if module.card_5.image_2.src %}
+                  <img src="{{ module.card_5.image_2.src }}" alt="{{ module.card_5.image_2.alt or 'image' }}">
+                {% else %}
+                  <img src="{{ get_asset_url('../../assets/img/feature/fea-img06.png') }}" alt="image">
+                {% endif %}
+              </div>
+              <div class="line">
+                <img src="{{ get_asset_url('../../assets/img/feature/line08.png') }}" alt="">
+              </div>
+            </div>
+            <div class="xb-item--shape">
+              <div class="shape shape--1">
+                <img src="{{ get_asset_url('../../assets/img/shape/fea_shape03.png') }}" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "section_id",
+    "label": "Section Anchor ID",
+    "type": "text",
+    "default": "faq"
+  },
+  {
+    "name": "section_title",
+    "label": "Section Title",
+    "type": "richtext",
+    "default": "Frequently Asked<br>Questions"
+  },
+  {
+    "name": "image_1",
+    "label": "Base Decorative Image",
+    "type": "image",
+    "default": { "src": "", "alt": "rock shape" }
+  },
+  {
+    "name": "image_2",
+    "label": "Floating Card Graphic",
+    "type": "image",
+    "default": { "src": "", "alt": "floating card" }
+  },
+  {
+    "name": "faqs",
+    "label": "FAQ Items",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 20,
+      "default": 5
+    },
+    "children": [
+      {
+        "name": "question",
+        "label": "Question",
+        "type": "text",
+        "default": "What payment methods do you support?"
+      },
+      {
+        "name": "answer",
+        "label": "Answer (HTML supported)",
+        "type": "richtext",
+        "default": "We support all major payment methods, including credit and debit cards, digital wallets, and bank transfers both locally and globally worldwide."
+      }
+    ],
+    "default": [
+      {
+        "question": "What payment methods do you support?",
+        "answer": "We support all major payment methods, including credit and debit cards, digital wallets, and bank transfers both locally and globally worldwide."
+      },
+      {
+        "question": "Can I accept payments in multiple currencies?",
+        "answer": "<span>Yes!</span> Our platform allows you to accept payments in multiple currencies and automatically handles foreign exchange (FX) for a global experience."
+      },
+      {
+        "question": "Do you support subscription or recurring billing?",
+        "answer": "<span>Yes!</span> Our platform can handle any billing model, including subscriptions, usage-based billing, and one-time payments, giving you full flexibility."
+      },
+      {
+        "question": "Is my payment data secure?",
+        "answer": "<span>Absolutely.</span> We use advanced encryption and comply with PCI-DSS standards to ensure your customers’ payment data is safe and secure."
+      },
+      {
+        "question": "Can I track cash flow in real time?",
+        "answer": "<span>Yes.</span> Our dashboard gives you real-time insights into incoming and outgoing payments, helping you make smarter financial decisions instantly."
+      }
+    ]
+  }
+]

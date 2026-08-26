@@ -1,0 +1,174 @@
+[
+  {
+    "name": "footer_nav",
+    "label": "Footer Navigation Links",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 10,
+      "default": 5
+    },
+    "children": [
+      {
+        "name": "link_label",
+        "label": "Link Label",
+        "type": "text",
+        "default": "Features"
+      },
+      {
+        "name": "url",
+        "label": "Link URL",
+        "type": "text",
+        "default": "#features"
+      }
+    ],
+    "default": [
+      { "link_label": "Features", "url": "#features" },
+      { "link_label": "Integration", "url": "#integrations" },
+      { "link_label": "Pricing", "url": "#pricing" },
+      { "link_label": "Solutions", "url": "#solutions" },
+      { "link_label": "Contact", "url": "#demo" }
+    ]
+  },
+  {
+    "name": "col1",
+    "label": "Column 1 - Promo / Callout",
+    "type": "group",
+    "children": [
+      {
+        "name": "badge_title",
+        "label": "Subtitle / Badge",
+        "type": "text",
+        "default": "The Ultimate Travel CRM"
+      },
+      {
+        "name": "title",
+        "label": "Heading",
+        "type": "text",
+        "default": "Join The Businesses Scaling Smarter"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text",
+        "default": "Smarter bookings, CRM, and websites made easy for travel operators."
+      },
+      {
+        "name": "cta_text",
+        "label": "CTA Button Text",
+        "type": "text",
+        "default": "Start Free Trial"
+      },
+      {
+        "name": "cta_link",
+        "label": "CTA Button Link",
+        "type": "url",
+        "default": { "href": "#pricing" }
+      }
+    ]
+  },
+  {
+    "name": "col2",
+    "label": "Column 2 - Brand Card",
+    "type": "group",
+    "children": [
+      {
+        "name": "logo",
+        "label": "Logo Image",
+        "type": "image",
+        "default": { "src": "", "alt": "Wridoo Logo" }
+      },
+      {
+        "name": "tagline",
+        "label": "Brand Tagline",
+        "type": "text",
+        "default": "The all-in-one travel operating platform"
+      }
+    ]
+  },
+  {
+    "name": "col3",
+    "label": "Column 3 - Contact & Newsletter",
+    "type": "group",
+    "children": [
+      {
+        "name": "contact_title",
+        "label": "Contact Heading",
+        "type": "text",
+        "default": "Need Any Emergency"
+      },
+      {
+        "name": "phone",
+        "label": "Phone Number",
+        "type": "text",
+        "default": "+1 555-123-4567"
+      },
+      {
+        "name": "email",
+        "label": "Support Email",
+        "type": "text",
+        "default": "support@wridoo.com"
+      },
+      {
+        "name": "newsletter_title",
+        "label": "Newsletter Heading",
+        "type": "text",
+        "default": "Subscribe Newsletter"
+      },
+      {
+        "name": "newsletter_placeholder",
+        "label": "Input Placeholder",
+        "type": "text",
+        "default": "Enter your email"
+      }
+    ]
+  },
+  {
+    "name": "social_links",
+    "label": "Social Media Links",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "default": 4
+    },
+    "children": [
+      {
+        "name": "network",
+        "label": "Network Name",
+        "type": "text",
+        "default": "Facebook"
+      },
+      {
+        "name": "url",
+        "label": "Profile URL",
+        "type": "text",
+        "default": "#!"
+      }
+    ],
+    "default": [
+      { "network": "Facebook", "url": "#!" },
+      { "network": "Twitter", "url": "#!" },
+      { "network": "LinkedIn", "url": "#!" },
+      { "network": "Instagram", "url": "#!" }
+    ]
+  },
+  {
+    "name": "copyright_text",
+    "label": "Copyright Text",
+    "type": "text",
+    "default": "Wridoo, All rights reserved."
+  },
+  {
+    "name": "terms_url",
+    "label": "Terms of Service URL",
+    "type": "text",
+    "default": "#!"
+  },
+  {
+    "name": "privacy_url",
+    "label": "Privacy Policy URL",
+    "type": "text",
+    "default": "#!"
+  }
+]

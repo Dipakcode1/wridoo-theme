@@ -1,53 +1,46 @@
-<section class="brand-area">
+<section class="brand pt-130 pb-105">
   <div class="container mxw-1330">
     <div class="fs-brand-wrapper text-center">
-      <p class="fs-brand-top">{{ module.title }}</p>
-      <div class="fs-brand-marquee-wrap">
+      <p class="fs-brand-top">
+        {% if module.title %}
+          {{ module.title }}
+        {% else %}
+          Trusted by <span>620K+</span> travel agencies &amp; global brands
+        {% endif %}
+      </p>
+      <div class="fs-brand-marquee-wrap o-hidden marquee-left">
         <ul class="fs-brand-marquee">
-          {% for logo in module.logos %}
-            <li class="fs-marquee-item">
-              {% if logo.image.src %}
-                <img src="{{ logo.image.src }}" alt="{{ logo.brand_name }}">
-              {% elif loop.index == 1 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_partners_logos/img-logo-1.png.webp" alt="{{ logo.brand_name }}">
-              {% elif loop.index == 2 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_partners_logos/img-logo-2.png.webp" alt="{{ logo.brand_name }}">
-              {% elif loop.index == 3 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_partners_logos/img-logo-3.png.webp" alt="{{ logo.brand_name }}">
-              {% elif loop.index == 4 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_partners_logos/img-logo-4.png.webp" alt="{{ logo.brand_name }}">
-              {% elif loop.index == 5 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_partners_logos/img-logo-5.png.webp" alt="{{ logo.brand_name }}">
-              {% elif loop.index == 6 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_partners_logos/img-logo-6.png.webp" alt="{{ logo.brand_name }}">
-              {% else %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_partners_logos/img-logo-7.png.webp" alt="{{ logo.brand_name }}">
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-        <ul class="fs-brand-marquee" aria-hidden="true">
-          {% for logo in module.logos %}
-            <li class="fs-marquee-item">
-              {% if logo.image.src %}
-                <img src="{{ logo.image.src }}" alt="{{ logo.brand_name }}">
-              {% elif loop.index == 1 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_partners_logos/img-logo-1.png.webp" alt="{{ logo.brand_name }}">
-              {% elif loop.index == 2 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_partners_logos/img-logo-2.png.webp" alt="{{ logo.brand_name }}">
-              {% elif loop.index == 3 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_partners_logos/img-logo-3.png.webp" alt="{{ logo.brand_name }}">
-              {% elif loop.index == 4 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_partners_logos/img-logo-4.png.webp" alt="{{ logo.brand_name }}">
-              {% elif loop.index == 5 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_partners_logos/img-logo-5.png.webp" alt="{{ logo.brand_name }}">
-              {% elif loop.index == 6 %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_partners_logos/img-logo-6.png.webp" alt="{{ logo.brand_name }}">
-              {% else %}
-                <img src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_partners_logos/img-logo-7.png.webp" alt="{{ logo.brand_name }}">
-              {% endif %}
-            </li>
-          {% endfor %}
+          {% if module.logos and module.logos|length > 0 %}
+            {% for logo in module.logos %}
+              <li class="fs-marquee-item">
+                {% if logo.image.src %}
+                  <img src="{{ logo.image.src }}" alt="{{ logo.image.alt or logo.brand_name }}">
+                {% elif loop.index == 1 %}
+                  <img src="{{ get_asset_url('../../assets/img/brand/brand-logo07.png') }}" alt="{{ logo.brand_name }}">
+                {% elif loop.index == 2 %}
+                  <img src="{{ get_asset_url('../../assets/img/brand/brand-logo08.png') }}" alt="{{ logo.brand_name }}">
+                {% elif loop.index == 3 %}
+                  <img src="{{ get_asset_url('../../assets/img/brand/brand-logo09.png') }}" alt="{{ logo.brand_name }}">
+                {% elif loop.index == 4 %}
+                  <img src="{{ get_asset_url('../../assets/img/brand/brand-logo10.png') }}" alt="{{ logo.brand_name }}">
+                {% elif loop.index == 5 %}
+                  <img src="{{ get_asset_url('../../assets/img/brand/brand-logo11.png') }}" alt="{{ logo.brand_name }}">
+                {% elif loop.index == 6 %}
+                  <img src="{{ get_asset_url('../../assets/img/brand/brand-logo12.png') }}" alt="{{ logo.brand_name }}">
+                {% else %}
+                  <img src="{{ get_asset_url('../../assets/img/brand/brand-logo13.png') }}" alt="{{ logo.brand_name }}">
+                {% endif %}
+              </li>
+            {% endfor %}
+          {% else %}
+            <li class="fs-marquee-item"><img src="{{ get_asset_url('../../assets/img/brand/brand-logo07.png') }}" alt="brand"></li>
+            <li class="fs-marquee-item"><img src="{{ get_asset_url('../../assets/img/brand/brand-logo08.png') }}" alt="brand"></li>
+            <li class="fs-marquee-item"><img src="{{ get_asset_url('../../assets/img/brand/brand-logo09.png') }}" alt="brand"></li>
+            <li class="fs-marquee-item"><img src="{{ get_asset_url('../../assets/img/brand/brand-logo10.png') }}" alt="brand"></li>
+            <li class="fs-marquee-item"><img src="{{ get_asset_url('../../assets/img/brand/brand-logo11.png') }}" alt="brand"></li>
+            <li class="fs-marquee-item"><img src="{{ get_asset_url('../../assets/img/brand/brand-logo12.png') }}" alt="brand"></li>
+            <li class="fs-marquee-item"><img src="{{ get_asset_url('../../assets/img/brand/brand-logo13.png') }}" alt="brand"></li>
+          {% endif %}
         </ul>
       </div>
     </div>

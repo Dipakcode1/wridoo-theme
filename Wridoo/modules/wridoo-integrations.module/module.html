@@ -1,3 +1,6 @@
+{% set primary_url = module.primary_cta_link.url.href or module.primary_cta_link.href or (module.primary_cta_link if module.primary_cta_link is string else '#cta') %}
+{% set secondary_url = module.secondary_cta_link.url.href or module.secondary_cta_link.href or (module.secondary_cta_link if module.secondary_cta_link is string else '#demo') %}
+
 <section class="integrations-section pt-60 pb-60" id="integrations">
   <div class="container mxw-1330">
     <div class="row align-items-center g-5">
@@ -16,23 +19,46 @@
           <p class="integrations-lead mb-30">{{ module.lead or "Connect external marketing platforms, telephony, and more through 500+ integrations and a robust REST API" }}</p>
           
           <ul class="integrations-checklist mb-40">
-            {% for item in module.checklist %}
+            {% if module.checklist and module.checklist|length > 0 %}
+              {% for item in module.checklist %}
+                <li class="integrations-check-item">
+                  <span class="integrations-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                  <div class="integrations-check-text">
+                    <strong>{{ item.bold_title }}</strong> {{ item.description }}
+                  </div>
+                </li>
+              {% endfor %}
+            {% else %}
               <li class="integrations-check-item">
                 <span class="integrations-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
                 <div class="integrations-check-text">
-                  <strong>{{ item.bold_title }}</strong> {{ item.description }}
+                  <strong>SMS, chat &amp; call services:</strong> Consult and support travelers through any channel
                 </div>
               </li>
-            {% endfor %}
+              <li class="integrations-check-item">
+                <span class="integrations-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <div class="integrations-check-text">
+                  <strong>Marketing platforms:</strong> Export customer data to launch targeted ad campaigns
+                </div>
+              </li>
+              <li class="integrations-check-item">
+                <span class="integrations-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <div class="integrations-check-text">
+                  <strong>Payment systems:</strong> Manage invoices and process payments effortlessly
+                </div>
+              </li>
+              <li class="integrations-check-item">
+                <span class="integrations-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <div class="integrations-check-text">
+                  <strong>Custom integrations from Wridoo partners:</strong> Because every business is unique
+                </div>
+              </li>
+            {% endif %}
           </ul>
 
           <div class="integrations-cta-btns ul_li gap-3">
-            {% if module.primary_cta_text %}
-              <a href="{{ module.primary_cta_link.href or '#cta' }}" class="thm-btn fintech-btn">{{ module.primary_cta_text }}</a>
-            {% endif %}
-            {% if module.secondary_cta_text %}
-              <a href="{{ module.secondary_cta_link.href or '#demo' }}" class="thm-btn fintech-btn fintech-btn--white">{{ module.secondary_cta_text }}</a>
-            {% endif %}
+            <a href="{{ primary_url }}" class="thm-btn fintech-btn">{{ module.primary_cta_text or "START FOR FREE" }}</a>
+            <a href="{{ secondary_url }}" class="thm-btn fintech-btn fintech-btn--white">{{ module.secondary_cta_text or "BOOK A DEMO" }}</a>
           </div>
         </div>
       </div>

@@ -1,82 +1,149 @@
-<section class="faq-area pt-80 pb-100" id="faq">
-    <div class="container mxw-1330">
-        <div class="fs-faq-wrapper pos-rel plr-20">
-            <div class="row mt-none-50 align-items-center">
-                <div class="col-lg-5 mt-50">
-                    <div class="xb-faq-left">
-                        <div class="sec-title mb-40">  
-                            <h2 class="title wow fadeInUp" data-wow-delay="0ms" data-wow-duration="600ms" style="font-size: clamp(32px, 4vw, 48px); font-weight: 800; color: #110c29; line-height: 1.15;">Frequently Asked<br>Questions</h2>
-                        </div>
-                        <div class="fs-faq-image pos-rel">
-                            <img src="{{ get_asset_url('../../assets/img/pricing/img01.png') }}" alt="rock shape" class="img-fluid">
-                            <div class="img" style="position: absolute; left: 0; top: 0;">
-                                <img class="updown-2 img-fluid" src="{{ get_asset_url('../../assets/img/pricing/img02.png') }}" alt="floating card">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7 mt-50">
-                    <div class="xb-faq xb-desk-faq fs-faq">
-                        <ul class="accordion_box clearfix list-unstyled mb-0">
-                            <li class="accordion block active-block">
-                                <div class="acc-btn active">
-                                    What payment methods do you support?
-                                    <span class="arrow"><span></span></span>
-                                </div>
-                                <div class="acc_body current" style="display: block;">
-                                    <div class="content">
-                                        <p>We support all major payment methods, including credit and debit cards, digital wallets, and bank transfers both locally and globally worldwide.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    Can I accept payments in multiple currencies?
-                                    <span class="arrow"><span></span></span>
-                                </div>
-                                <div class="acc_body">
-                                    <div class="content">
-                                        <p><span>Yes!</span> Our platform allows you to accept payments in multiple currencies and automatically handles foreign exchange (FX) for a global experience.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    Do you support subscription or recurring billing?
-                                    <span class="arrow"><span></span></span>
-                                </div>
-                                <div class="acc_body">
-                                    <div class="content">
-                                        <p><span>Yes!</span> Our platform can handle any billing model, including subscriptions, usage-based billing, and one-time payments, giving you full flexibility.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    Is my payment data secure?
-                                    <span class="arrow"><span></span></span>
-                                </div>
-                                <div class="acc_body">
-                                    <div class="content">
-                                        <p><span>Absolutely.</span> We use advanced encryption and comply with PCI-DSS standards to ensure your customers’ payment data is safe and secure.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    Can I track cash flow in real time?
-                                    <span class="arrow"><span></span></span>
-                                </div>
-                                <div class="acc_body">
-                                    <div class="content">
-                                        <p><span>Yes.</span> Our dashboard gives you real-time insights into incoming and outgoing payments, helping you make smarter financial decisions instantly.</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+<section class="faq-area pt-80 pb-100" id="{{ module.section_id or 'faq' }}">
+  <div class="container mxw-1330">
+    <div class="fs-faq-wrapper pos-rel plr-20">
+      <div class="row mt-none-50 align-items-center">
+        <div class="col-lg-5 mt-50">
+          <div class="xb-faq-left">
+            <div class="sec-title mb-40">  
+              <h2 class="title wow fadeInUp" data-wow-delay="0ms" data-wow-duration="600ms" style="font-size: clamp(32px, 4vw, 48px); font-weight: 800; color: #110c29; line-height: 1.15;">
+                {% if module.section_title %}
+                  {{ module.section_title }}
+                {% else %}
+                  Frequently Asked<br>Questions
+                {% endif %}
+              </h2>
             </div>
+            <div class="fs-faq-image pos-rel">
+              {% if module.image_1.src %}
+                <img src="{{ module.image_1.src }}" alt="{{ module.image_1.alt or 'rock shape' }}" class="img-fluid">
+              {% else %}
+                <img src="{{ get_asset_url('../../assets/img/pricing/img01.png') }}" alt="rock shape" class="img-fluid">
+              {% endif %}
+              <div class="img" style="position: absolute; left: 0; top: 0;">
+                {% if module.image_2.src %}
+                  <img class="updown-2 img-fluid" src="{{ module.image_2.src }}" alt="{{ module.image_2.alt or 'floating card' }}">
+                {% else %}
+                  <img class="updown-2 img-fluid" src="{{ get_asset_url('../../assets/img/pricing/img02.png') }}" alt="floating card">
+                {% endif %}
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="col-lg-7 mt-50">
+          <div class="xb-faq xb-desk-faq fs-faq">
+            <ul class="accordion_box clearfix list-unstyled mb-0" id="accordion-box-{{ name }}">
+              {% if module.faqs and module.faqs|length > 0 %}
+                {% for item in module.faqs %}
+                  <li class="accordion block {% if loop.first %}active-block{% endif %}">
+                    <div class="acc-btn {% if loop.first %}active{% endif %}">
+                      {{ item.question }}
+                      <span class="arrow"><span></span></span>
+                    </div>
+                    <div class="acc_body {% if loop.first %}current{% endif %}" {% if loop.first %}style="display: block;"{% else %}style="display: none;"{% endif %}>
+                      <div class="content">
+                        <p>{{ item.answer }}</p>
+                      </div>
+                    </div>
+                  </li>
+                {% endfor %}
+              {% else %}
+                <li class="accordion block active-block">
+                  <div class="acc-btn active">
+                    What payment methods do you support?
+                    <span class="arrow"><span></span></span>
+                  </div>
+                  <div class="acc_body current" style="display: block;">
+                    <div class="content">
+                      <p>We support all major payment methods, including credit and debit cards, digital wallets, and bank transfers both locally and globally worldwide.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="accordion block">
+                  <div class="acc-btn">
+                    Can I accept payments in multiple currencies?
+                    <span class="arrow"><span></span></span>
+                  </div>
+                  <div class="acc_body" style="display: none;">
+                    <div class="content">
+                      <p><span>Yes!</span> Our platform allows you to accept payments in multiple currencies and automatically handles foreign exchange (FX) for a global experience.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="accordion block">
+                  <div class="acc-btn">
+                    Do you support subscription or recurring billing?
+                    <span class="arrow"><span></span></span>
+                  </div>
+                  <div class="acc_body" style="display: none;">
+                    <div class="content">
+                      <p><span>Yes!</span> Our platform can handle any billing model, including subscriptions, usage-based billing, and one-time payments, giving you full flexibility.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="accordion block">
+                  <div class="acc-btn">
+                    Is my payment data secure?
+                    <span class="arrow"><span></span></span>
+                  </div>
+                  <div class="acc_body" style="display: none;">
+                    <div class="content">
+                      <p><span>Absolutely.</span> We use advanced encryption and comply with PCI-DSS standards to ensure your customers’ payment data is safe and secure.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="accordion block">
+                  <div class="acc-btn">
+                    Can I track cash flow in real time?
+                    <span class="arrow"><span></span></span>
+                  </div>
+                  <div class="acc_body" style="display: none;">
+                    <div class="content">
+                      <p><span>Yes.</span> Our dashboard gives you real-time insights into incoming and outgoing payments, helping you make smarter financial decisions instantly.</p>
+                    </div>
+                  </div>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
+
+{% require_js %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var accordion = document.getElementById('accordion-box-{{ name }}');
+    if (!accordion) return;
+    var btns = accordion.querySelectorAll('.acc-btn');
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var parentBlock = btn.closest('.accordion');
+        var body = parentBlock.querySelector('.acc_body');
+        var isActive = parentBlock.classList.contains('active-block');
+        
+        accordion.querySelectorAll('.accordion').forEach(function(blk) {
+          blk.classList.remove('active-block');
+          var b = blk.querySelector('.acc_body');
+          var btnSub = blk.querySelector('.acc-btn');
+          if (btnSub) btnSub.classList.remove('active');
+          if (b) {
+            b.classList.remove('current');
+            b.style.display = 'none';
+          }
+        });
+
+        if (!isActive) {
+          parentBlock.classList.add('active-block');
+          btn.classList.add('active');
+          if (body) {
+            body.classList.add('current');
+            body.style.display = 'block';
+          }
+        }
+      });
+    });
+  });
+</script>
+{% end_require_js %}

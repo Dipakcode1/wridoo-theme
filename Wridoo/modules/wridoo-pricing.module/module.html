@@ -1,0 +1,175 @@
+<section class="pricing-area pt-80 pb-80 pos-rel" id="{{ module.section_id or 'pricing' }}">
+  <div class="container mxw-1330">
+    <div class="fs-pricing-wrapper">
+      <div class="sec-title text-center mb-50 plr-20">
+        <h2 class="title" style="font-size: clamp(30px, 4vw, 44px); font-weight: 800; color: #110c29; margin-bottom: 12px; letter-spacing: -0.02em;">
+          {{ module.section_title or "Simple Plans for Every Stage" }}
+        </h2>
+        <p class="pricing-sec-subtitle" style="font-size: 18px; color: #6e6b80; margin: 0;">
+          {{ module.section_subtitle or "Start Free. Pay When You're Ready." }}
+        </p>
+      </div>
+      
+      <div class="fs-pricing-inner pos-rel z-1">
+        <div class="fs-pricing-wrap">
+          <div class="row g-4 justify-content-center">
+            {% if module.plans and module.plans|length > 0 %}
+              {% for plan in module.plans %}
+                {% set plan_btn_url = plan.button_link.url.href or plan.button_link.href or (plan.button_link if plan.button_link is string else '#cta') %}
+                <div class="col-lg-4 col-md-6">
+                  <div class="fs-pricing-item">
+                    <div class="xb-item--holder">
+                      <div class="xb-item--top">
+                        <div class="xb-item--content">
+                          <div class="xb-iem--icon">
+                            {% if plan.icon.src %}
+                              <img src="{{ plan.icon.src }}" alt="{{ plan.icon.alt or 'icon' }}">
+                            {% elif loop.index == 3 %}
+                              <img src="{{ get_asset_url('../../assets/img/pricing/icon02.png') }}" alt="icon">
+                            {% else %}
+                              <img src="{{ get_asset_url('../../assets/img/pricing/icon01.png') }}" alt="icon">
+                            {% endif %}
+                          </div>
+                          <h2 class="xb-item--title">{{ plan.plan_name or "Pricing Plan" }}</h2>
+                          <p class="xb-item--text">{{ plan.description }}</p>
+                        </div>
+                        <div class="xb-item--price_box">
+                          <h3 class="xb-item--price">{{ plan.price or "₹0" }}</h3>
+                          <span class="xb-item--text">{{ plan.period }}</span>
+                        </div>
+                      </div>
+                      {% if plan.button_text %}
+                        <div class="xb-item--btn">
+                          <a class="thm-btn fintech-btn" href="{{ plan_btn_url }}">{{ plan.button_text }}</a>
+                        </div>
+                      {% endif %}
+                    </div>
+                    <div class="xb-item--list_box">
+                      <h3 class="xb-item--list_title">{{ plan.features_title or "Features Includes" }}</h3>
+                      <ul class="xb-item--list list-unstyled">
+                        {% for feat in plan.features %}
+                          <li>
+                            <img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon">
+                            {{ feat.text }}
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            {% else %}
+              <!-- Fallback Default Pricing Cards -->
+              <!-- Card 1: 3 Months Free Plan -->
+              <div class="col-lg-4 col-md-6">
+                <div class="fs-pricing-item">
+                  <div class="xb-item--holder">
+                    <div class="xb-item--top">
+                      <div class="xb-item--content">
+                        <div class="xb-iem--icon">
+                          <img src="{{ get_asset_url('../../assets/img/pricing/icon01.png') }}" alt="icon">
+                        </div>
+                        <h2 class="xb-item--title">3 Months Free Plan</h2>
+                        <p class="xb-item--text">Best for startups. After 3 months, ₹1,000 / month.</p>
+                      </div>
+                      <div class="xb-item--price_box">
+                        <h3 class="xb-item--price">₹0</h3>
+                        <span class="xb-item--text">Then ₹1,000/mo</span>
+                      </div>
+                    </div>
+                    <div class="xb-item--btn">
+                      <a class="thm-btn fintech-btn" href="#cta">Start Free</a>
+                    </div>
+                  </div>
+                  <div class="xb-item--list_box">
+                    <h3 class="xb-item--list_title">Features Includes</h3>
+                    <ul class="xb-item--list list-unstyled">
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Full 3 Months 100% Free Access.</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Then ₹1,000/month to keep running.</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Professional travel agency website.</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Wridoo CRM & customer portal access.</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Automated lead & enquiry management.</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Package & itinerary management.</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Mobile-friendly responsive website.</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> 1-on-1 setup assistance & onboarding.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2: 6 Months Plan -->
+              <div class="col-lg-4 col-md-6">
+                <div class="fs-pricing-item">
+                  <div class="xb-item--holder">
+                    <div class="xb-item--top">
+                      <div class="xb-item--content">
+                        <div class="xb-iem--icon">
+                          <img src="{{ get_asset_url('../../assets/img/pricing/icon01.png') }}" alt="icon">
+                        </div>
+                        <h2 class="xb-item--title">6 Months Plan</h2>
+                        <p class="xb-item--text">Best for growing agencies looking for value.</p>
+                      </div>
+                      <div class="xb-item--price_box">
+                        <h3 class="xb-item--price">₹6,000</h3>
+                        <span class="xb-item--text">For 6 months</span>
+                      </div>
+                    </div>
+                    <div class="xb-item--btn">
+                      <a class="thm-btn fintech-btn" href="#cta">Get Started</a>
+                    </div>
+                  </div>
+                  <div class="xb-item--list_box">
+                    <h3 class="xb-item--list_title">Features Includes</h3>
+                    <ul class="xb-item--list list-unstyled">
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Free Custom Domain included (.com/.in).</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Complete website & CRM management.</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Automated lead & enquiry tracking.</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Unlimited package & itinerary listings.</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Customer database & follow-up reminders.</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Priority email & chat support.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3: 1 Year Plan -->
+              <div class="col-lg-4 col-md-6">
+                <div class="fs-pricing-item">
+                  <div class="xb-item--holder">
+                    <div class="xb-item--top">
+                      <div class="xb-item--content">
+                        <div class="xb-iem--icon">
+                          <img src="{{ get_asset_url('../../assets/img/pricing/icon02.png') }}" alt="icon">
+                        </div>
+                        <h2 class="xb-item--title">1 Year Plan</h2>
+                        <p class="xb-item--text">Pay for 12, Get 13 Months + Free Domain.</p>
+                      </div>
+                      <div class="xb-item--price_box">
+                        <h3 class="xb-item--price">₹12,000</h3>
+                        <span class="xb-item--text">Per year</span>
+                      </div>
+                    </div>
+                    <div class="xb-item--btn">
+                      <a class="thm-btn fintech-btn" href="#cta">Get Started</a>
+                    </div>
+                  </div>
+                  <div class="xb-item--list_box">
+                    <h3 class="xb-item--list_title">Features Includes</h3>
+                    <ul class="xb-item--list list-unstyled">
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> 13 Months Service (1 Month Extra FREE).</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Free Custom Domain included (.com/.in).</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Complete website & full CRM suite.</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Advanced lead & enquiry automation.</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Unlimited travel package management.</li>
+                      <li><img src="{{ get_asset_url('../../assets/img/icon/check-primary04.svg') }}" alt="icon"> Priority 24/7 dedicated support & SLA.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

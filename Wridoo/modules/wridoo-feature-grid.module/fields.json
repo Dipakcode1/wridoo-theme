@@ -1,0 +1,175 @@
+[
+  {
+    "name": "section_id",
+    "label": "Section Anchor ID",
+    "type": "text",
+    "default": "solutions"
+  },
+  {
+    "name": "section_title",
+    "label": "Section Heading",
+    "type": "text",
+    "default": "Smarter Travel Operations Start Here"
+  },
+  {
+    "name": "card_1",
+    "label": "Card 1 - Global Bookings (Large)",
+    "type": "group",
+    "children": [
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "Global Tour Bookings & Checkout"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text",
+        "default": "Accept reservations from international travelers anywhere in the world with instant multi-currency checkout and automated booking confirmations."
+      },
+      {
+        "name": "image_1",
+        "label": "Main Image",
+        "type": "image",
+        "default": { "src": "", "alt": "Booking preview" }
+      },
+      {
+        "name": "image_2",
+        "label": "Floating Card Image",
+        "type": "image",
+        "default": { "src": "", "alt": "Booking details" }
+      }
+    ]
+  },
+  {
+    "name": "card_2",
+    "label": "Card 2 - Multi-Channel Guest Payments",
+    "type": "group",
+    "children": [
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "Multi-Channel Guest Payments"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text",
+        "default": "Make tour deposits, balance payments, and travel add-ons simple, secure, and hassle-free for all your guests."
+      },
+      {
+        "name": "card_image",
+        "label": "Center Card Image",
+        "type": "image",
+        "default": { "src": "", "alt": "Payment card" }
+      }
+    ]
+  },
+  {
+    "name": "card_3",
+    "label": "Card 3 - Automated Itinerary & CRM",
+    "type": "group",
+    "children": [
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "Automated Itinerary & CRM"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text",
+        "default": "Streamline custom tour itineraries, guest communication, and supplier bookings from one unified dashboard."
+      },
+      {
+        "name": "image_1",
+        "label": "Top Dashboard Image",
+        "type": "image",
+        "default": { "src": "", "alt": "Dashboard view 1" }
+      },
+      {
+        "name": "image_2",
+        "label": "Bottom Dashboard Image",
+        "type": "image",
+        "default": { "src": "", "alt": "Dashboard view 2" }
+      }
+    ]
+  },
+  {
+    "name": "card_4",
+    "label": "Card 4 - Real-Time Booking Analytics",
+    "type": "group",
+    "children": [
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "Real-Time Booking Analytics"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text",
+        "default": "Track monthly booking volume, profit margins, and tour operator performance with live revenue analytics."
+      },
+      {
+        "name": "box_title",
+        "label": "Revenue Box Title",
+        "type": "text",
+        "default": "Revenue Overview"
+      },
+      {
+        "name": "price",
+        "label": "Revenue Amount",
+        "type": "text",
+        "default": "$3,286"
+      },
+      {
+        "name": "discount_text",
+        "label": "Growth Rate",
+        "type": "text",
+        "default": "125%"
+      },
+      {
+        "name": "footer_text",
+        "label": "Footer Comparison Text",
+        "type": "text",
+        "default": "Revenue is up +$427 compared to last month."
+      }
+    ]
+  },
+  {
+    "name": "card_5",
+    "label": "Card 5 - Flexible Travel Packages & Pricing",
+    "type": "group",
+    "children": [
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "Flexible Travel Packages & Pricing"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text",
+        "default": "Easily manage seasonal tour rates, group discounts, split deposits, and customized private travel packages."
+      },
+      {
+        "name": "image_1",
+        "label": "Left Package Image",
+        "type": "image",
+        "default": { "src": "", "alt": "Package view 1" }
+      },
+      {
+        "name": "image_2",
+        "label": "Right Package Image",
+        "type": "image",
+        "default": { "src": "", "alt": "Package view 2" }
+      }
+    ]
+  }
+]

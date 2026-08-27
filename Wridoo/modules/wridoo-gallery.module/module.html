@@ -1,0 +1,70 @@
+{% set btn_url = module.btn_link.url.href or module.btn_link.href or (module.btn_link if module.btn_link is string else '#cta') %}
+
+<section class="gallery pt-60 pb-120">
+  <div class="container mxw-1330">
+    <h2 class="gallery-title mb-80 text-center" style="font-size: clamp(28px, 3.5vw, 42px); font-weight: 800; color: #110c29;">
+      {{ module.section_title or "[ Moments from Wridoo ]" }}
+    </h2>
+    <div class="xb-gallery-wrap">
+      {% if module.gallery_items and module.gallery_items|length > 0 %}
+        {% for item in module.gallery_items %}
+          <div class="xb-gallery-item xbFadeUpItem" data-animation-delay="{{ loop.index0 * 100 }}ms">
+            <div class="xb-item--img">
+              {% if item.image.src %}
+                <img src="{{ item.image.src }}" alt="{{ item.image.alt or item.item_title }}">
+              {% else %}
+                <img src="{{ get_asset_url('../../assets/img/gallery/img0' ~ loop.index ~ '.png') }}" alt="{{ item.item_title }}">
+              {% endif %}
+            </div>
+            <div class="xb-item--holder ul_li_between">
+              <p class="xb-item--text">{{ item.item_title }}</p>
+              <p class="xb-item--date">{{ item.item_date }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="xb-gallery-item xbFadeUpItem" data-animation-delay="0ms">
+          <div class="xb-item--img">
+            <img src="{{ get_asset_url('../../assets/img/gallery/img01.png') }}" alt="Daily Standup">
+          </div>
+          <div class="xb-item--holder ul_li_between">
+            <p class="xb-item--text">Daily Meeting</p>
+            <p class="xb-item--date">21/07/2026</p>
+          </div>
+        </div>
+        <div class="xb-gallery-item xbFadeUpItem" data-animation-delay="100ms">
+          <div class="xb-item--img">
+            <img src="{{ get_asset_url('../../assets/img/gallery/img02.png') }}" alt="Global Summit">
+          </div>
+          <div class="xb-item--holder ul_li_between">
+            <p class="xb-item--text">Global Travel Summit</p>
+            <p class="xb-item--date">15/06/2026</p>
+          </div>
+        </div>
+        <div class="xb-gallery-item xbFadeUpItem" data-animation-delay="200ms">
+          <div class="xb-item--img">
+            <img src="{{ get_asset_url('../../assets/img/gallery/img03.png') }}" alt="Innovation Workshop">
+          </div>
+          <div class="xb-item--holder ul_li_between">
+            <p class="xb-item--text">Innovation Hackathon</p>
+            <p class="xb-item--date">21/07/2026</p>
+          </div>
+        </div>
+        <div class="xb-gallery-item xbFadeUpItem" data-animation-delay="300ms">
+          <div class="xb-item--img">
+            <img src="{{ get_asset_url('../../assets/img/gallery/img04.png') }}" alt="Product Launch">
+          </div>
+          <div class="xb-item--holder ul_li_between">
+            <p class="xb-item--text">Product Launch Day</p>
+            <p class="xb-item--date">25/04/2026</p>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    {% if module.btn_text %}
+      <div class="xb-team-btn mt-80 text-center xbFadeUpItem" data-animation-delay="350ms">
+        <a class="thm-btn fintech-btn" href="{{ btn_url }}">{{ module.btn_text }}</a>
+      </div>
+    {% endif %}
+  </div>
+</section>

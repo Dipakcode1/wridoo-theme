@@ -1,0 +1,51 @@
+<section class="about-card pt-90 pb-80">
+  <div class="container mxw-1330">
+    <div class="ab-card-wrap">
+      <div class="row mt-none-20 align-items-stretch">
+        <!-- Left Big Image -->
+        <div class="col-lg-6 mt-20">
+          <div class="xb-card-item xbFadeUpItem h-100" data-animation-delay="0ms">
+            <div class="xb-item--img h-100" style="overflow: hidden; border-radius: 20px;">
+              {% if module.feature_image.src %}
+                <img src="{{ module.feature_image.src }}" alt="{{ module.feature_image.alt or 'Wridoo Global Impact' }}" class="img-fluid w-100 h-100" style="object-fit: cover; min-height: 380px;">
+              {% else %}
+                <img src="{{ get_asset_url('../../assets/img/about/ab-img05.jpg') }}" alt="Wridoo Global Impact" class="img-fluid w-100 h-100" style="object-fit: cover; min-height: 380px;">
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 2 Bento Metric Cards -->
+        <div class="col-lg-6 mt-20">
+          <div class="xb-card-box xbFadeUpItem d-flex flex-column gap-4 h-100 justify-content-between" data-animation-delay="100ms">
+            <!-- Card 1 -->
+            <div class="xb-card-item">
+              <div class="xb-item--inner bg-pink p-4 p-md-5" style="border-radius: 20px;">
+                <div class="xb-item--top mb-3">
+                  <h2 class="xb-item--number" style="font-size: clamp(38px, 4vw, 54px); font-weight: 800; color: #110c29; margin-bottom: 5px;">{{ module.card_1_number or "100+" }}</h2>
+                  <p class="xb-item--text" style="font-size: 16px; font-weight: 600; color: #6e6b80; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">{{ module.card_1_title or "Countries Served" }}</p>
+                </div>
+                <div class="xb-item--bottom">
+                  <p class="xb-item--content" style="font-size: 16px; color: #494569; line-height: 1.6; margin: 0;">{{ module.card_1_description or "Our platform supports travel teams globally, helping agencies streamline workflows and bookings." }}</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="xb-card-item">
+              <div class="xb-item--inner p-4 p-md-5" style="border-radius: 20px; background: #0d1738;">
+                <div class="xb-item--top mb-3">
+                  <h2 class="xb-item--number clr-white" style="font-size: clamp(38px, 4vw, 54px); font-weight: 800; color: #fff; margin-bottom: 5px;">{{ module.card_2_number or "4M+" }}</h2>
+                  <p class="xb-item--text clr-white" style="font-size: 16px; font-weight: 600; color: #a4a0c2; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">{{ module.card_2_title or "Bookings Managed Monthly" }}</p>
+                </div>
+                <div class="xb-item--bottom">
+                  <p class="xb-item--content clr-white" style="font-size: 16px; color: #cfcde3; line-height: 1.6; margin: 0;">{{ module.card_2_description or "Agencies rely on our technology to organize itineraries, automate guest communications, and scale revenue." }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

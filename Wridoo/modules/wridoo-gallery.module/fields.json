@@ -1,0 +1,51 @@
+[
+  {
+    "name": "section_title",
+    "label": "Section Heading",
+    "type": "text",
+    "default": "[ Moments from Wridoo ]"
+  },
+  {
+    "name": "gallery_items",
+    "label": "Gallery Cards",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 12,
+      "default": 4
+    },
+    "children": [
+      {
+        "name": "image",
+        "label": "Card Image",
+        "type": "image"
+      },
+      {
+        "name": "item_title",
+        "label": "Event Title",
+        "type": "text",
+        "default": "Daily Meeting"
+      },
+      {
+        "name": "item_date",
+        "label": "Event Date",
+        "type": "text",
+        "default": "21/07/2026"
+      }
+    ]
+  },
+  {
+    "name": "btn_text",
+    "label": "CTA Button Text",
+    "type": "text",
+    "default": "Join Our team"
+  },
+  {
+    "name": "btn_link",
+    "label": "CTA Button Link",
+    "type": "url",
+    "default": {
+      "href": "#cta"
+    }
+  }
+]

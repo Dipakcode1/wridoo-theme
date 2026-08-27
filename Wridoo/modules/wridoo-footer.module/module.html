@@ -1,5 +1,17 @@
 {% set cta_url = module.col1.cta_link.url.href or module.col1.cta_link.href or (module.col1.cta_link if module.col1.cta_link is string else '#pricing') %}
 
+{% require_css %}
+<style>
+  .xb-corner-shape::before,
+  .xb-corner-shape::after {
+    background-image: url("{{ get_asset_url('../../assets/img/shape/corner-shape01.png') }}") !important;
+  }
+  .xb-corner-shape::after {
+    background-image: url("{{ get_asset_url('../../assets/img/shape/corner-shape02.png') }}") !important;
+  }
+</style>
+{% end_require_css %}
+
 <footer class="footer pt-60 pb-30">
   <div class="container mxw-1330">
     <div class="fs-footer-wrapper pos-rel z-1">

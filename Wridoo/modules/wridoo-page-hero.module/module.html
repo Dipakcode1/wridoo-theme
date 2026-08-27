@@ -1,0 +1,35 @@
+<section class="breadcrumb pos-rel z-1 pb-65 pt-60">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-9 col-lg-10">
+        <div class="breadcrumb--wrap text-center">
+          <h1 class="breadcrumb--title xbFadeUpItem" data-animation-delay="0ms" style="font-size: clamp(32px, 5vw, 56px); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em;">
+            {% if module.show_video_badge %}
+              AI Automation for Faster 
+              <span class="xb-video" style="display: inline-block; vertical-align: middle; width: 68px; height: 38px; border-radius: 30px; overflow: hidden; margin: 0 6px;">
+                <video loop="" muted="" playsinline="" autoplay="" poster="{{ get_asset_url('../../assets/img/hero/title-video-img.png') }}" style="width: 100%; height: 100%; object-fit: cover;">
+                  <source src="{{ module.video_url or get_asset_url('../../assets/img/hero/hero-title-video.mp4') }}">
+                </video>
+              </span>
+              Business Operations
+            {% else %}
+              {{ module.title or "Always Ready to Listen and Assist You" }}
+            {% endif %}
+          </h1>
+          {% if module.subtitle %}
+            <p class="breadcrumb--content xbFadeUpItem mt-3" data-animation-delay="200ms" style="font-size: 18px; color: #6e6b80; max-width: 680px; margin-left: auto; margin-right: auto;">
+              {{ module.subtitle }}
+            </p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if module.show_shapes %}
+    <div class="breadcrumb-shape">
+      <div class="shape shape--1"><img src="{{ get_asset_url('../../assets/img/shape/leftUp-shape01.png') }}" alt="shape"></div>
+      <div class="shape shape--2"><img src="{{ get_asset_url('../../assets/img/shape/rightUp-shape03.png') }}" alt="shape"></div>
+      <div class="shape shape--3"></div>
+    </div>
+  {% endif %}
+</section>

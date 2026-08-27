@@ -1,0 +1,135 @@
+<section class="contact-section pt-40 pb-120">
+  <div class="container mxw-1330">
+    <div class="row mt-none-30">
+      <!-- Left Column: Contact Information -->
+      <div class="col-lg-6 mt-30">
+        <div class="xb-contact-content">
+          <h2 class="xb-item--title" style="font-size: clamp(28px, 3.5vw, 42px); font-weight: 800; line-height: 1.2; color: #110c29; margin-bottom: 30px;">
+            {{ module.info_title or "We are excited to connect and support smarter communication" }}
+          </h2>
+          
+          <div class="xb-item--holder">
+            <ul class="xb-item--contact_methor list-unstyled">
+              <li class="xb-item--text">{{ module.call_center_label or "Call center" }}</li>
+              {% if module.phone_1 %}<li><a href="tel:{{ module.phone_1|replace(' ', '') }}">{{ module.phone_1 }}</a></li>{% endif %}
+              {% if module.phone_2 %}<li><a href="tel:{{ module.phone_2|replace(' ', '') }}">{{ module.phone_2 }}</a></li>{% endif %}
+            </ul>
+            <ul class="xb-item--contact_methor list-unstyled">
+              <li class="xb-item--text">{{ module.email_label or "Email" }}</li>
+              {% if module.email_1 %}<li><a href="mailto:{{ module.email_1 }}">{{ module.email_1 }}</a></li>{% endif %}
+              {% if module.email_2 %}<li><a href="mailto:{{ module.email_2 }}">{{ module.email_2 }}</a></li>{% endif %}
+            </ul>
+          </div>
+
+          <div class="xb-item--holder">
+            <ul class="xb-item--contact_methor list-unstyled">
+              <li class="xb-item--text">{{ module.location_1_label or "Location 1" }}</li>
+              <li>{{ module.location_1_text or "1365 N Scottsdale Rd. <br> Suite 350 <br> Scottsdale, AZ, 85257, US" }}</li>
+            </ul>
+            <ul class="xb-item--contact_methor list-unstyled">
+              <li class="xb-item--text">{{ module.location_2_label or "Location 2" }}</li>
+              <li>{{ module.location_2_text or "2211 North First Street <br> San Jose, CA 95131, US" }}</li>
+            </ul>
+          </div>
+
+          <div class="xb-item--social">
+            <h3 class="xb-item--text">Social Network</h3>
+            <ul class="xb-item--social ul_li list-unstyled">
+              <li><a href="#!"><i class="fa-brands fa-facebook-f"></i></a></li>
+              <li><a href="#!"><i class="fa-brands fa-instagram"></i></a></li>
+              <li><a href="#!"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+          </div>
+
+          <p class="xb-item--botom_text" style="font-size: 14px; color: #85809c; line-height: 1.6; margin-top: 25px;">
+            {{ module.disclaimer or "Please avoid sharing sensitive or confidential information through our contact information or form submission, and ensure all details provided are safe and appropriate always carefully." }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Column: Form -->
+      <div class="col-lg-6 mt-30">
+        <div id="career-form" class="xb-contact-form xb-main-contact-form">
+          <div class="form-heading text-center mb-40">
+            <h3 class="title" style="font-size: 28px; font-weight: 800; color: #110c29;">{{ module.form_title or "Contact form" }}</h3>
+          </div>
+
+          {% if module.use_hubspot_form and module.hubspot_form.form_id %}
+            <div class="hubspot-custom-form-wrap">
+              {% form form_to_use="{{ module.hubspot_form.form_id }}" %}
+            </div>
+          {% else %}
+            <!-- Standalone Contact Form -->
+            <form action="#!" class="xb-contact-input-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');">
+              <div class="row mt-none-25">
+                <div class="col-lg-6 mt-25">
+                  <label for="author-name">Name</label>
+                  <div class="xb-input-field">
+                    <input id="author-name" type="text" placeholder="Your Full Name" required>
+                  </div>
+                </div>
+                <div class="col-lg-6 mt-25">
+                  <label for="author-email">Email</label>
+                  <div class="xb-input-field">
+                    <input id="author-email" type="email" placeholder="you@company.com" required>
+                  </div>
+                </div>
+                <div class="col-lg-6 mt-25">
+                  <label for="author-phone">Contact Number</label>
+                  <div class="xb-input-field">
+                    <input id="author-phone" type="tel" placeholder="+1 (555) 000-0000" required>
+                  </div>
+                </div>
+                <div class="col-lg-6 mt-25">
+                  <label>Documents</label>
+                  <div class="xb-input-field xb-upload-file pos-rel">
+                    <input type="file" id="contact-file">
+                    <div class="xb-input-file">
+                      <p>Attach file...</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 mt-25">
+                  <label>Country</label>
+                  <div class="xb-input-field xb-select-field">
+                    <select class="form-select" style="height: 52px; border-radius: 8px; border: 1px solid #e7e5f2; font-size: 15px; color: #494569; padding: 0 16px;">
+                      <option value="">Please select country</option>
+                      <option value="US">United States</option>
+                      <option value="UK">United Kingdom</option>
+                      <option value="IN">India</option>
+                      <option value="CA">Canada</option>
+                      <option value="AU">Australia</option>
+                      <option value="DE">Germany</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-12 mt-25">
+                  <label for="author-massage">Message</label>
+                  <div class="xb-input-field xb-massage-field">
+                    <textarea name="massage" id="author-massage" required placeholder="How can our travel CRM assist you?"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="form-check mt-3 mb-3">
+                <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1" checked>
+                <label class="form-check-label" for="defaultCheck1" style="font-size: 14px; color: #6e6b80;">
+                  Subscribe to stay ahead with Wridoo product updates and travel insights
+                </label>
+              </div>
+              <div class="form-submit-btn">
+                <button type="submit" class="details-btn arrow_hover_effect w-100" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: #0d1738; color: #fff; padding: 16px; border-radius: 8px; border: none; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer;">
+                  {{ module.btn_text or "send a message" }}
+                  <span class="xb-arrow">
+                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.75 16.25L0 14.5L12 2.5H1.25V0H16.25V15H13.75V4.25L1.75 16.25Z" fill="white" />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </form>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Wridoo About Us Page
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body_class %}inner-page fintech-saas{% endblock %}
+
+{% block body %}
+<div class="body_wrap">
+  <!-- Global Header Navigation -->
+  {% module "header" path="../modules/wridoo-header.module", label="Header Navigation" %}
+
+  <main>
+    <!-- Page Hero Banner with Video Capsule -->
+    {% module "hero" path="../modules/wridoo-page-hero.module", label="Page Hero Banner", show_video_badge=true, subtitle="The intelligent infrastructure for modern, high-performance travel organizations" %}
+
+    <!-- Brand Partners Marquee -->
+    {% module "brand_marquee" path="../modules/wridoo-brand-marquee.module", label="Brand Partners Marquee", title="Trusted by 90K+ global travel brands" %}
+
+    <!-- About Image Gallery Grid -->
+    {% module "about_showcase" path="../modules/wridoo-about-showcase.module", label="About Photo Showcase" %}
+
+    <!-- Mission & Scale Section -->
+    {% module "mission" path="../modules/wridoo-mission.module", label="Mission & Vision" %}
+
+    <!-- Key Metrics & Bento Cards -->
+    {% module "stats" path="../modules/wridoo-about-stats.module", label="Key Metrics & Bento Cards" %}
+
+    <div class="ab-group-section">
+      <!-- Team Faces Marquee -->
+      {% module "team_marquee" path="../modules/wridoo-team-marquee.module", label="Team Faces Marquee" %}
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  {% module "footer" path="../modules/wridoo-footer.module", label="Global Footer" %}
+</div>
+{% endblock body %}

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "img_1",
+    "label": "Showcase Image 1",
+    "type": "image"
+  },
+  {
+    "name": "img_2",
+    "label": "Showcase Image 2",
+    "type": "image"
+  },
+  {
+    "name": "img_3",
+    "label": "Showcase Image 3",
+    "type": "image"
+  },
+  {
+    "name": "img_4",
+    "label": "Showcase Image 4",
+    "type": "image"
+  }
+]

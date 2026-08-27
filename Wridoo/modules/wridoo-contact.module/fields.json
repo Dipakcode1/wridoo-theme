@@ -1,0 +1,97 @@
+[
+  {
+    "name": "info_title",
+    "label": "Left Heading",
+    "type": "text",
+    "default": "We are excited to connect and support smarter communication"
+  },
+  {
+    "name": "call_center_label",
+    "label": "Call Center Section Title",
+    "type": "text",
+    "default": "Call center"
+  },
+  {
+    "name": "phone_1",
+    "label": "Phone Number 1",
+    "type": "text",
+    "default": "(501) 663-5387"
+  },
+  {
+    "name": "phone_2",
+    "label": "Phone Number 2",
+    "type": "text",
+    "default": "(747) 224-0662"
+  },
+  {
+    "name": "email_label",
+    "label": "Email Section Title",
+    "type": "text",
+    "default": "Email"
+  },
+  {
+    "name": "email_1",
+    "label": "Email 1",
+    "type": "text",
+    "default": "support@wridoo.com"
+  },
+  {
+    "name": "email_2",
+    "label": "Email 2",
+    "type": "text",
+    "default": "sales@wridoo.com"
+  },
+  {
+    "name": "location_1_label",
+    "label": "Location 1 Title",
+    "type": "text",
+    "default": "Location 1"
+  },
+  {
+    "name": "location_1_text",
+    "label": "Location 1 Address",
+    "type": "text",
+    "default": "1365 N Scottsdale Rd. Suite 350, Scottsdale, AZ, 85257, US"
+  },
+  {
+    "name": "location_2_label",
+    "label": "Location 2 Title",
+    "type": "text",
+    "default": "Location 2"
+  },
+  {
+    "name": "location_2_text",
+    "label": "Location 2 Address",
+    "type": "text",
+    "default": "2211 North First Street, San Jose, CA 95131, US"
+  },
+  {
+    "name": "disclaimer",
+    "label": "Bottom Disclaimer Text",
+    "type": "text",
+    "default": "Please avoid sharing sensitive or confidential information through our contact information or form submission, and ensure all details provided are safe and appropriate always carefully."
+  },
+  {
+    "name": "form_title",
+    "label": "Form Box Title",
+    "type": "text",
+    "default": "Contact form"
+  },
+  {
+    "name": "use_hubspot_form",
+    "label": "Use HubSpot Embedded Form",
+    "type": "boolean",
+    "default": false
+  },
+  {
+    "name": "hubspot_form",
+    "label": "Select HubSpot Form",
+    "type": "form"
+  },
+  {
+    "name": "btn_text",
+    "label": "Submit Button Text",
+    "type": "text",
+    "default": "send a message"
+  }
+]

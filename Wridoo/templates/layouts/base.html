@@ -30,7 +30,7 @@
 
     {{ standard_header_includes }}
   </head>
-  <body class="fintech-saas">
+  <body class="{% block body_class %}fintech-saas{% endblock %}">
     {% block body %}
     {% endblock body %}
 

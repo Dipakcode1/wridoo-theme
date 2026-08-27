@@ -1,0 +1,43 @@
+[
+  {
+    "name": "section_kicker",
+    "label": "Section Kicker / Title",
+    "type": "text",
+    "default": "Our Mission"
+  },
+  {
+    "name": "mission_image",
+    "label": "Mission Showcase Graphic",
+    "type": "image"
+  },
+  {
+    "name": "content_heading",
+    "label": "Content Heading",
+    "type": "text",
+    "default": "Enterprise Security & Scale"
+  },
+  {
+    "name": "p1",
+    "label": "Paragraph 1",
+    "type": "text",
+    "default": "Modern work has become unnecessarily complicated. Teams rely on too many disconnected tools tasks in one platform, communication in another, files scattered across different spaces. Important information gets buried, workflows slow down, and productivity suffers. We believed work shouldn’t feel this fragmented."
+  },
+  {
+    "name": "p2",
+    "label": "Paragraph 2",
+    "type": "text",
+    "default": "That belief led to the creation of Wridoo a unified platform designed to bring projects, collaboration, automation, and insights together in one place. Instead of switching between multiple tools, teams can focus on what truly matters."
+  },
+  {
+    "name": "p3",
+    "label": "Paragraph 3",
+    "type": "text",
+    "default": "As automation and human creativity converge, the best platforms don’t just manage work they simplify it and help teams move faster."
+  },
+  {
+    "name": "p4",
+    "label": "Paragraph 4",
+    "type": "text",
+    "default": "Our vision is a future where work feels seamless, collaboration feels natural, and productivity happens effortlessly."
+  }
+]

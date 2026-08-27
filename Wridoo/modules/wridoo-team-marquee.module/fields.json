@@ -1,0 +1,8 @@
+[
+  {
+    "name": "section_title",
+    "label": "Section Heading",
+    "type": "text",
+    "default": "The faces behind Wridoo"
+  }
+]

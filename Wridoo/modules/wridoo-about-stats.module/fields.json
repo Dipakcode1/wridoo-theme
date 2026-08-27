@@ -1,0 +1,43 @@
+[
+  {
+    "name": "feature_image",
+    "label": "Left Feature Image",
+    "type": "image"
+  },
+  {
+    "name": "card_1_number",
+    "label": "Card 1 Stat Number",
+    "type": "text",
+    "default": "100+"
+  },
+  {
+    "name": "card_1_title",
+    "label": "Card 1 Label",
+    "type": "text",
+    "default": "Countries Served"
+  },
+  {
+    "name": "card_1_description",
+    "label": "Card 1 Description",
+    "type": "text",
+    "default": "Our platform supports travel teams globally, helping agencies streamline workflows and bookings."
+  },
+  {
+    "name": "card_2_number",
+    "label": "Card 2 Stat Number",
+    "type": "text",
+    "default": "4M+"
+  },
+  {
+    "name": "card_2_title",
+    "label": "Card 2 Label",
+    "type": "text",
+    "default": "Bookings Managed Monthly"
+  },
+  {
+    "name": "card_2_description",
+    "label": "Card 2 Description",
+    "type": "text",
+    "default": "Agencies rely on our technology to organize itineraries, automate guest communications, and scale revenue."
+  }
+]

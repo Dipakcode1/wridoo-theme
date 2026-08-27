@@ -1,0 +1,29 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Wridoo Contact Page
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body_class %}inner-page fintech-saas{% endblock %}
+
+{% block body %}
+<div class="body_wrap">
+  <!-- Global Header Navigation -->
+  {% module "header" path="../modules/wridoo-header.module", label="Header Navigation" %}
+
+  <main>
+    <!-- Page Hero / Breadcrumb -->
+    {% module "hero" path="../modules/wridoo-page-hero.module", label="Page Hero Banner", title="Always Ready to Listen and Assist You" %}
+
+    <!-- Contact Details & Form -->
+    {% module "contact" path="../modules/wridoo-contact.module", label="Contact Details & Form" %}
+
+    <!-- Google Map Embed -->
+    {% module "map" path="../modules/wridoo-map.module", label="Google Map" %}
+  </main>
+
+  <!-- Global Footer -->
+  {% module "footer" path="../modules/wridoo-footer.module", label="Global Footer" %}
+</div>
+{% endblock body %}

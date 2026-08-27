@@ -1,0 +1,32 @@
+[
+  {
+    "name": "title",
+    "label": "Page Title",
+    "type": "text",
+    "default": "Always Ready to Listen and Assist You"
+  },
+  {
+    "name": "subtitle",
+    "label": "Subtitle / Description",
+    "type": "text",
+    "default": ""
+  },
+  {
+    "name": "show_video_badge",
+    "label": "Show Inline Video Badge (About Style)",
+    "type": "boolean",
+    "default": false
+  },
+  {
+    "name": "video_url",
+    "label": "Inline Video URL",
+    "type": "text",
+    "default": ""
+  },
+  {
+    "name": "show_shapes",
+    "label": "Show Background Decorative Shapes",
+    "type": "boolean",
+    "default": true
+  }
+]

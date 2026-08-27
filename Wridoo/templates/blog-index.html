@@ -1,0 +1,386 @@
+<!--
+  templateType: blog_listing
+  isAvailableForNewContent: true
+  label: Wridoo Blog Listing
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body_class %}inner-page fintech-saas blog-listing-page{% endblock %}
+
+{% block body %}
+{% require_css %}
+<style>
+  /* Blog Slide Featured Items */
+  .blog-slide-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 500px;
+    background: #0d1738;
+    box-shadow: 0 10px 30px rgba(13, 23, 56, 0.1);
+  }
+  @media (max-width: 767px) {
+    .blog-slide-item {
+      height: 440px;
+    }
+  }
+  .blog-slide-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 85%;
+    background: linear-gradient(to top, rgba(13, 23, 56, 0.96) 0%, rgba(13, 23, 56, 0.6) 55%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .blog-slide-item .xb-item--img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  .blog-slide-item .xb-item--img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .blog-slide-item:hover .xb-item--img img {
+    transform: scale(1.05);
+  }
+  .blog-slide-item .xb-item--holder {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+    z-index: 2;
+    max-width: 800px;
+  }
+  @media (max-width: 767px) {
+    .blog-slide-item .xb-item--holder {
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+    }
+  }
+  .blog-slide-item .xb-item--tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 6px;
+    background: #533afd;
+    color: #ffffff;
+    margin-bottom: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .blog-slide-item .xb-item--title {
+    font-size: clamp(20px, 2.6vw, 30px);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+  .blog-slide-item .xb-item--title a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .blog-slide-item .xb-item--title a:hover {
+    color: #c4baff;
+  }
+  .blog-slide-item .xb-item--content {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Blog Details Grid Items */
+  .blog_details_item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .blog_details_item .xb-item--img {
+    width: 100%;
+    height: 280px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f4f3ff;
+  }
+  @media (max-width: 575px) {
+    .blog_details_item .xb-item--img {
+      height: 220px;
+    }
+  }
+  .blog_details_item .xb-item--img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .blog_details_item:hover .xb-item--img img {
+    transform: scale(1.04);
+  }
+  .blog_details_item .xb-item--meta {
+    margin: 18px 0 12px;
+  }
+  .blog_details_item .xb-item--meta .category {
+    background: #f4f3ff;
+    color: #533afd;
+    padding: 3px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .blog_details_item .xb-item--meta .date {
+    font-size: 13px;
+    color: #85809c;
+    font-weight: 500;
+  }
+  .blog_details_item .xb-item--title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 12px;
+  }
+  .blog_details_item .xb-item--title a {
+    color: #110c29;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .blog_details_item .xb-item--title a:hover {
+    color: #533afd;
+  }
+  .blog_details_item .xb-item--content {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #6e6b80;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+{% end_require_css %}
+
+<div class="body_wrap">
+  <!-- Global Header Navigation -->
+  {% module "header" path="../modules/wridoo-header.module", label="Header Navigation", is_inner_page=true %}
+
+  <main>
+    <!-- Breadcrumb / Hero -->
+    <section class="breadcrumb pos-rel z-1 pb-45">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-md-10">
+            <div class="breadcrumb--wrap text-center">
+              <h2 class="breadcrumb--title">
+                {% if topic %}
+                  Topic: {{ topic|replace('-', ' ')|title }}
+                {% elif blog_author %}
+                  Author: {{ blog_author.display_name }}
+                {% else %}
+                  {{ group.public_title or "News, Trends & Travel CRM Insights" }}
+                {% endif %}
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="breadcrumb-shape">
+        <div class="shape shape--1"><img src="{{ get_asset_url('../assets/img/shape/leftUp-shape01.png') }}" alt=""></div>
+        <div class="shape shape--2"><img src="{{ get_asset_url('../assets/img/shape/rightUp-shape03.png') }}" alt=""></div>
+        <div class="shape shape--3"></div>
+      </div>
+    </section>
+
+    <!-- Featured Blog Slider (Shows on first page of listing) -->
+    {% if not current_page_num or current_page_num == 1 %}
+      {% if not topic and not blog_author %}
+        {% set featured_posts = blog_recent_posts(group.id, 4) %}
+        {% if featured_posts|length > 0 %}
+          <section class="blog">
+            <div class="container">
+              <div class="blog-slider swiper-container pos-rel">
+                <div class="swiper-wrapper">
+                  {% for post in featured_posts %}
+                    <div class="swiper-slide">
+                      <div class="blog-slide-item">
+                        <div class="xb-item--img">
+                          {% if post.featured_image %}
+                            <img src="{{ post.featured_image }}" alt="{{ post.name }}">
+                          {% else %}
+                            <img src="{{ get_asset_url('../assets/img/blog/img01.jpg') }}" alt="{{ post.name }}">
+                          {% endif %}
+                        </div>
+                        <div class="xb-item--holder">
+                          {% if post.topic_list|length > 0 %}
+                            <a href="{{ blog_tag_url(group.id, post.topic_list[0].slug) }}" class="xb-item--tag"># {{ post.topic_list[0].name }}</a>
+                          {% else %}
+                            <span class="xb-item--tag"># Travel CRM</span>
+                          {% endif %}
+                          <h2 class="xb-item--title"><a href="{{ post.absolute_url }}">{{ post.name }}</a></h2>
+                          <p class="xb-item--content">{{ post.post_list_content|striptags|truncate(120) }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="blog-item_button">
+                  <div class="blog-swiper-btn swiper-button-prev">
+                    <img src="{{ get_asset_url('../assets/img/shape/prev-shape.png') }}" alt="">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                  </div>
+                  <div class="blog-swiper-btn swiper-button-next">
+                    <img src="{{ get_asset_url('../assets/img/shape/next-shape.png') }}" alt="">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+
+    <!-- Blog Posts Grid -->
+    <section class="blog-details pt-110 pb-120">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-50">
+          <h2 class="details-content-title mb-0">Latest Articles &amp; Insights</h2>
+          {% if topic or blog_author %}
+            <a href="{{ group.absolute_url }}" class="thm-btn fintech-btn" style="padding: 10px 20px; font-size: 14px;">View All Posts</a>
+          {% endif %}
+        </div>
+
+        <div class="xb-blog-details-wrap">
+          <div class="row mt-none-50">
+            {% for content in contents %}
+              <div class="col-lg-6 mt-50">
+                <article class="blog_details_item">
+                  <div class="xb-item--img">
+                    <a href="{{ content.absolute_url }}">
+                      {% if content.featured_image %}
+                        <img src="{{ content.featured_image }}" alt="{{ content.name|striptags|escape }}">
+                      {% else %}
+                        <img src="{{ get_asset_url('../assets/img/blog/img05.jpg') }}" alt="{{ content.name|striptags|escape }}">
+                      {% endif %}
+                    </a>
+                  </div>
+                  <ul class="xb-item--meta ul_li_between list-unstyled" style="display: flex; justify-content: space-between; align-items: center;">
+                    <li>
+                      <ul class="ul_li list-unstyled" style="display: flex; gap: 10px; align-items: center;">
+                        <li class="category">
+                          {% if content.topic_list|length > 0 %}
+                            <a href="{{ blog_tag_url(group.id, content.topic_list[0].slug) }}" style="color: inherit; text-decoration: none;">{{ content.topic_list[0].name }}</a>
+                          {% else %}
+                            Travel Tech
+                          {% endif %}
+                        </li>
+                        {% if content.blog_post_author %}
+                          <li>by <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" style="color: inherit; text-decoration: none;">{{ content.blog_post_author.display_name }}</a></li>
+                        {% endif %}
+                      </ul>
+                    </li>
+                    <li class="date">{{ content.publish_date|datetimeformat('%d/%m/%Y') }}</li>
+                  </ul>
+                  <h2 class="xb-item--title">
+                    <a href="{{ content.absolute_url }}">{{ content.name }}</a>
+                  </h2>
+                  <p class="xb-item--content">{{ content.post_list_content|striptags|truncate(140) }}</p>
+                </article>
+              </div>
+            {% else %}
+              <div class="col-12 text-center py-5">
+                <h3>No blog articles found.</h3>
+                <p>Check back soon for latest travel industry updates and guides.</p>
+              </div>
+            {% endfor %}
+          </div>
+
+          <!-- Pagination -->
+          {% if not simple_list_page %}
+            <div class="xb-pagination-wrap text-center mt-55">
+              <ul class="xb-pagination-inner list-unstyled" style="display: inline-flex; gap: 8px; align-items: center;">
+                {% if last_page_num %}
+                  <li>
+                    <a href="{{ blog_page_link(last_page_num) }}" aria-label="Previous Page">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </a>
+                  </li>
+                {% endif %}
+
+                {% set total_pages = contents.total_page_count %}
+                {% set current_page = current_page_num or 1 %}
+                {% for page_num in range(1, total_pages + 1) %}
+                  <li>
+                    <a class="{% if page_num == current_page %}active{% endif %}" href="{{ blog_page_link(page_num) }}">{{ page_num }}</a>
+                  </li>
+                {% endfor %}
+
+                {% if next_page_num %}
+                  <li>
+                    <a href="{{ blog_page_link(next_page_num) }}" aria-label="Next Page">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </a>
+                  </li>
+                {% endif %}
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  {% module "footer" path="../modules/wridoo-footer.module", label="Global Footer" %}
+</div>
+
+{% require_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof Swiper !== 'undefined' && document.querySelector('.blog-slider')) {
+    new Swiper('.blog-slider', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.blog-slider .swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.blog-swiper-btn.swiper-button-next',
+        prevEl: '.blog-swiper-btn.swiper-button-prev',
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1200: { slidesPerView: 3 }
+      }
+    });
+  }
+});
+</script>
+{% end_require_js %}
+{% endblock body %}

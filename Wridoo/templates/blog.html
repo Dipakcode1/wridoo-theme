@@ -1,0 +1,10 @@
+<!--
+  templateType: blog
+  isAvailableForNewContent: true
+  label: Wridoo Universal Blog Template
+-->
+{% if is_listing %}
+  {% include "./blog-index.html" %}
+{% else %}
+  {% include "./blog-post.html" %}
+{% endif %}

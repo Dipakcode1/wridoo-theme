@@ -1,0 +1,399 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  label: Wridoo Blog Post Details
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body_class %}inner-page fintech-saas blog-post-page{% endblock %}
+
+{% block body %}
+{% require_css %}
+<style>
+  /* Blog Details & Comment Form Styling */
+  .blog_details_content h1,
+  .blog_details_content h2,
+  .blog_details_content h3,
+  .blog_details_content h4 {
+    color: #110c29;
+    font-weight: 800;
+    margin-top: 35px;
+    margin-bottom: 18px;
+    line-height: 1.3;
+  }
+  .blog_details_content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #494569;
+    margin-bottom: 20px;
+  }
+  .blog_details_content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 25px 0;
+  }
+  .blog_details_content ul,
+  .blog_details_content ol {
+    margin-bottom: 25px;
+    padding-left: 24px;
+    color: #494569;
+  }
+  .blog_details_content li {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+
+  /* Single Blog Post Header Image */
+  .single-item-image {
+    width: 100%;
+    height: 480px;
+    max-height: 480px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 50px;
+    background: #f4f3ff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  }
+  @media (max-width: 991px) {
+    .single-item-image {
+      height: 380px;
+      margin-bottom: 40px;
+    }
+  }
+  @media (max-width: 767px) {
+    .single-item-image {
+      height: 250px;
+      margin-bottom: 30px;
+    }
+  }
+  .single-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 16px;
+  }
+
+  /* Comments Area Display */
+  .comment_area {
+    margin-top: 40px;
+  }
+  .comment_area .comments-title,
+  .comment_area h3 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #110c29;
+    margin-bottom: 25px;
+  }
+  .comment_area .comment,
+  .comment_area .comment-item {
+    background: #f7f6fc;
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+    border: 1px solid #eeecf8;
+  }
+  .comment_area .comment-author {
+    font-weight: 700;
+    font-size: 17px;
+    color: #110c29;
+    margin-bottom: 4px;
+  }
+  .comment_area .comment-date {
+    font-size: 13px;
+    color: #85809c;
+    margin-bottom: 12px;
+  }
+  .comment_area .comment-body {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #494569;
+  }
+
+  /* Sastik Dark Comment Form Container */
+  .blog-comment-form-wrap {
+    margin-top: 60px;
+    background: #0d1738;
+    border-radius: 16px;
+    padding: 50px 45px;
+    box-shadow: 0 15px 40px rgba(13, 23, 56, 0.12);
+  }
+  @media (max-width: 767px) {
+    .blog-comment-form-wrap {
+      padding: 35px 22px;
+    }
+  }
+  .blog-comment-form-wrap .comment-form-heading {
+    margin-bottom: 28px;
+  }
+  .blog-comment-form-wrap .comment-form-heading .title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+  .blog-comment-form-wrap .comment-form-heading .sub-title {
+    font-size: 14px;
+    color: #a19ebd;
+    margin: 0;
+  }
+
+  /* Form Fields & Inputs */
+  .blog-comment-form-wrap form,
+  .blog-comment-form-wrap .hs-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 100%;
+  }
+  .blog-comment-form-wrap .hs-form-field,
+  .blog-comment-form-wrap .form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0 !important;
+  }
+  .blog-comment-form-wrap label {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #e2dff5 !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+  }
+  .blog-comment-form-wrap input[type="text"],
+  .blog-comment-form-wrap input[type="email"],
+  .blog-comment-form-wrap input[type="url"],
+  .blog-comment-form-wrap input[type="tel"] {
+    height: 52px !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    font-size: 15px !important;
+    padding: 0 18px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transition: all 0.2s ease !important;
+  }
+  .blog-comment-form-wrap input[type="text"]:focus,
+  .blog-comment-form-wrap input[type="email"]:focus,
+  .blog-comment-form-wrap input[type="url"]:focus,
+  .blog-comment-form-wrap textarea:focus {
+    border-color: #533afd !important;
+    background: rgba(255, 255, 255, 0.14) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(83, 58, 253, 0.25) !important;
+  }
+  .blog-comment-form-wrap textarea {
+    min-height: 130px !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    font-size: 15px !important;
+    padding: 14px 18px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transition: all 0.2s ease !important;
+    resize: vertical !important;
+  }
+  .blog-comment-form-wrap input::placeholder,
+  .blog-comment-form-wrap textarea::placeholder {
+    color: rgba(255, 255, 255, 0.45) !important;
+  }
+  .blog-comment-form-wrap .hs-comment-checkbox-wrapper,
+  .blog-comment-form-wrap .form-check {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin: 6px 0 !important;
+  }
+  .blog-comment-form-wrap .hs-comment-checkbox-wrapper label,
+  .blog-comment-form-wrap .form-check label {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: #a19ebd !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+  }
+  .blog-comment-form-wrap input[type="submit"],
+  .blog-comment-form-wrap .hs-button,
+  .blog-comment-form-wrap button[type="submit"] {
+    background: #533afd !important;
+    color: #ffffff !important;
+    height: 52px !important;
+    padding: 0 36px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    font-size: 15px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 10px !important;
+    box-shadow: 0 4px 14px rgba(83, 58, 253, 0.35) !important;
+  }
+  .blog-comment-form-wrap input[type="submit"]:hover,
+  .blog-comment-form-wrap .hs-button:hover,
+  .blog-comment-form-wrap button[type="submit"]:hover {
+    background: #4028e0 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(83, 58, 253, 0.45) !important;
+  }
+</style>
+{% end_require_css %}
+
+<div class="body_wrap">
+  <!-- Global Header Navigation -->
+  {% module "header" path="../modules/wridoo-header.module", label="Header Navigation", is_inner_page=true %}
+
+  <main>
+    <!-- Breadcrumb / Hero -->
+    <section class="breadcrumb pos-rel z-1 pb-45">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-12 col-lg-10 col-md-10">
+            <div class="breadcrumb--wrap text-center">
+              <h1 class="breadcrumb--title" style="font-size: clamp(28px, 4vw, 46px); font-weight: 800; line-height: 1.25; color: #110c29;">
+                {{ content.name }}
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="breadcrumb-shape">
+        <div class="shape shape--1"><img src="{{ get_asset_url('../assets/img/shape/leftUp-shape01.png') }}" alt=""></div>
+        <div class="shape shape--2"><img src="{{ get_asset_url('../assets/img/shape/rightUp-shape03.png') }}" alt=""></div>
+        <div class="shape shape--3"></div>
+      </div>
+    </section>
+
+    <!-- Single Blog Post Main Section -->
+    <section class="blog_details_section pb-110">
+      <div class="container">
+        {% if content.featured_image %}
+          <div class="single-item-image mb-60">
+            <img src="{{ content.featured_image }}" alt="{{ content.name|striptags|escape }}">
+          </div>
+        {% endif %}
+
+        <div class="row mt-none-50">
+          <!-- Left Column: Blog Post Content -->
+          <div class="col-lg-8 mt-50">
+            <article class="blog_details_content">
+              {{ content.post_body }}
+            </article>
+
+            <!-- Post Topics / Tags -->
+            {% if content.topic_list|length > 0 %}
+              <div class="post-tags-wrap mt-40 pt-30" style="border-top: 1px solid #e7e5f2; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <span style="font-weight: 700; color: #110c29;">Tags:</span>
+                {% for topic in content.topic_list %}
+                  <a href="{{ blog_tag_url(group.id, topic.slug) }}" class="xb-item--tag xb-border" style="display: inline-block; padding: 6px 16px; border-radius: 30px; font-size: 13px; font-weight: 600; color: #533afd; background: #f4f3ff; text-decoration: none;">
+                    #{{ topic.name }}
+                  </a>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            <!-- Blog Comments Area -->
+            <div class="item_details_box pt-60">
+              <!-- Comment Form Styled Box -->
+              <div class="blog-comment-form-wrap">
+                <div class="comment-form-heading">
+                  <h3 class="title">Leave a Comment</h3>
+                  <p class="sub-title">Your email address will not be published. Required fields are marked *</p>
+                </div>
+                {% blog_comments "blog_comments" %}
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Sidebar -->
+          <div class="col-lg-4 mt-50">
+            <div class="career-details-right sticky-top" style="top: 100px;">
+              <!-- Meta Card -->
+              <div class="career-address-wrap" style="background: #f7f6fc; border-radius: 16px; padding: 30px;">
+                <h3 class="xb-item--title" style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: #110c29;">Article Info</h3>
+                <ul class="xb-item--list list-unstyled" style="display: flex; flex-direction: column; gap: 14px; margin: 0;">
+                  <li style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #494569;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#533afd" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                    <span><strong>Category:</strong> {% if content.topic_list|length > 0 %}{{ content.topic_list[0].name }}{% else %}Travel CRM{% endif %}</span>
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #494569;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#533afd" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span><strong>Date:</strong> {{ content.publish_date|datetimeformat('%d %B, %Y') }}</span>
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #494569;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#533afd" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span><strong>Reading Time:</strong> {{ (content.post_body|striptags|wordcount // 200) + 1 }} min read</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Author Card -->
+              {% if content.blog_post_author %}
+                <div class="post_author ul_li mt-30" style="background: #ffffff; border: 1px solid #e7e5f2; border-radius: 16px; padding: 24px; display: flex; align-items: center; gap: 16px;">
+                  {% if content.blog_post_author.avatar %}
+                    <div class="xb-item--author" style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
+                      <img src="{{ content.blog_post_author.avatar }}" alt="{{ content.blog_post_author.display_name }}" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                  {% else %}
+                    <div class="xb-item--author" style="width: 60px; height: 60px; border-radius: 50%; background: #e6e3fb; color: #533afd; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 22px; flex-shrink: 0;">
+                      {{ content.blog_post_author.display_name|first }}
+                    </div>
+                  {% endif %}
+                  <div class="xb-item--holder">
+                    <h4 class="xb-item--name" style="font-size: 18px; font-weight: 700; margin-bottom: 4px; color: #110c29;">{{ content.blog_post_author.display_name }}</h4>
+                    {% if content.blog_post_author.bio %}
+                      <p class="xb-item--desig" style="font-size: 13px; color: #6e6b80; margin: 0; line-height: 1.4;">{{ content.blog_post_author.bio|truncate(80) }}</p>
+                    {% else %}
+                      <p class="xb-item--desig" style="font-size: 13px; color: #6e6b80; margin: 0;">Wridoo Travel CRM Specialist</p>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+
+              <!-- Recent Posts Sidebar Widget -->
+              {% set recent_posts = blog_recent_posts(group.id, 4) %}
+              {% if recent_posts|length > 0 %}
+                <div class="recent-posts-sidebar mt-30" style="background: #ffffff; border: 1px solid #e7e5f2; border-radius: 16px; padding: 24px;">
+                  <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #110c29;">Related Insights</h4>
+                  <div style="display: flex; flex-direction: column; gap: 16px;">
+                    {% for rec in recent_posts %}
+                      {% if rec.id != content.id %}
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                          {% if rec.featured_image %}
+                            <div style="width: 65px; height: 65px; border-radius: 10px; overflow: hidden; flex-shrink: 0;">
+                              <img src="{{ rec.featured_image }}" alt="{{ rec.name }}" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                          {% endif %}
+                          <div>
+                            <span style="font-size: 12px; color: #85809c;">{{ rec.publish_date|datetimeformat('%d %b, %Y') }}</span>
+                            <h5 style="font-size: 14px; font-weight: 600; line-height: 1.35; margin: 4px 0 0;">
+                              <a href="{{ rec.absolute_url }}" style="color: #110c29; text-decoration: none;">{{ rec.name|truncate(48) }}</a>
+                            </h5>
+                          </div>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  {% module "footer" path="../modules/wridoo-footer.module", label="Global Footer" %}
+</div>
+{% endblock body %}

@@ -158,7 +158,10 @@
                 </div>
                 <div class="xb-item--price_box ul_li">
                   <h3 class="xb-price">{{ module.card_4.price or "$3,286" }}</h3>
-                  <span class="xb-discount"><i class="fa-regular fa-arrow-up"></i> {{ module.card_4.discount_text or "125%" }}</span>
+                  <span class="xb-discount" style="display: inline-flex; align-items: center; gap: 3px;">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                    {{ module.card_4.discount_text or "125%" }}
+                  </span>
                 </div>
                 <p class="xb-item--text">
                   {% if module.card_4.footer_text %}

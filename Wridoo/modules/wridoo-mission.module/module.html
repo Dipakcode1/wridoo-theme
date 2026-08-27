@@ -1,27 +1,27 @@
-<section class="mission pt-110 pb-90">
-  <div class="container mxw-1330">
-    <h2 class="mission-title xbFadeUpItem text-center" style="font-size: clamp(32px, 4vw, 48px); font-weight: 800; color: #110c29; margin-bottom: 50px;">
+<section class="mission pt-155">
+  <div class="container">
+    <h2 class="mission-title xbFadeUpItem">
       {{ module.section_kicker or "Our Mission" }}
     </h2>
   </div>
   
-  <div class="mission-img text-center mb-60">
+  <div class="mission-img">
     {% if module.mission_image.src %}
-      <img src="{{ module.mission_image.src }}" alt="{{ module.mission_image.alt or 'Wridoo Mission' }}" class="img-fluid" style="max-width: 100%; border-radius: 20px;">
+      <img src="{{ module.mission_image.src }}" alt="{{ module.mission_image.alt or 'Wridoo Mission' }}">
     {% else %}
-      <img src="{{ get_asset_url('../../assets/img/about/mission-img.png') }}" alt="Wridoo Mission" class="img-fluid" style="max-width: 100%; border-radius: 20px;">
+      <img src="{{ get_asset_url('../../assets/img/about/mission-img.png') }}" alt="Wridoo Mission">
     {% endif %}
   </div>
 
-  <div class="container mxw-1330">
-    <div class="mission-content text-center" style="max-width: 860px; margin-left: auto; margin-right: auto;">
-      <h3 class="details-content-title mb-35" style="font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: #110c29;">
+  <div class="container">
+    <div class="mission-content text-center">
+      <h3 class="details-content-title mb-35">
         {{ module.content_heading or "Enterprise Security & Scale" }}
       </h3>
-      {% if module.p1 %}<p class="details-content mb-25" style="font-size: 17px; line-height: 1.8; color: #575370;">{{ module.p1 }}</p>{% endif %}
-      {% if module.p2 %}<p class="details-content mb-25" style="font-size: 17px; line-height: 1.8; color: #575370;">{{ module.p2 }}</p>{% endif %}
-      {% if module.p3 %}<p class="details-content mb-25" style="font-size: 17px; line-height: 1.8; color: #575370;">{{ module.p3 }}</p>{% endif %}
-      {% if module.p4 %}<p class="details-content mb-25" style="font-size: 17px; line-height: 1.8; color: #575370;">{{ module.p4 }}</p>{% endif %}
+      {% if module.p1 %}<p class="details-content mb-25">{{ module.p1 }}</p>{% else %}<p class="details-content mb-25">Modern work has become unnecessarily complicated. Teams rely on too many disconnected tools tasks in one platform, communication in another, files scattered across different spaces. Important information gets buried, workflows slow down, and productivity suffers. We believed work shouldn’t feel this fragmented.</p>{% endif %}
+      {% if module.p2 %}<p class="details-content mb-25">{{ module.p2 }}</p>{% else %}<p class="details-content mb-25">That belief led to the creation of Wridoo a unified platform designed to bring projects, collaboration, automation, and insights together in one place. Instead of switching between multiple tools, teams can focus on what truly matters.</p>{% endif %}
+      {% if module.p3 %}<p class="details-content mb-25">{{ module.p3 }}</p>{% else %}<p class="details-content mb-25">As automation and human creativity converge, the best platforms don’t just manage work they simplify it and help teams move faster.</p>{% endif %}
+      {% if module.p4 %}<p class="details-content mb-25">{{ module.p4 }}</p>{% else %}<p class="details-content mb-25">Our vision is a future where work feels seamless, collaboration feels natural, and productivity happens effortlessly.</p>{% endif %}
     </div>
   </div>
 </section>

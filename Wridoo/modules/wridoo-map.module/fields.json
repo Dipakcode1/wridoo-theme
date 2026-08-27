@@ -3,7 +3,7 @@
     "name": "map_embed_url",
     "label": "Google Map Embed URL",
     "type": "text",
-    "default": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.0163359050604!2d-111.9282361!3d33.4749363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b0bf24cf5e297%3A0xbceb10c9c7f66a7b!2s1365%20N%20Scottsdale%20Rd%2C%20Scottsdale%2C%20AZ%2085257!5e0!3m2!1sen!2sus!4v1700000000000"
+    "default": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113997.77180490714!2d88.3578768!3d26.7271012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e44140a3359d9f%3A0x6335a1420790757a!2sSiliguri%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1700000000000"
   },
   {
     "name": "map_height",

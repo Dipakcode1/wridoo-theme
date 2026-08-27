@@ -1,3 +1,90 @@
+{% require_css %}
+<style>
+  .hubspot-custom-form-wrap .hs-form {
+    max-width: 100% !important;
+  }
+  .hubspot-custom-form-wrap .hs-form fieldset {
+    max-width: 100% !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .hubspot-custom-form-wrap .hs-form .hs-form-field {
+    margin-bottom: 20px !important;
+  }
+  .hubspot-custom-form-wrap .hs-form label {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #110c29 !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+  }
+  .hubspot-custom-form-wrap .hs-form input[type="text"],
+  .hubspot-custom-form-wrap .hs-form input[type="email"],
+  .hubspot-custom-form-wrap .hs-form input[type="tel"],
+  .hubspot-custom-form-wrap .hs-form input[type="number"],
+  .hubspot-custom-form-wrap .hs-form select {
+    height: 52px !important;
+    border-radius: 8px !important;
+    border: 1px solid #e7e5f2 !important;
+    font-size: 15px !important;
+    color: #494569 !important;
+    padding: 0 16px !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    box-sizing: border-box !important;
+    transition: border-color 0.2s ease !important;
+  }
+  .hubspot-custom-form-wrap .hs-form input:focus,
+  .hubspot-custom-form-wrap .hs-form select:focus,
+  .hubspot-custom-form-wrap .hs-form textarea:focus {
+    border-color: #533afd !important;
+    outline: none !important;
+  }
+  .hubspot-custom-form-wrap .hs-form textarea {
+    border-radius: 8px !important;
+    border: 1px solid #e7e5f2 !important;
+    font-size: 15px !important;
+    color: #494569 !important;
+    padding: 14px 16px !important;
+    width: 100% !important;
+    min-height: 120px !important;
+    background: #ffffff !important;
+    box-sizing: border-box !important;
+  }
+  .hubspot-custom-form-wrap .hs-form input[type="submit"],
+  .hubspot-custom-form-wrap .hs-form .hs-button {
+    background: #533afd !important;
+    color: #ffffff !important;
+    padding: 16px 32px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    font-size: 15px !important;
+    transition: all 0.3s ease !important;
+    margin-top: 10px !important;
+  }
+  .hubspot-custom-form-wrap .hs-form input[type="submit"]:hover,
+  .hubspot-custom-form-wrap .hs-form .hs-button:hover {
+    background: #4028e0 !important;
+    box-shadow: 0 6px 20px rgba(83, 58, 253, 0.35) !important;
+  }
+  .hubspot-custom-form-wrap .submitted-message {
+    background: #e6e3fb;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    font-weight: 600;
+    color: #110c29;
+    font-size: 18px;
+  }
+</style>
+{% end_require_css %}
+
 <section class="contact-section pt-40 pb-120">
   <div class="container mxw-1330">
     <div class="row mt-none-30">
@@ -5,120 +92,124 @@
       <div class="col-lg-6 mt-30">
         <div class="xb-contact-content">
           <h2 class="xb-item--title" style="font-size: clamp(28px, 3.5vw, 42px); font-weight: 800; line-height: 1.2; color: #110c29; margin-bottom: 30px;">
-            {{ module.info_title or "We are excited to connect and support smarter communication" }}
+            {{ module.info_title or "Transform Your Travel Business with Wridoo Travel CRM" }}
           </h2>
           
           <div class="xb-item--holder">
             <ul class="xb-item--contact_methor list-unstyled">
-              <li class="xb-item--text">{{ module.call_center_label or "Call center" }}</li>
-              {% if module.phone_1 %}<li><a href="tel:{{ module.phone_1|replace(' ', '') }}">{{ module.phone_1 }}</a></li>{% endif %}
+              <li class="xb-item--text">{{ module.call_center_label or "Call Center & WhatsApp" }}</li>
+              <li><a href="tel:+919641866113">{{ module.phone_1 or "+91 96418 66113" }}</a></li>
               {% if module.phone_2 %}<li><a href="tel:{{ module.phone_2|replace(' ', '') }}">{{ module.phone_2 }}</a></li>{% endif %}
             </ul>
             <ul class="xb-item--contact_methor list-unstyled">
               <li class="xb-item--text">{{ module.email_label or "Email" }}</li>
-              {% if module.email_1 %}<li><a href="mailto:{{ module.email_1 }}">{{ module.email_1 }}</a></li>{% endif %}
-              {% if module.email_2 %}<li><a href="mailto:{{ module.email_2 }}">{{ module.email_2 }}</a></li>{% endif %}
+              {% if module.email_1 %}<li><a href="mailto:{{ module.email_1 }}">{{ module.email_1 }}</a></li>{% else %}<li><a href="mailto:support@wridoo.com">support@wridoo.com</a></li>{% endif %}
+              {% if module.email_2 %}<li><a href="mailto:{{ module.email_2 }}">{{ module.email_2 }}</a></li>{% else %}<li><a href="mailto:sales@wridoo.com">sales@wridoo.com</a></li>{% endif %}
             </ul>
           </div>
 
           <div class="xb-item--holder">
             <ul class="xb-item--contact_methor list-unstyled">
-              <li class="xb-item--text">{{ module.location_1_label or "Location 1" }}</li>
-              <li>{{ module.location_1_text or "1365 N Scottsdale Rd. <br> Suite 350 <br> Scottsdale, AZ, 85257, US" }}</li>
+              <li class="xb-item--text">{{ module.location_1_label or "Headquarters (Siliguri)" }}</li>
+              <li>{{ module.location_1_text or "Siliguri, West Bengal, India - 734001" }}</li>
             </ul>
             <ul class="xb-item--contact_methor list-unstyled">
-              <li class="xb-item--text">{{ module.location_2_label or "Location 2" }}</li>
-              <li>{{ module.location_2_text or "2211 North First Street <br> San Jose, CA 95131, US" }}</li>
+              <li class="xb-item--text">{{ module.location_2_label or "Global Reach" }}</li>
+              <li>{{ module.location_2_text or "Serving Tour Operators & DMCs Globally" }}</li>
             </ul>
           </div>
 
           <div class="xb-item--social">
-            <h3 class="xb-item--text">Social Network</h3>
-            <ul class="xb-item--social ul_li list-unstyled">
-              <li><a href="#!"><i class="fa-brands fa-facebook-f"></i></a></li>
-              <li><a href="#!"><i class="fa-brands fa-instagram"></i></a></li>
-              <li><a href="#!"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            <h3 class="xb-item--text">Direct Contact &amp; WhatsApp</h3>
+            <ul class="xb-item--social ul_li list-unstyled" style="display: flex; gap: 12px; margin-top: 10px;">
+              <li>
+                <a href="https://wa.me/919641866113" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #25D366; color: #fff; text-decoration: none; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35); transition: transform 0.2s ease;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ffffff"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.23.25-.88.86-.88 2.1s.9 2.43 1.03 2.6c.12.16 1.77 2.7 4.28 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.48-.6 1.69-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29s-1.48-.73-1.71-.81c-.23-.08-.4-.13-.56.12-.17.25-.65.81-.8 1-.15.18-.29.2-.54.08-.25-.13-1.07-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.15.17-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48z"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="tel:+919641866113" title="Call Us" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #533afd; color: #fff; text-decoration: none; box-shadow: 0 4px 12px rgba(83, 58, 253, 0.35); transition: transform 0.2s ease;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </a>
+              </li>
             </ul>
           </div>
 
           <p class="xb-item--botom_text" style="font-size: 14px; color: #85809c; line-height: 1.6; margin-top: 25px;">
-            {{ module.disclaimer or "Please avoid sharing sensitive or confidential information through our contact information or form submission, and ensure all details provided are safe and appropriate always carefully." }}
+            {{ module.disclaimer or "Reach out to schedule a live product walk-through or discuss customized travel software integrations for your team." }}
           </p>
         </div>
       </div>
 
-      <!-- Right Column: Form -->
+      <!-- Right Column: Demo / Contact Form -->
       <div class="col-lg-6 mt-30">
         <div id="career-form" class="xb-contact-form xb-main-contact-form">
           <div class="form-heading text-center mb-40">
-            <h3 class="title" style="font-size: 28px; font-weight: 800; color: #110c29;">{{ module.form_title or "Contact form" }}</h3>
+            <h3 class="title" style="font-size: 28px; font-weight: 800; color: #ffffff;">{{ module.form_title or "Request a Travel CRM Demo" }}</h3>
           </div>
 
-          {% if module.use_hubspot_form and module.hubspot_form.form_id %}
+          {% if module.hubspot_form.form_id %}
+            <!-- Native Embedded HubSpot Form -->
             <div class="hubspot-custom-form-wrap">
-              {% form form_to_use="{{ module.hubspot_form.form_id }}" %}
+              {% form
+                form_to_use="{{ module.hubspot_form.form_id }}",
+                response_response_type="{{ module.hubspot_form.response_type }}",
+                response_message="{{ module.hubspot_form.message }}",
+                response_redirect_id="{{ module.hubspot_form.redirect_id }}",
+                response_redirect_url="{{ module.hubspot_form.redirect_url }}"
+              %}
             </div>
           {% else %}
-            <!-- Standalone Contact Form -->
-            <form action="#!" class="xb-contact-input-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');">
+            <!-- Standalone Travel CRM Demo Request Form Fallback -->
+            <form action="#!" class="xb-contact-input-form" onsubmit="event.preventDefault(); alert('Thank you! Your Travel CRM demo request has been received. Our Siliguri team will reach out shortly.');">
               <div class="row mt-none-25">
                 <div class="col-lg-6 mt-25">
-                  <label for="author-name">Name</label>
+                  <label for="author-name">Your Name</label>
                   <div class="xb-input-field">
-                    <input id="author-name" type="text" placeholder="Your Full Name" required>
+                    <input id="author-name" type="text" placeholder="John Doe" required>
                   </div>
                 </div>
                 <div class="col-lg-6 mt-25">
-                  <label for="author-email">Email</label>
+                  <label for="author-email">Work Email</label>
                   <div class="xb-input-field">
-                    <input id="author-email" type="email" placeholder="you@company.com" required>
+                    <input id="author-email" type="email" placeholder="john@travelagency.com" required>
                   </div>
                 </div>
                 <div class="col-lg-6 mt-25">
-                  <label for="author-phone">Contact Number</label>
+                  <label for="author-phone">Phone / WhatsApp</label>
                   <div class="xb-input-field">
-                    <input id="author-phone" type="tel" placeholder="+1 (555) 000-0000" required>
+                    <input id="author-phone" type="tel" placeholder="+91 96418 66113" required>
                   </div>
                 </div>
                 <div class="col-lg-6 mt-25">
-                  <label>Documents</label>
-                  <div class="xb-input-field xb-upload-file pos-rel">
-                    <input type="file" id="contact-file">
-                    <div class="xb-input-file">
-                      <p>Attach file...</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-12 mt-25">
-                  <label>Country</label>
+                  <label for="business-type">Travel Business Type</label>
                   <div class="xb-input-field xb-select-field">
-                    <select class="form-select" style="height: 52px; border-radius: 8px; border: 1px solid #e7e5f2; font-size: 15px; color: #494569; padding: 0 16px;">
-                      <option value="">Please select country</option>
-                      <option value="US">United States</option>
-                      <option value="UK">United Kingdom</option>
-                      <option value="IN">India</option>
-                      <option value="CA">Canada</option>
-                      <option value="AU">Australia</option>
-                      <option value="DE">Germany</option>
+                    <select id="business-type" class="form-select" style="height: 52px; border-radius: 8px; border: 1px solid #e7e5f2; font-size: 15px; color: #494569; padding: 0 16px;" required>
+                      <option value="">Select Business Type</option>
+                      <option value="tour_operator">Tour Operator</option>
+                      <option value="travel_agency">Travel Agency</option>
+                      <option value="dmc">Destination Management (DMC)</option>
+                      <option value="hotel_resort">Hotel / Resort / Homestay</option>
+                      <option value="activity_provider">Activity &amp; Transfer Provider</option>
                     </select>
                   </div>
                 </div>
                 <div class="col-lg-12 mt-25">
-                  <label for="author-massage">Message</label>
+                  <label for="author-massage">What features are you looking for?</label>
                   <div class="xb-input-field xb-massage-field">
-                    <textarea name="massage" id="author-massage" required placeholder="How can our travel CRM assist you?"></textarea>
+                    <textarea name="massage" id="author-massage" required placeholder="E.g., Automated itinerary builder, multi-currency invoicing, WhatsApp lead capture, supplier management..."></textarea>
                   </div>
                 </div>
               </div>
               <div class="form-check mt-3 mb-3">
                 <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1" checked>
                 <label class="form-check-label" for="defaultCheck1" style="font-size: 14px; color: #6e6b80;">
-                  Subscribe to stay ahead with Wridoo product updates and travel insights
+                  I agree to receive a personalized Wridoo Travel CRM demo and software insights.
                 </label>
               </div>
               <div class="form-submit-btn">
-                <button type="submit" class="details-btn arrow_hover_effect w-100" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: #0d1738; color: #fff; padding: 16px; border-radius: 8px; border: none; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer;">
-                  {{ module.btn_text or "send a message" }}
+                <button type="submit" class="details-btn arrow_hover_effect w-100" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: #533afd; color: #fff; padding: 16px; border-radius: 8px; border: none; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer;">
+                  {{ module.btn_text or "Submit Demo Request" }}
                   <span class="xb-arrow">
                     <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1.75 16.25L0 14.5L12 2.5H1.25V0H16.25V15H13.75V4.25L1.75 16.25Z" fill="white" />

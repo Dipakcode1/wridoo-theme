@@ -1,47 +1,156 @@
-<section class="about-card pt-90 pb-80">
+{% require_css %}
+<style>
+  .about-card-section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  .about-card-section .ab-card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+    width: 100%;
+  }
+  @media (max-width: 991px) {
+    .about-card-section .ab-card-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+  .about-card-section .ab-img-box {
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    min-height: 460px;
+    display: flex;
+    width: 100%;
+  }
+  .about-card-section .ab-img-box img {
+    width: 100%;
+    height: 100%;
+    min-height: 460px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border-radius: 16px;
+  }
+  .about-card-section .ab-stats-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    height: 100%;
+    width: 100%;
+  }
+  @media (max-width: 767px) {
+    .about-card-section .ab-stats-box {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+  .about-card-section .ab-stat-card {
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+  .about-card-section .ab-stat-card-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 460px;
+    height: 100%;
+    width: 100%;
+    padding: 38px 28px 34px;
+    border-radius: 16px;
+    box-sizing: border-box;
+  }
+  @media (max-width: 1199px) {
+    .about-card-section .ab-stat-card-inner {
+      padding: 30px 22px 28px;
+    }
+  }
+  .about-card-section .ab-stat-card-inner.card-pink {
+    background: #e6e3fb !important;
+    color: #110c29 !important;
+  }
+  .about-card-section .ab-stat-card-inner.card-dark {
+    background: #0d1738 !important;
+    color: #ffffff !important;
+  }
+  .about-card-section .stat-top {
+    margin-bottom: 20px;
+  }
+  .about-card-section .stat-number {
+    font-size: clamp(36px, 3.2vw, 48px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    color: #110c29;
+  }
+  .about-card-section .card-dark .stat-number {
+    color: #ffffff !important;
+  }
+  .about-card-section .stat-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+    color: #2e2a4a;
+  }
+  .about-card-section .card-dark .stat-title {
+    color: #d4ceff !important;
+  }
+  .about-card-section .stat-desc {
+    font-size: 15px;
+    line-height: 1.65;
+    margin: 0;
+    font-weight: 500;
+    color: #494569;
+    padding-top: 20px;
+  }
+  .about-card-section .card-dark .stat-desc {
+    color: #b8b3d8 !important;
+  }
+</style>
+{% end_require_css %}
+
+<section class="about-card-section">
   <div class="container mxw-1330">
-    <div class="ab-card-wrap">
-      <div class="row mt-none-20 align-items-stretch">
-        <!-- Left Big Image -->
-        <div class="col-lg-6 mt-20">
-          <div class="xb-card-item xbFadeUpItem h-100" data-animation-delay="0ms">
-            <div class="xb-item--img h-100" style="overflow: hidden; border-radius: 20px;">
-              {% if module.feature_image.src %}
-                <img src="{{ module.feature_image.src }}" alt="{{ module.feature_image.alt or 'Wridoo Global Impact' }}" class="img-fluid w-100 h-100" style="object-fit: cover; min-height: 380px;">
-              {% else %}
-                <img src="{{ get_asset_url('../../assets/img/about/ab-img05.jpg') }}" alt="Wridoo Global Impact" class="img-fluid w-100 h-100" style="object-fit: cover; min-height: 380px;">
-              {% endif %}
+    <div class="ab-card-grid">
+      <!-- Left Image Box -->
+      <div class="ab-img-box xbFadeUpItem" data-animation-delay="0ms">
+        {% if module.feature_image.src %}
+          <img src="{{ module.feature_image.src }}" alt="{{ module.feature_image.alt or 'Wridoo Global Impact' }}">
+        {% else %}
+          <img src="{{ get_asset_url('../../assets/img/about/ab-img05.jpg') }}" alt="Wridoo Global Impact">
+        {% endif %}
+      </div>
+
+      <!-- Right 2 Bento Metric Cards (Always 2 Columns on Big Screen) -->
+      <div class="ab-stats-box xbFadeUpItem" data-animation-delay="100ms">
+        <!-- Card 1 (Pink) -->
+        <div class="ab-stat-card">
+          <div class="ab-stat-card-inner card-pink">
+            <div class="stat-top">
+              <h2 class="stat-number">{{ module.card_1_number or "100+" }}</h2>
+              <p class="stat-title">{{ module.card_1_title or "Countries Served" }}</p>
+            </div>
+            <div class="stat-bottom">
+              <p class="stat-desc">{{ module.card_1_description or "Our platform supports travel teams globally, helping agencies streamline workflows and bookings." }}</p>
             </div>
           </div>
         </div>
 
-        <!-- Right 2 Bento Metric Cards -->
-        <div class="col-lg-6 mt-20">
-          <div class="xb-card-box xbFadeUpItem d-flex flex-column gap-4 h-100 justify-content-between" data-animation-delay="100ms">
-            <!-- Card 1 -->
-            <div class="xb-card-item">
-              <div class="xb-item--inner bg-pink p-4 p-md-5" style="border-radius: 20px;">
-                <div class="xb-item--top mb-3">
-                  <h2 class="xb-item--number" style="font-size: clamp(38px, 4vw, 54px); font-weight: 800; color: #110c29; margin-bottom: 5px;">{{ module.card_1_number or "100+" }}</h2>
-                  <p class="xb-item--text" style="font-size: 16px; font-weight: 600; color: #6e6b80; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">{{ module.card_1_title or "Countries Served" }}</p>
-                </div>
-                <div class="xb-item--bottom">
-                  <p class="xb-item--content" style="font-size: 16px; color: #494569; line-height: 1.6; margin: 0;">{{ module.card_1_description or "Our platform supports travel teams globally, helping agencies streamline workflows and bookings." }}</p>
-                </div>
-              </div>
+        <!-- Card 2 (Dark Navy) -->
+        <div class="ab-stat-card xbFadeUpItem" data-animation-delay="200ms">
+          <div class="ab-stat-card-inner card-dark">
+            <div class="stat-top">
+              <h2 class="stat-number">{{ module.card_2_number or "4M+" }}</h2>
+              <p class="stat-title">{{ module.card_2_title or "Bookings Managed Monthly" }}</p>
             </div>
-
-            <!-- Card 2 -->
-            <div class="xb-card-item">
-              <div class="xb-item--inner p-4 p-md-5" style="border-radius: 20px; background: #0d1738;">
-                <div class="xb-item--top mb-3">
-                  <h2 class="xb-item--number clr-white" style="font-size: clamp(38px, 4vw, 54px); font-weight: 800; color: #fff; margin-bottom: 5px;">{{ module.card_2_number or "4M+" }}</h2>
-                  <p class="xb-item--text clr-white" style="font-size: 16px; font-weight: 600; color: #a4a0c2; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">{{ module.card_2_title or "Bookings Managed Monthly" }}</p>
-                </div>
-                <div class="xb-item--bottom">
-                  <p class="xb-item--content clr-white" style="font-size: 16px; color: #cfcde3; line-height: 1.6; margin: 0;">{{ module.card_2_description or "Agencies rely on our technology to organize itineraries, automate guest communications, and scale revenue." }}</p>
-                </div>
-              </div>
+            <div class="stat-bottom">
+              <p class="stat-desc">{{ module.card_2_description or "Agencies rely on our technology to organize itineraries, automate guest communications, and scale revenue." }}</p>
             </div>
           </div>
         </div>

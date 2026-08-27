@@ -3,25 +3,25 @@
     "name": "info_title",
     "label": "Left Heading",
     "type": "text",
-    "default": "We are excited to connect and support smarter communication"
+    "default": "Transform Your Travel Business with Wridoo Travel CRM"
   },
   {
     "name": "call_center_label",
     "label": "Call Center Section Title",
     "type": "text",
-    "default": "Call center"
+    "default": "Call Center & WhatsApp"
   },
   {
     "name": "phone_1",
     "label": "Phone Number 1",
     "type": "text",
-    "default": "(501) 663-5387"
+    "default": "+91 96418 66113"
   },
   {
     "name": "phone_2",
     "label": "Phone Number 2",
     "type": "text",
-    "default": "(747) 224-0662"
+    "default": ""
   },
   {
     "name": "email_label",
@@ -45,53 +45,53 @@
     "name": "location_1_label",
     "label": "Location 1 Title",
     "type": "text",
-    "default": "Location 1"
+    "default": "Headquarters (Siliguri)"
   },
   {
     "name": "location_1_text",
     "label": "Location 1 Address",
     "type": "text",
-    "default": "1365 N Scottsdale Rd. Suite 350, Scottsdale, AZ, 85257, US"
+    "default": "Siliguri, West Bengal, India - 734001"
   },
   {
     "name": "location_2_label",
     "label": "Location 2 Title",
     "type": "text",
-    "default": "Location 2"
+    "default": "Global Reach"
   },
   {
     "name": "location_2_text",
     "label": "Location 2 Address",
     "type": "text",
-    "default": "2211 North First Street, San Jose, CA 95131, US"
+    "default": "Serving Tour Operators & DMCs Globally"
   },
   {
     "name": "disclaimer",
     "label": "Bottom Disclaimer Text",
     "type": "text",
-    "default": "Please avoid sharing sensitive or confidential information through our contact information or form submission, and ensure all details provided are safe and appropriate always carefully."
+    "default": "Reach out to schedule a live product walk-through or discuss customized travel software integrations for your team."
   },
   {
     "name": "form_title",
     "label": "Form Box Title",
     "type": "text",
-    "default": "Contact form"
-  },
-  {
-    "name": "use_hubspot_form",
-    "label": "Use HubSpot Embedded Form",
-    "type": "boolean",
-    "default": false
+    "default": "Request a Travel CRM Demo"
   },
   {
     "name": "hubspot_form",
     "label": "Select HubSpot Form",
-    "type": "form"
+    "type": "form",
+    "default": {
+      "form_id": "",
+      "response_type": "inline",
+      "message": "Thank you for contacting Wridoo. We will be in touch shortly."
+    },
+    "help_text": "Select any HubSpot Form from your portal. If unselected, the built-in Travel CRM Demo form will be shown."
   },
   {
     "name": "btn_text",
-    "label": "Submit Button Text",
+    "label": "Submit Button Text (for default form)",
     "type": "text",
-    "default": "send a message"
+    "default": "Submit Demo Request"
   }
 ]

@@ -1,0 +1,106 @@
+/* Wridoo Header Module Styles */
+
+.header-area--inner_page {
+  background: transparent !important;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+@media (max-width: 991px) {
+  .header-area--inner_page {
+    top: 15px;
+  }
+}
+
+.header-area--inner_page .header__wrap {
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 0 35px !important;
+  border: 1px solid rgba(220, 215, 255, 0.6) !important;
+  box-shadow: 0 10px 35px rgba(83, 58, 253, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 1199px) {
+  .header-area--inner_page .header__wrap {
+    padding: 0 20px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .header-area--inner_page .header__wrap {
+    padding: 12px 20px !important;
+  }
+}
+
+.header-area--inner_page .main-menu > ul > li {
+  padding: 22px 0;
+}
+
+.header-area--inner_page .main-menu > ul > li > a {
+  color: #5a5869 !important;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.header-area--inner_page .main-menu > ul > li:hover > a,
+.header-area--inner_page .main-menu > ul > li.active > a {
+  color: #533afd !important;
+  background: rgba(193, 186, 245, 0.35) !important;
+}
+
+.header-area--inner_page .xb-header-btn .fintech-btn {
+  background: #533afd !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 12px 24px !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  box-shadow: 0 4px 14px rgba(83, 58, 253, 0.35) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease !important;
+  text-decoration: none;
+}
+
+.header-area--inner_page .xb-header-btn .fintech-btn:hover {
+  background: #4028e0 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(83, 58, 253, 0.45) !important;
+}
+
+/* Sticky Header styling */
+#xb-header-area.is-sticky .xb-header-area-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transform: translateY(-100%);
+  transition: 0.4s cubic-bezier(0.23, 0.76, 0.53, 0.99);
+  visibility: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+#xb-header-area.is-sticky .xb-header-area-sticky.xb-header-fixed {
+  transform: translateY(0%);
+  visibility: visible;
+}
+
+#xb-header-area.is-sticky .xb-header-area-sticky .header__wrap {
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 10px 0 !important;
+}

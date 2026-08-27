@@ -1,3 +1,4 @@
+{% set is_inner = module.is_inner_page %}
 {% set cta_href = module.cta_url.url.href if (module.cta_url and module.cta_url.url and module.cta_url.url.href) else (module.cta_url if module.cta_url is string else '#cta') %}
 
 {# Macro for rendering HubSpot Menu Nodes for Desktop #}
@@ -32,10 +33,10 @@
   </li>
 {% endmacro %}
 
-<header id="xb-header-area" class="header-area header-area--four"> 
+<header id="xb-header-area" class="header-area header-area--four {% if is_inner %}header-area--inner_page header-transparent is-sticky{% endif %}"> 
   <div class="xb-header">
-    <div class="container mxw-1330">
-      <div class="header-wrapper">
+    <div class="container {% if not is_inner %}mxw-1330{% endif %}">
+      {% if not is_inner %}<div class="header-wrapper">{% endif %}
         <div class="header__wrap border-btm ul_li_between pos-rel">
           <!-- Logo -->
           <div class="xb-header-logo">
@@ -58,21 +59,25 @@
                     {{ render_desktop_node(node) }}
                   {% endfor %}
                 {% else %}
-                  <li class="active"><a href="/"><span>Home</span></a></li>
-                  <li><a href="/about"><span>About Us</span></a></li>
+                  <li><a href="/"><span>Home</span></a></li>
                   <li class="menu-item-has-children">
-                    <a href="#solutions"><span>Solutions</span></a>
+                    <a href="#products"><span>Products</span></a>
                     <ul class="submenu">
-                      <li><a href="#solutions"><span>Tour Operators</span></a></li>
-                      <li><a href="#solutions"><span>Travel Agencies</span></a></li>
-                      <li><a href="#solutions"><span>Hotels &amp; Resorts</span></a></li>
-                      <li><a href="#solutions"><span>DMCs &amp; Activities</span></a></li>
+                      <li><a href="#tour-management"><span>Tour Management</span></a></li>
+                      <li><a href="#booking-engine"><span>Booking Engine</span></a></li>
+                      <li><a href="#itinerary-builder"><span>Itinerary Builder</span></a></li>
+                      <li><a href="#crm-invoicing"><span>CRM &amp; Invoicing</span></a></li>
                     </ul>
                   </li>
-                  <li><a href="#features"><span>Features</span></a></li>
                   <li><a href="#pricing"><span>Pricing</span></a></li>
-                  <li><a href="#faq"><span>FAQ</span></a></li>
-                  <li><a href="/contact"><span>Contact</span></a></li>
+                  <li><a href="/blog"><span>Blog</span></a></li>
+                  <li class="menu-item-has-children {% if is_inner %}active{% endif %}">
+                    <a href="#company"><span>Company</span></a>
+                    <ul class="submenu">
+                      <li><a href="/about"><span>About Us</span></a></li>
+                      <li><a href="/contact"><span>Contact</span></a></li>
+                    </ul>
+                  </li>
                 {% endif %}
               </ul>
             </nav>
@@ -94,7 +99,7 @@
             </a>
           </div>
         </div>
-      </div>
+      {% if not is_inner %}</div>{% endif %}
 
       <!-- Mobile Slide-out Drawer Menu -->
       <div class="xb-header-wrap">
@@ -129,21 +134,25 @@
                     {{ render_mobile_node(node) }}
                   {% endfor %}
                 {% else %}
-                  <li class="menu-item active"><a href="/"><span>Home</span></a></li>
-                  <li class="menu-item"><a href="/about"><span>About Us</span></a></li>
+                  <li class="menu-item"><a href="/"><span>Home</span></a></li>
                   <li class="menu-item menu-item-has-children">
-                    <a href="#solutions"><span>Solutions</span></a>
+                    <a href="#products"><span>Products</span></a>
                     <ul class="sub-menu">
-                      <li><a href="#solutions"><span>Tour Operators</span></a></li>
-                      <li><a href="#solutions"><span>Travel Agencies</span></a></li>
-                      <li><a href="#solutions"><span>Hotels &amp; Resorts</span></a></li>
-                      <li><a href="#solutions"><span>DMCs &amp; Activities</span></a></li>
+                      <li><a href="#tour-management"><span>Tour Management</span></a></li>
+                      <li><a href="#booking-engine"><span>Booking Engine</span></a></li>
+                      <li><a href="#itinerary-builder"><span>Itinerary Builder</span></a></li>
+                      <li><a href="#crm-invoicing"><span>CRM &amp; Invoicing</span></a></li>
                     </ul>
                   </li>
-                  <li class="menu-item"><a href="#features"><span>Features</span></a></li>
                   <li class="menu-item"><a href="#pricing"><span>Pricing</span></a></li>
-                  <li class="menu-item"><a href="#faq"><span>FAQ</span></a></li>
-                  <li class="menu-item"><a href="/contact"><span>Contact</span></a></li>
+                  <li class="menu-item"><a href="/blog"><span>Blog</span></a></li>
+                  <li class="menu-item menu-item-has-children {% if is_inner %}active{% endif %}">
+                    <a href="#company"><span>Company</span></a>
+                    <ul class="sub-menu">
+                      <li><a href="/about"><span>About Us</span></a></li>
+                      <li><a href="/contact"><span>Contact</span></a></li>
+                    </ul>
+                  </li>
                 {% endif %}
               </ul>
             </nav>

@@ -1,5 +1,12 @@
 [
   {
+    "name": "is_inner_page",
+    "label": "Use Floating Inner Page Header Style?",
+    "type": "boolean",
+    "default": false,
+    "help_text": "Enable for About, Contact, and other inner pages to render a floating white navbar over the hero background."
+  },
+  {
     "name": "logo",
     "label": "Logo Image",
     "type": "image",
@@ -25,7 +32,7 @@
     "name": "cta_text",
     "label": "Primary CTA Text",
     "type": "text",
-    "default": "Start free trial"
+    "default": "Start Free Trial"
   },
   {
     "name": "cta_url",
